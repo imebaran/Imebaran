@@ -8,17 +8,17 @@
 <style>
 @font-face {
   font-family: "Shekari";
-  src: url("Shekari.ttf");
+  src: url("Shekari.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Radin";
-  src: url("Radin3.ttf");
+  font-family: "Adrin";
+  src: url("Adrin.ttf") format("truetype");
 }
 
 body {
   margin: 0;
   direction: rtl;
-  font-family: "Radin";
+  font-family: "Adrin", sans-serif;
   background: #fff;
   color: #222;
 }
@@ -36,74 +36,67 @@ body {
   object-position: bottom;
 }
 
-/* معرفی */
-.intro-text {
+/* متن معرفی */
+.intro {
   font-family: "Shekari";
   text-align: center;
   font-size: 22px;
-  margin: 20px 12px;
+  margin: 20px;
   color: #3B4953;
 }
 
-/* عنوان */
-.section-title {
+/* اسلایدر افقی */
+.horizontal-title {
   margin: 20px 16px 10px;
   font-size: 18px;
 }
-
-/* اسلایدر افقی */
-.horizontal-scroll {
+.slider {
   display: flex;
-  gap: 12px;
   overflow-x: auto;
+  gap: 12px;
   padding: 10px 16px;
 }
-.horizontal-scroll::-webkit-scrollbar { display: none; }
+.slider::-webkit-scrollbar { display: none; }
 
-.product-slider {
-  width: 140px;
+.slide-card {
+  width: 130px;
+  flex-shrink: 0;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
   text-align: center;
-  flex-shrink: 0;
 }
-.product-slider img {
+.slide-card img {
   width: 100%;
-  height: 110px;
+  height: 120px;
   object-fit: cover;
 }
-
-.color-btns button {
-  border: 1px solid #ccc;
-  background: #fff;
-  margin: 4px 2px;
-  padding: 2px 6px;
-  cursor: pointer;
-  font-size: 12px;
+.price {
+  margin: 8px 0;
+  font-weight: bold;
 }
-
 .buy-green {
   background: #2e8b57;
   color: #fff;
   border: none;
   width: 80%;
-  margin: 6px auto 10px;
-  padding: 4px 0;
+  margin-bottom: 10px;
+  padding: 5px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-/* گرید */
+/* گرید ثابت */
 .products {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  padding: 0 16px 30px;
+  padding: 16px;
 }
 .card {
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  background: #fff;
   border-radius: 12px;
-  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
   text-align: center;
 }
 .card img {
@@ -111,15 +104,14 @@ body {
   height: 170px;
   object-fit: cover;
 }
-.card-body {
-  padding: 10px;
-}
 .buy-yellow {
   background: #ffcc00;
   border: none;
   width: 80%;
-  padding: 4px 0;
+  padding: 5px;
+  margin: 10px 0;
   border-radius: 6px;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -128,104 +120,51 @@ body {
 
 <!-- هدر -->
 <div class="hero">
-  <img src="۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg">
+  <img src="20251223_004831.jpg">
 </div>
 
-<div class="intro-text">
-از دلِ سادگی، زیبایی متولد می‌شود
+<!-- متن معرفی -->
+<div class="intro">از دلِ سادگی، زیبایی متولد می‌شود</div>
+
+<!-- اسلایدر افقی | ۶ محصول -->
+<div class="horizontal-title">منتخب</div>
+<div class="slider">
+  <div class="slide-card"><img src="img1.jpg"><div class="price">۶۱۵</div><button class="buy-green">خرید</button></div>
+  <div class="slide-card"><img src="img2.jpg"><div class="price">۵۹۰</div><button class="buy-green">خرید</button></div>
+  <div class="slide-card"><img src="img3.jpg"><div class="price">۸۸۵</div><button class="buy-green">خرید</button></div>
+  <div class="slide-card"><img src="img4.jpg"><div class="price">۵۶۸</div><button class="buy-green">خرید</button></div>
+  <div class="slide-card"><img src="img5.jpg"><div class="price">۸۹۹</div><button class="buy-green">خرید</button></div>
+  <div class="slide-card"><img src="img6.jpg"><div class="price">۶۱۵</div><button class="buy-green">خرید</button></div>
 </div>
 
-<!-- اسلایدر -->
-<div class="section-title">محصولات پرفروش</div>
-<div class="horizontal-scroll">
-
-  <!-- 615 -->
-  <div class="product-slider">
-    <img id="p615" src="آجری.jpg">
-    <div class="color-btns">
-      <button onclick="p615.src='آجری.jpg'">آجری</button>
-      <button onclick="p615.src='کالباسی.jpg'">کالباسی</button>
-      <button onclick="p615.src='سدری.jpg'">سدری</button>
-    </div>
-    <div>کد ۶۱۵</div>
-    <button class="buy-green">خرید</button>
-  </div>
-
-  <!-- 590 -->
-  <div class="product-slider">
-    <img id="p590" src="خاکستری.jpg">
-    <div class="color-btns">
-      <button onclick="p590.src='خاکستری.jpg'">خاکستری</button>
-      <button onclick="p590.src='قهوه ای.jpg'">قهوه‌ای</button>
-      <button onclick="p590.src='قهوه ای کرم.jpg'">قهوه‌ای کرم</button>
-    </div>
-    <div>کد ۵۹۰</div>
-    <button class="buy-green">خرید</button>
-  </div>
-
-  <!-- 885 -->
-  <div class="product-slider">
-    <img id="p885" src="سبز.jpg">
-    <div class="color-btns">
-      <button onclick="p885.src='سبز.jpg'">سبز</button>
-      <button onclick="p885.src='نسکافه ای.jpg'">نسکافه‌ای</button>
-    </div>
-    <div>کد ۸۸۵</div>
-    <button class="buy-green">خرید</button>
-  </div>
-
-  <!-- 568 -->
-  <div class="product-slider">
-    <img id="p568" src="1.jpg">
-    <div class="color-btns">
-      <button onclick="p568.src='1.jpg'">۱</button>
-      <button onclick="p568.src='2.jpg'">۲</button>
-      <button onclick="p568.src='3.jpg'">۳</button>
-    </div>
-    <div>کد ۵۶۸</div>
-    <button class="buy-green">خرید</button>
-  </div>
-
-</div>
-
-<!-- گرید -->
-<div class="section-title">محصولات</div>
+<!-- گرید | ۲۱ محصول -->
 <div class="products">
+  <!-- فقط الگو، img7.jpg تا img27.jpg رو با فایل‌های واقعی عوض کن -->
+  <!-- قیمت‌ها طبق قوانین خودت -->
+  <!-- ۲۱ کارت -->
+  <div class="card"><img src="img7.jpg"><div class="price">۵۹۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img8.jpg"><div class="price">۶۱۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img9.jpg"><div class="price">۸۸۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img10.jpg"><div class="price">۵۶۸</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img11.jpg"><div class="price">۵۶۸</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img12.jpg"><div class="price">۵۶۸</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img13.jpg"><div class="price">۸۹۹</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img14.jpg"><div class="price">۸۹۹</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img15.jpg"><div class="price">۸۹۹</div><button class="buy-yellow">خرید</button></div>
 
-  <!-- 899 -->
-  <div class="card">
-    <img id="p899" src="4.jpg">
-    <div class="card-body">
-      کد ۸۹۹
-      <div class="color-btns">
-        <button onclick="p899.src='4.jpg'">۴</button>
-        <button onclick="p899.src='5.jpg'">۵</button>
-        <button onclick="p899.src='6.jpg'">۶</button>
-      </div>
-      <button class="buy-yellow">خرید</button>
-    </div>
-  </div>
+  <div class="card"><img src="img16.jpg"><div class="price">۵۴۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img17.jpg"><div class="price">۵۷۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img18.jpg"><div class="price">۷۱۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img19.jpg"><div class="price">۸۴۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img20.jpg"><div class="price">۸۶۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img21.jpg"><div class="price">۸۶۹</div><button class="buy-yellow">خرید</button></div>
 
-  <div class="card">
-    <img src="399.jpg">
-    <div class="card-body">کد ۳۹۹<br><button class="buy-yellow">خرید</button></div>
-  </div>
-
-  <div class="card">
-    <img src="520.jpg">
-    <div class="card-body">کد ۵۲۰<br><button class="buy-yellow">خرید</button></div>
-  </div>
-
-  <div class="card">
-    <img src="640.jpg">
-    <div class="card-body">کد ۶۴۰<br><button class="buy-yellow">خرید</button></div>
-  </div>
-
-  <div class="card">
-    <img src="830.jpg">
-    <div class="card-body">کد ۸۳۰<br><button class="buy-yellow">خرید</button></div>
-  </div>
-
+  <div class="card"><img src="img22.jpg"><div class="price">۵۹۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img23.jpg"><div class="price">۶۱۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img24.jpg"><div class="price">۸۸۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img25.jpg"><div class="price">۵۹۰</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img26.jpg"><div class="price">۶۱۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="img27.jpg"><div class="price">۸۸۵</div><button class="buy-yellow">خرید</button></div>
 </div>
 
 </body>
