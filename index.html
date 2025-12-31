@@ -1,98 +1,183 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <title>ارزانسرای باران</title>
-  <style>
-    body { font-family: Tahoma; direction: rtl; margin: 0; background: #f9f9f9; text-align: center; }
-    h2 { margin: 20px 0; }
+<meta charset="UTF-8">
+<title>ارزانسرای باران</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* هدر */
-    .header img { width: 100%; height: 250px; object-fit: cover; }
+<style>
+@font-face{font-family:"Shekari";src:url("Shekari.ttf")}
+@font-face{font-family:"Adrin";src:url("Adrin.ttf")}
 
-    /* متن معرفی */
-    .intro { padding: 20px; font-size: 16px; line-height: 1.8; }
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: "Adrin", sans-serif;
+  background: #fff;
+  color: #222;
+}
 
-    /* اسلایدر */
-    .slider { margin: 30px auto; width: 90%; max-width: 400px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; }
-    .slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
-    .slides img { flex: 0 0 100%; scroll-snap-align: center; border-radius: 6px; height: 200px; object-fit: cover; }
-    .buy-button { display: block; margin-top: 10px; padding: 8px; background: green; color: white; text-decoration: none; border-radius: 5px; }
-    .buy-button:hover { background: darkgreen; }
+/* HEADER */
+.hero {
+  height: 150px;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
 
-    /* گرید */
-    .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 30px auto; }
-    .product { width: 150px; background: white; border: 1px solid #ccc; border-radius: 8px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .product img { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; }
-    .product p { margin: 5px 0; }
-  </style>
+/* INTRO */
+.intro {
+  font-family: "Shekari";
+  text-align: center;
+  font-size: 22px;
+  margin: 20px;
+  color: #3B4953;
+}
+
+/* SLIDER */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px 16px;
+}
+.slider::-webkit-scrollbar { display: none; }
+.slide-card {
+  width: 140px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  text-align: center;
+}
+.slide-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+.price {
+  margin: 6px 0;
+  font-weight: bold;
+}
+.buy-green {
+  background: #2e8b57;
+  color: #fff;
+  border: none;
+  width: 80%;
+  padding: 6px 0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 16px;
+  padding: 16px;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+.buy-yellow {
+  background: #ffcc00;
+  border: none;
+  width: 80%;
+  padding: 6px 0;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+</style>
 </head>
 <body>
 
-  <!-- 🟩 هدر -->
-  <div class="header">
-    <img src="header.jpg" alt="هدر فروشگاه">
+<!-- HEADER -->
+<div class="hero">
+  <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg" alt="هدر">
+</div>
+
+<div class="intro">از دلِ سادگی، زیبایی متولد می‌شود</div>
+
+<!-- SLIDER 6 PRODUCTS -->
+<div class="slider">
+
+  <div class="slide-card">
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/615.jpg">
+    <div class="price">۶۱۵ تومان</div>
+    <button class="buy-green">خرید</button>
   </div>
 
-  <!-- 🟨 متن معرفی -->
-  <div class="intro">
-    <h2>به ارزانسرای باران خوش آمدید</h2>
-    <p>اینجا می‌توانید محصولات متنوع با کیفیت عالی و قیمت مناسب را مشاهده و خریداری کنید. برای هر محصول عکس‌های دقیق و دسته‌بندی‌شده آماده شده تا انتخاب راحت‌تری داشته باشید.</p>
+  <div class="slide-card">
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg">
+    <div class="price">۵۹۰ تومان</div>
+    <button class="buy-green">خرید</button>
   </div>
 
-  <!-- 🟦 اسلایدرها -->
-  <div class="slider" id="product-615">
-    <h3>محصول کد 615</h3>
-    <div class="slides">
-      <img src="آجری.jpg" alt="615 - آجری">
-      <img src="کالباسی.jpg" alt="615 - کالباسی">
-      <img src="سدری.jpg" alt="615 - سدری">
-      <img src="مشکی.jpg" alt="615 - مشکی">
-    </div>
-    <a href="order.html?code=615" class="buy-button">خرید کد 615</a>
+  <div class="slide-card">
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/885.jpg">
+    <div class="price">۸۸۵ تومان</div>
+    <button class="buy-green">خرید</button>
   </div>
 
-  <div class="slider" id="product-590">
-    <h3>محصول کد 590</h3>
-    <div class="slides">
-      <img src="خاکستری.jpg" alt="590 - خاکستری">
-      <img src="قهوه ای.jpg" alt="590 - قهوه ای">
-      <img src="کرم.jpg" alt="590 - کرم">
-      <img src="قهوه ای کرم.jpg" alt="590 - قهوه ای کرم">
-    </div>
-    <a href="order.html?code=590" class="buy-button">خرید کد 590</a>
+  <div class="slide-card">
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg">
+    <div class="price">۵۶۸ تومان</div>
+    <button class="buy-green">خرید</button>
   </div>
 
-  <div class="slider" id="product-885">
-    <h3>محصول کد 885</h3>
-    <div class="slides">
-      <img src="مشکی.jpg" alt="885 - مشکی">
-      <img src="سبز.jpg" alt="885 - سبز">
-      <img src="نسکافه ای.jpg" alt="885 - نسکافه ای">
-    </div>
-    <a href="order.html?code=885" class="buy-button">خرید کد 885</a>
+  <div class="slide-card">
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg">
+    <div class="price">۳۹۹ تومان</div>
+    <button class="buy-green">خرید</button>
   </div>
 
-  <div class="slider" id="product-568">
-    <h3>محصول کد 568</h3>
-    <div class="slides">
-      <img src="1.jpg" alt="568 - 1">
-      <img src="2.jpg" alt="568 - 2">
-      <img src="3.jpg" alt="568 - 3">
-    </div>
-    <a href="order.html?code=568" class="buy-button">خرید کد 568</a>
+  <div class="slide-card">
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg">
+    <div class="price">۵۲۰ تومان</div>
+    <button class="buy-green">خرید</button>
   </div>
 
-  <!-- 🟨 گرید محصولات -->
-  <div class="grid">
-    <div class="product"><img src="399.jpg" alt="محصول 399"><p>قیمت: 399,000 تومان</p><a href="order.html?code=399" class="buy-button">خرید</a></div>
-    <div class="product"><img src="520.jpg" alt="محصول 520"><p>قیمت: 520,000 تومان</p><a href="order.html?code=520" class="buy-button">خرید</a></div>
-    <div class="product"><img src="640.jpg" alt="محصول 640"><p>قیمت: 640,000 تومان</p><a href="order.html?code=640" class="buy-button">خرید</a></div>
-    <div class="product"><img src="830.jpg" alt="محصول 830"><p>قیمت: 830,000 تومان</p><a href="order.html?code=830" class="buy-button">خرید</a></div>
-    <div class="product"><img src="899.jpg" alt="محصول 899"><p>قیمت: 899,000 تومان</p><a href="order.html?code=899" class="buy-button">خرید</a></div>
-    <div class="product"><img src="20251223_0431.jpg" alt="محصول ویژه"><p>محصول ویژه</p><a href="order.html?code=20251223" class="buy-button">خرید</a></div>
-    <!-- بقیه محصولات تک‌عکسی رو همینجا اضافه کن -->
-  </div>
+</div>
+
+<!-- GRID 21 PRODUCTS -->
+<div class="products">
+
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg"><div class="price">۶۴۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg"><div class="price">۸۳۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/899.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
+
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/1.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/2.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/3.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
+
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/4.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/5.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/6.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
+
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/آجری.jpg"><div class="price">۶۱۵ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/کالباسی.jpg"><div class="price">۶۱۵ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/سدری.jpg"><div class="price">۶۱۵ تومان</div><button class="buy-yellow">خرید</button></div>
+
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/خاکستری.jpg"><div class="price">۵۹۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/قهوه ای.jpg"><div class="price">۵۹۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/قهوه ای کرم.jpg"><div class="price">۵۹۰ تومان</div><button class="buy-yellow">خرید</button></div>
+
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/سبز.jpg"><div class="price">۸۸۵ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/نسکافه ای.jpg"><div class="price">۸۸۵ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/کرم.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
+
+</div>
 
 </body>
 </html>
