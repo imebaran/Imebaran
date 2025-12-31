@@ -1,151 +1,128 @@
 <!DOCTYPE html>
-<html lang="fa-IR">
+<html lang="fa">
 <head>
 <meta charset="UTF-8">
 <title>ارزانسرای باران</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-/* فونت‌ها */
 @font-face {
   font-family: "Shekari";
-  src: url("https://raw.githubusercontent.com/imebaran/Imebaran/main/Shekari.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/baranaarzani/Barana/main/Shekari.ttf") format("truetype");
 }
 @font-face {
   font-family: "Adrin";
-  src: url("https://raw.githubusercontent.com/imebaran/Imebaran/main/Adrin.ttf") format("truetype");
+  src: url("Adrin.ttf") format("truetype");
 }
 
-body {
-  margin: 0;
-  font-family: "Adrin", sans-serif;
-  direction: rtl;
-  background: #fff;
-  color: #222;
-  padding-bottom: 30px;
+body{
+  margin:0;
+  direction:rtl;
+  font-family:"Adrin",sans-serif;
+  background:#fff;
+  color:#222;
 }
 
 /* هدر */
-.hero {
-  width: 100%;
-  height: 147px;
-  overflow: hidden;
+.hero{
+  width:100%;
+  height:147px;
+  overflow:hidden;
 }
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 /* متن معرفی */
-.intro-text {
-  text-align: center;
-  font-size: 22px;
-  font-family: "Shekari";
-  color: #3B4953;
-  margin: 20px 0;
+.intro-text{
+  font-family:"Shekari";
+  text-align:center;
+  font-size:22px;
+  margin:20px 10px;
+  color:#3B4953;
 }
 
-/* منو */
-.hamburger-menu {
-  padding: 10px 16px;
-}
-.hamburger {
-  font-size: 28px;
-  cursor: pointer;
-}
-.menu-links {
-  display: none;
-}
-.menu-links a {
-  display: block;
-  padding: 12px;
-  margin: 6px 0;
-  background: #a0522d;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  text-align: center;
+/* عنوان اسلایدر */
+.horizontal-title{
+  font-family:"Shekari";
+  font-size:20px;
+  margin:20px 16px 10px;
 }
 
 /* اسلایدر */
-.horizontal-title {
-  font-size: 20px;
-  margin: 20px 16px 10px;
+.horizontal-scroll{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:10px 16px;
 }
-.horizontal-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 12px;
-  padding: 10px 16px;
+.horizontal-scroll::-webkit-scrollbar{display:none;}
+
+.product-card{
+  width:130px;
+  flex:0 0 auto;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  text-align:center;
+  text-decoration:none;
+  color:#000;
 }
-.product-card {
-  flex: 0 0 auto;
-  width: 140px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-  text-align: center;
-  text-decoration: none;
-  color: #000;
+.product-card img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
 }
-.product-card img {
-  width: 100%;
-  height: 110px; /* اندازه یکنواخت اسلایدر */
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
+.product-card .title{
+  font-size:13px;
+  margin:6px 0;
 }
-.buy-green {
-  background: #2e8b57;
-  color: #fff;
-  border-radius: 6px;
-  margin: 6px;
-  padding: 4px 0;
-  font-size: 12px;
+.product-card .buy-btn{
+  background:#2e8b57;
+  color:#fff;
+  border:none;
+  width:80%;
+  padding:5px 0;
+  margin-bottom:8px;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-/* گل یاس */
-.yas-flower {
-  width: 100%;
-  height: 80px;
-  object-fit: cover;
-  margin: 10px 0;
+/* گرید محصولات */
+.products{
+  max-width:900px;
+  margin:20px auto 30px;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
 }
-
-/* گرید */
-.products {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+.card{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
 }
-.card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  text-decoration: none;
-  color: inherit;
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
 }
-.card img {
-  width: 100%;
-  height: 230px; /* بزرگ‌تر از اسلایدر */
-  object-fit: cover;
+.card-body{
+  padding:12px;
+  text-align:center;
 }
-.card-body {
-  text-align: center;
-  padding: 12px;
-}
-.buy-yellow {
-  background: #ffcc00;
-  border-radius: 6px;
-  margin-top: 6px;
-  padding: 4px 0;
-  font-size: 12px;
+.card-body .buy-btn{
+  background:#ffcc00;
+  border:none;
+  width:80%;
+  padding:6px 0;
+  border-radius:6px;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -154,60 +131,73 @@ body {
 
 <!-- هدر -->
 <div class="hero">
-  <img src="۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg" alt="هدر سایت">
+  <img src="header.jpg" alt="هدر سایت">
 </div>
 
-<div class="intro-text">از دلِ سادگی، زیبایی متولد می‌شود</div>
-
-<!-- منوی همبرگری -->
-<div class="hamburger-menu">
-  <div class="hamburger" onclick="toggleMenu()">🪀</div>
-  <div class="menu-links" id="menuLinks">
-    <a href="https://t.me/Allahosamad1">اعتماد واریزی</a>
-    <a href="https://t.me/Allahosamad1">چالش و جوایز</a>
-    <a href="https://t.me/Allahosamad1">تبلیغ شما حمایت ما</a>
-  </div>
+<!-- معرفی -->
+<div class="intro-text">
+از دلِ سادگی، زیبایی متولد می‌شود
 </div>
 
-<!-- اسلایدر افقی -->
+<!-- اسلایدر -->
 <div class="horizontal-title">محصولات منتخب</div>
 <div class="horizontal-scroll">
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="615.jpg"><div class="buy-green">خرید</div>
+    <img src="615-ajori.jpg">
+    <div class="title">کد 615 – آجری</div>
+    <div class="buy-btn">خرید</div>
   </a>
+
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="590.jpg"><div class="buy-green">خرید</div>
+    <img src="590-ghahvei.jpg">
+    <div class="title">کد 590</div>
+    <div class="buy-btn">خرید</div>
   </a>
+
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="885.jpg"><div class="buy-green">خرید</div>
+    <img src="885-meshki.jpg">
+    <div class="title">کد 885</div>
+    <div class="buy-btn">خرید</div>
   </a>
+
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="568.jpg"><div class="buy-green">خرید</div>
+    <img src="568-1.jpg">
+    <div class="title">کد 568</div>
+    <div class="buy-btn">خرید</div>
   </a>
 </div>
 
-<img src="گل یاس.jpeg" class="yas-flower">
-
-<!-- گرید محصولات -->
+<!-- گرید -->
 <div class="products">
-  <a href="#" class="card"><img src="899.jpg"><div class="card-body">کد 899<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="568.jpg"><div class="card-body">کد 568<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="590.jpg"><div class="card-body">کد 590<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="615.jpg"><div class="card-body">کد 615<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="885.jpg"><div class="card-body">کد 885<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="540.jpg"><div class="card-body">کد 540<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="575.jpg"><div class="card-body">کد 575<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="710.jpg"><div class="card-body">کد 710<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="840.jpg"><div class="card-body">کد 840<div class="buy-yellow">خرید</div></div></a>
-  <a href="#" class="card"><img src="869.jpg"><div class="card-body">کد 869<div class="buy-yellow">خرید</div></div></a>
-</div>
 
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("menuLinks");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-</script>
+  <!-- نمونه – همه عکس‌های main دقیقاً به همین شکل -->
+  <a href="https://t.me/Allahosamad1" class="card">
+    <img src="899-4.jpg">
+    <div class="card-body">
+      کد 899
+      <div class="buy-btn">خرید</div>
+    </div>
+  </a>
+
+  <a href="https://t.me/Allahosamad1" class="card">
+    <img src="899-5.jpg">
+    <div class="card-body">
+      کد 899
+      <div class="buy-btn">خرید</div>
+    </div>
+  </a>
+
+  <a href="https://t.me/Allahosamad1" class="card">
+    <img src="899-6.jpg">
+    <div class="card-body">
+      کد 899
+      <div class="buy-btn">خرید</div>
+    </div>
+  </a>
+
+  <!-- بقیه عکس‌ها رو همین الگو ادامه بده (تا ۲۷ تا) -->
+
+</div>
 
 </body>
 </html>
