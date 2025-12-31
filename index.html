@@ -8,17 +8,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+/* فونت‌ها */
 @font-face {
   font-family: "Shekari";
   src: url("https://raw.githubusercontent.com/imebaran/Imebaran/main/Shekari.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Adrin";
+  src: url("https://raw.githubusercontent.com/imebaran/Imebaran/main/Adrin.ttf") format("truetype");
+}
 
 body {
   margin: 0;
-  font-family: "Shekari", sans-serif;
+  font-family: "Adrin", sans-serif;
   direction: rtl;
   background: #fff;
   color: #222;
+  padding-bottom: 30px;
 }
 
 /* هدر */
@@ -37,6 +43,7 @@ body {
 .intro-text {
   text-align: center;
   font-size: 22px;
+  font-family: "Shekari";
   color: #3B4953;
   margin: 20px 0;
 }
@@ -86,9 +93,17 @@ body {
 }
 .product-card img {
   width: 100%;
-  height: 120px;
+  height: 110px; /* اندازه یکنواخت اسلایدر */
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+}
+.buy-green {
+  background: #2e8b57;
+  color: #fff;
+  border-radius: 6px;
+  margin: 6px;
+  padding: 4px 0;
+  font-size: 12px;
 }
 
 /* گل یاس */
@@ -118,12 +133,19 @@ body {
 }
 .card img {
   width: 100%;
-  height: 220px;
+  height: 230px; /* بزرگ‌تر از اسلایدر */
   object-fit: cover;
 }
 .card-body {
   text-align: center;
   padding: 12px;
+}
+.buy-yellow {
+  background: #ffcc00;
+  border-radius: 6px;
+  margin-top: 6px;
+  padding: 4px 0;
+  font-size: 12px;
 }
 </style>
 </head>
@@ -132,7 +154,7 @@ body {
 
 <!-- هدر -->
 <div class="hero">
-  <img src="image_1766962498109.jpeg" alt="هدر جنگلی">
+  <img src="۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg" alt="هدر سایت">
 </div>
 
 <div class="intro-text">از دلِ سادگی، زیبایی متولد می‌شود</div>
@@ -147,36 +169,37 @@ body {
   </div>
 </div>
 
-<!-- اسلایدر افقی (۴ محصول) -->
+<!-- اسلایدر افقی -->
 <div class="horizontal-title">محصولات منتخب</div>
 <div class="horizontal-scroll">
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="615.jpg">
-    <div>کد 615</div>
+    <img src="615.jpg"><div class="buy-green">خرید</div>
   </a>
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="590.jpg">
-    <div>کد 590</div>
+    <img src="590.jpg"><div class="buy-green">خرید</div>
   </a>
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="885.jpg">
-    <div>کد 885</div>
+    <img src="885.jpg"><div class="buy-green">خرید</div>
   </a>
   <a href="https://t.me/Allahosamad1" class="product-card">
-    <img src="568.jpg">
-    <div>کد 568</div>
+    <img src="568.jpg"><div class="buy-green">خرید</div>
   </a>
 </div>
 
-<!-- گل یاس -->
-<img src="گل یاس.jpeg" class="yas-flower" alt="گل یاس">
+<img src="گل یاس.jpeg" class="yas-flower">
 
-<!-- گرید ثابت -->
+<!-- گرید محصولات -->
 <div class="products">
-  <a href="https://t.me/Allahosamad1" class="card">
-    <img src="899.jpg">
-    <div class="card-body">کد 899</div>
-  </a>
+  <a href="#" class="card"><img src="899.jpg"><div class="card-body">کد 899<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="568.jpg"><div class="card-body">کد 568<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="590.jpg"><div class="card-body">کد 590<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="615.jpg"><div class="card-body">کد 615<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="885.jpg"><div class="card-body">کد 885<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="540.jpg"><div class="card-body">کد 540<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="575.jpg"><div class="card-body">کد 575<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="710.jpg"><div class="card-body">کد 710<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="840.jpg"><div class="card-body">کد 840<div class="buy-yellow">خرید</div></div></a>
+  <a href="#" class="card"><img src="869.jpg"><div class="card-body">کد 869<div class="buy-yellow">خرید</div></div></a>
 </div>
 
 <script>
