@@ -20,9 +20,10 @@ body{
   font-family:"Adrin",sans-serif;
   direction:rtl;
   background:#fff;
+  color:#222;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .hero{
   height:150px;
   overflow:hidden;
@@ -34,7 +35,7 @@ body{
   object-position:bottom;
 }
 
-/* INTRO */
+/* ===== INTRO ===== */
 .intro-text{
   font-family:"Shekari";
   text-align:center;
@@ -42,7 +43,7 @@ body{
   margin:20px;
 }
 
-/* SLIDER */
+/* ===== HORIZONTAL ===== */
 .horizontal-scroll{
   display:flex;
   gap:12px;
@@ -69,10 +70,10 @@ body{
   width:80%;
   padding:5px 0;
   border-radius:6px;
-  margin:6px auto;
+  margin:6px auto 10px;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .products{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -90,17 +91,17 @@ body{
 }
 .img-wrapper img{
   width:100%;
-  height:150px;
+  height:140px;
   object-fit:cover;
 }
 .nav{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  background:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.85);
   border:1px solid #ccc;
-  width:24px;
-  height:24px;
+  width:22px;
+  height:22px;
   border-radius:50%;
   cursor:pointer;
 }
@@ -131,71 +132,100 @@ body{
 
 <div class="intro-text">از دلِ سادگی، زیبایی متولد می‌شود</div>
 
-<!-- SLIDER : 5 محصول -->
+<!-- ===== 4 HORIZONTAL PRODUCTS ===== -->
 <div class="horizontal-scroll">
-  <div class="product-card"><img src="615_1.jpg"><div>کد ۶۱۵</div><button class="buy-green">خرید</button></div>
-  <div class="product-card"><img src="590_1.jpg"><div>کد ۵۹۰</div><button class="buy-green">خرید</button></div>
-  <div class="product-card"><img src="885_1.jpg"><div>کد ۸۸۵</div><button class="buy-green">خرید</button></div>
-  <div class="product-card"><img src="568_1.jpg"><div>کد ۵۶۸</div><button class="buy-green">خرید</button></div>
-  <div class="product-card"><img src="899_1.jpg"><div>کد ۸۹۹</div><button class="buy-green">خرید</button></div>
+  <div class="product-card">
+    <img src="568.jpg">
+    <div>کد ۵۶۸</div>
+    <button class="buy-green">خرید</button>
+  </div>
+  <div class="product-card">
+    <img src="590.jpg">
+    <div>کد ۵۹۰</div>
+    <button class="buy-green">خرید</button>
+  </div>
+  <div class="product-card">
+    <img src="615.jpg">
+    <div>کد ۶۱۵</div>
+    <button class="buy-green">خرید</button>
+  </div>
+  <div class="product-card">
+    <img src="885.jpg">
+    <div>کد ۸۸۵</div>
+    <button class="buy-green">خرید</button>
+  </div>
 </div>
 
-<!-- GRID : 9 محصول -->
+<!-- ===== 5 GRID PRODUCTS ===== -->
 <div class="products">
 
+<!-- 399 -->
 <div class="card">
-  <div class="img-wrapper">
-    <button class="nav left" onclick="prev(615)">‹</button>
-    <img id="img-615" src="615_1.jpg">
-    <button class="nav right" onclick="next(615)">›</button>
+  <img src="399.jpg">
+  <div class="card-body">
+    کد ۳۹۹
+    <button class="buy-yellow">خرید</button>
   </div>
-  <div class="card-body">کد ۶۱۵<button class="buy-yellow">خرید</button></div>
 </div>
 
+<!-- 520 -->
 <div class="card">
-  <div class="img-wrapper">
-    <button class="nav left" onclick="prev(590)">‹</button>
-    <img id="img-590" src="590_1.jpg">
-    <button class="nav right" onclick="next(590)">›</button>
+  <img src="520.jpg">
+  <div class="card-body">
+    کد ۵۲۰
+    <button class="buy-yellow">خرید</button>
   </div>
-  <div class="card-body">کد ۵۹۰<button class="buy-yellow">خرید</button></div>
 </div>
 
+<!-- 640 -->
 <div class="card">
-  <div class="img-wrapper">
-    <button class="nav left" onclick="prev(885)">‹</button>
-    <img id="img-885" src="885_1.jpg">
-    <button class="nav right" onclick="next(885)">›</button>
+  <img src="640.jpg">
+  <div class="card-body">
+    کد ۶۴۰
+    <button class="buy-yellow">خرید</button>
   </div>
-  <div class="card-body">کد ۸۸۵<button class="buy-yellow">خرید</button></div>
 </div>
 
-<div class="card"><img src="568_1.jpg"><div class="card-body">کد ۵۶۸<button class="buy-yellow">خرید</button></div></div>
-<div class="card"><img src="899_1.jpg"><div class="card-body">کد ۸۹۹<button class="buy-yellow">خرید</button></div></div>
-<div class="card"><img src="710.jpg"><div class="card-body">کد ۷۱۰<button class="buy-yellow">خرید</button></div></div>
-<div class="card"><img src="840.jpg"><div class="card-body">کد ۸۴۰<button class="buy-yellow">خرید</button></div></div>
-<div class="card"><img src="860.jpg"><div class="card-body">کد ۸۶۰<button class="buy-yellow">خرید</button></div></div>
-<div class="card"><img src="869.jpg"><div class="card-body">کد ۸۶۹<button class="buy-yellow">خرید</button></div></div>
+<!-- 830 -->
+<div class="card">
+  <img src="830.jpg">
+  <div class="card-body">
+    کد ۸۳۰
+    <button class="buy-yellow">خرید</button>
+  </div>
+</div>
+
+<!-- 899 (چندعکسی) -->
+<div class="card">
+  <div class="img-wrapper">
+    <button class="nav left" onclick="prevImg(899)">‹</button>
+    <img id="img-899" src="4.jpg">
+    <button class="nav right" onclick="nextImg(899)">›</button>
+  </div>
+  <div class="card-body">
+    کد ۸۹۹
+    <button class="buy-yellow">خرید</button>
+  </div>
+</div>
 
 </div>
 
 <script>
-const imgs={
-  615:["615_1.jpg","615_2.jpg","615_3.jpg"],
-  590:["590_1.jpg","590_2.jpg","590_3.jpg","590_4.jpg"],
-  885:["885_1.jpg","885_2.jpg","885_3.jpg"]
+const images = {
+  899: ["4.jpg","5.jpg","6.jpg"]
 };
-const idx={};
 
-function next(c){
-  idx[c]=(idx[c]??0)+1;
-  if(idx[c]>=imgs[c].length) idx[c]=0;
-  document.getElementById("img-"+c).src=imgs[c][idx[c]];
+const index = {};
+
+function nextImg(code){
+  index[code]=(index[code]??0)+1;
+  if(index[code]>=images[code].length) index[code]=0;
+  document.getElementById("img-"+code).src=images[code][index[code]];
 }
-function prev(c){
-  idx[c]=(idx[c]??0)-1;
-  if(idx[c]<0) idx[c]=imgs[c].length-1;
-  document.getElementById("img-"+c).src=imgs[c][idx[c]];
+function prevImg(code){
+  index[code]=(index[code]??0)-1;
+  if(index[code]<0) index[code]=images[code].length-1;
+  document.getElementById("img-"+code).src=images[code][index[code]];
 }
 </script>
 
