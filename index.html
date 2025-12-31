@@ -1,1 +1,190 @@
-ه
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+<meta charset="UTF-8">
+<title>ارزانسرای باران</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+@font-face {
+  font-family: "Shekari";
+  src: url("https://raw.githubusercontent.com/imebaran/Imebaran/main/Shekari.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: "Shekari", sans-serif;
+  direction: rtl;
+  background: #fff;
+  color: #222;
+}
+
+/* هدر */
+.hero {
+  width: 100%;
+  height: 147px;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* متن معرفی */
+.intro-text {
+  text-align: center;
+  font-size: 22px;
+  color: #3B4953;
+  margin: 20px 0;
+}
+
+/* منو */
+.hamburger-menu {
+  padding: 10px 16px;
+}
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+}
+.menu-links {
+  display: none;
+}
+.menu-links a {
+  display: block;
+  padding: 12px;
+  margin: 6px 0;
+  background: #a0522d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* اسلایدر */
+.horizontal-title {
+  font-size: 20px;
+  margin: 20px 16px 10px;
+}
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px 16px;
+}
+.product-card {
+  flex: 0 0 auto;
+  width: 140px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* گل یاس */
+.yas-flower {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+/* گرید */
+.products {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  text-decoration: none;
+  color: inherit;
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.card-body {
+  text-align: center;
+  padding: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- هدر -->
+<div class="hero">
+  <img src="image_1766962498109.jpeg" alt="هدر جنگلی">
+</div>
+
+<div class="intro-text">از دلِ سادگی، زیبایی متولد می‌شود</div>
+
+<!-- منوی همبرگری -->
+<div class="hamburger-menu">
+  <div class="hamburger" onclick="toggleMenu()">🪀</div>
+  <div class="menu-links" id="menuLinks">
+    <a href="https://t.me/Allahosamad1">اعتماد واریزی</a>
+    <a href="https://t.me/Allahosamad1">چالش و جوایز</a>
+    <a href="https://t.me/Allahosamad1">تبلیغ شما حمایت ما</a>
+  </div>
+</div>
+
+<!-- اسلایدر افقی (۴ محصول) -->
+<div class="horizontal-title">محصولات منتخب</div>
+<div class="horizontal-scroll">
+  <a href="https://t.me/Allahosamad1" class="product-card">
+    <img src="615.jpg">
+    <div>کد 615</div>
+  </a>
+  <a href="https://t.me/Allahosamad1" class="product-card">
+    <img src="590.jpg">
+    <div>کد 590</div>
+  </a>
+  <a href="https://t.me/Allahosamad1" class="product-card">
+    <img src="885.jpg">
+    <div>کد 885</div>
+  </a>
+  <a href="https://t.me/Allahosamad1" class="product-card">
+    <img src="568.jpg">
+    <div>کد 568</div>
+  </a>
+</div>
+
+<!-- گل یاس -->
+<img src="گل یاس.jpeg" class="yas-flower" alt="گل یاس">
+
+<!-- گرید ثابت -->
+<div class="products">
+  <a href="https://t.me/Allahosamad1" class="card">
+    <img src="899.jpg">
+    <div class="card-body">کد 899</div>
+  </a>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menuLinks");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
