@@ -20,12 +20,10 @@ body {
   direction: rtl;
   font-family: "Adrin", sans-serif;
   background: #fff;
-  color: #222;
 }
 
 /* هدر */
 .hero {
-  width: 100%;
   height: 150px;
   overflow: hidden;
 }
@@ -42,14 +40,9 @@ body {
   text-align: center;
   font-size: 22px;
   margin: 20px;
-  color: #3B4953;
 }
 
-/* اسلایدر افقی */
-.horizontal-title {
-  margin: 20px 16px 10px;
-  font-size: 18px;
-}
+/* اسلایدر */
 .slider {
   display: flex;
   overflow-x: auto;
@@ -58,15 +51,14 @@ body {
 }
 .slider::-webkit-scrollbar { display: none; }
 
-.slide-card {
+.slide {
   width: 130px;
-  flex-shrink: 0;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
   text-align: center;
 }
-.slide-card img {
+.slide img {
   width: 100%;
   height: 120px;
   object-fit: cover;
@@ -80,16 +72,14 @@ body {
   color: #fff;
   border: none;
   width: 80%;
-  margin-bottom: 10px;
   padding: 5px;
   border-radius: 6px;
-  cursor: pointer;
 }
 
-/* گرید ثابت */
+/* گرید */
 .products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 16px;
   padding: 16px;
 }
@@ -109,9 +99,8 @@ body {
   border: none;
   width: 80%;
   padding: 5px;
-  margin: 10px 0;
+  margin-bottom: 10px;
   border-radius: 6px;
-  cursor: pointer;
 }
 </style>
 </head>
@@ -126,45 +115,32 @@ body {
 <!-- متن معرفی -->
 <div class="intro">از دلِ سادگی، زیبایی متولد می‌شود</div>
 
-<!-- اسلایدر افقی | ۶ محصول -->
-<div class="horizontal-title">منتخب</div>
+<!-- اسلایدر | ۶ محصول -->
 <div class="slider">
-  <div class="slide-card"><img src="img1.jpg"><div class="price">۶۱۵</div><button class="buy-green">خرید</button></div>
-  <div class="slide-card"><img src="img2.jpg"><div class="price">۵۹۰</div><button class="buy-green">خرید</button></div>
-  <div class="slide-card"><img src="img3.jpg"><div class="price">۸۸۵</div><button class="buy-green">خرید</button></div>
-  <div class="slide-card"><img src="img4.jpg"><div class="price">۵۶۸</div><button class="buy-green">خرید</button></div>
-  <div class="slide-card"><img src="img5.jpg"><div class="price">۸۹۹</div><button class="buy-green">خرید</button></div>
-  <div class="slide-card"><img src="img6.jpg"><div class="price">۶۱۵</div><button class="buy-green">خرید</button></div>
+  <div class="slide"><img src="615.jpg"><div class="price">۶۱۵ تومان</div><button class="buy-green">خرید</button></div>
+  <div class="slide"><img src="590.jpg"><div class="price">۵۹۰ تومان</div><button class="buy-green">خرید</button></div>
+  <div class="slide"><img src="885.jpg"><div class="price">۸۸۵ تومان</div><button class="buy-green">خرید</button></div>
+  <div class="slide"><img src="568.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-green">خرید</button></div>
+  <div class="slide"><img src="899.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-green">خرید</button></div>
+  <div class="slide"><img src="540.jpg"><div class="price">۵۴۰ تومان</div><button class="buy-green">خرید</button></div>
 </div>
 
 <!-- گرید | ۲۱ محصول -->
 <div class="products">
-  <!-- فقط الگو، img7.jpg تا img27.jpg رو با فایل‌های واقعی عوض کن -->
-  <!-- قیمت‌ها طبق قوانین خودت -->
-  <!-- ۲۱ کارت -->
-  <div class="card"><img src="img7.jpg"><div class="price">۵۹۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img8.jpg"><div class="price">۶۱۵</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img9.jpg"><div class="price">۸۸۵</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img10.jpg"><div class="price">۵۶۸</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img11.jpg"><div class="price">۵۶۸</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img12.jpg"><div class="price">۵۶۸</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img13.jpg"><div class="price">۸۹۹</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img14.jpg"><div class="price">۸۹۹</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img15.jpg"><div class="price">۸۹۹</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="575.jpg"><div class="price">۵۷۵ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="710.jpg"><div class="price">۷۱۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="840.jpg"><div class="price">۸۴۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="860.jpg"><div class="price">۸۶۰ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="869.jpg"><div class="price">۸۶۹ تومان</div><button class="buy-yellow">خرید</button></div>
 
-  <div class="card"><img src="img16.jpg"><div class="price">۵۴۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img17.jpg"><div class="price">۵۷۵</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img18.jpg"><div class="price">۷۱۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img19.jpg"><div class="price">۸۴۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img20.jpg"><div class="price">۸۶۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img21.jpg"><div class="price">۸۶۹</div><button class="buy-yellow">خرید</button></div>
+  <!-- بقیه عکس‌های IMG_... -->
+  <div class="card"><img src="IMG_1.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="IMG_2.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="IMG_3.jpg"><div class="price">۵۶۸ تومان</div><button class="buy-yellow">خرید</button></div>
 
-  <div class="card"><img src="img22.jpg"><div class="price">۵۹۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img23.jpg"><div class="price">۶۱۵</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img24.jpg"><div class="price">۸۸۵</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img25.jpg"><div class="price">۵۹۰</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img26.jpg"><div class="price">۶۱۵</div><button class="buy-yellow">خرید</button></div>
-  <div class="card"><img src="img27.jpg"><div class="price">۸۸۵</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="IMG_4.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="IMG_5.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
+  <div class="card"><img src="IMG_6.jpg"><div class="price">۸۹۹ تومان</div><button class="buy-yellow">خرید</button></div>
 </div>
 
 </body>
