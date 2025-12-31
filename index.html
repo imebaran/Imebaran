@@ -8,226 +8,201 @@
 <style>
 @font-face {
   font-family: "Shekari";
-  src: url("https://raw.githubusercontent.com/baranaarzani/Barana/main/Shekari.ttf");
+  src: url("Shekari.ttf");
 }
 @font-face {
-  font-family: "Adrin";
-  src: url("Adrin.ttf");
+  font-family: "Radin";
+  src: url("Radin3.ttf");
 }
 
-body{
-  margin:0;
-  font-family:"Adrin",sans-serif;
-  direction:rtl;
-  background:#fff;
-  color:#222;
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: "Radin";
+  background: #fff;
+  color: #222;
 }
 
-/* ===== HEADER ===== */
-.hero{
-  height:150px;
-  overflow:hidden;
+/* هدر */
+.hero {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
 }
-.hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:bottom;
-}
-
-/* ===== INTRO ===== */
-.intro-text{
-  font-family:"Shekari";
-  text-align:center;
-  font-size:22px;
-  margin:20px;
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
 }
 
-/* ===== HORIZONTAL ===== */
-.horizontal-scroll{
-  display:flex;
-  gap:12px;
-  padding:10px 16px;
-  overflow-x:auto;
-}
-.product-card{
-  width:140px;
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,.1);
-  text-align:center;
-  flex:0 0 auto;
-}
-.product-card img{
-  width:100%;
-  height:100px;
-  object-fit:cover;
-}
-.buy-green{
-  background:#2e8b57;
-  color:#fff;
-  border:none;
-  width:80%;
-  padding:5px 0;
-  border-radius:6px;
-  margin:6px auto 10px;
+/* متن معرفی */
+.intro-text {
+  font-family: "Shekari";
+  text-align: center;
+  font-size: 22px;
+  margin: 20px 10px;
+  color: #3B4953;
 }
 
-/* ===== GRID ===== */
-.products{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-  padding:16px;
+/* عنوان‌ها */
+.section-title {
+  margin: 20px 16px 10px;
+  font-size: 18px;
 }
-.card{
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 2px 8px rgba(0,0,0,.1);
-  overflow:hidden;
-}
-.img-wrapper{
-  position:relative;
-}
-.img-wrapper img{
-  width:100%;
-  height:140px;
-  object-fit:cover;
-}
-.nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(255,255,255,.85);
-  border:1px solid #ccc;
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  cursor:pointer;
-}
-.nav.left{ right:6px; }
-.nav.right{ left:6px; }
 
-.card-body{
-  text-align:center;
-  padding:10px;
+/* اسلایدر افقی */
+.horizontal-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 16px;
 }
-.buy-yellow{
-  background:#ffcc00;
-  border:none;
-  width:80%;
-  padding:5px 0;
-  border-radius:6px;
-  margin-top:6px;
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+.product-slider {
+  width: 140px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  text-align: center;
+  flex-shrink: 0;
+}
+.product-slider img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+.slider-btns button {
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 4px 2px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.buy-green {
+  background: #2e8b57;
+  color: #fff;
+  border: none;
+  width: 80%;
+  margin: 6px auto 10px;
+  padding: 4px 0;
+  border-radius: 6px;
+}
+
+/* گرید */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 16px;
+  padding: 0 16px 30px;
+}
+.card {
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 10px;
+}
+.buy-yellow {
+  background: #ffcc00;
+  border: none;
+  width: 80%;
+  padding: 4px 0;
+  border-radius: 6px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- هدر -->
 <div class="hero">
-  <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg">
+  <img src="۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg">
 </div>
 
-<div class="intro-text">از دلِ سادگی، زیبایی متولد می‌شود</div>
+<!-- معرفی -->
+<div class="intro-text">
+از دلِ سادگی، زیبایی متولد می‌شود
+</div>
 
-<!-- ===== 4 HORIZONTAL PRODUCTS ===== -->
+<!-- اسلایدر -->
+<div class="section-title">محصولات پرفروش</div>
 <div class="horizontal-scroll">
-  <div class="product-card">
-    <img src="568.jpg">
+
+  <!-- 568 -->
+  <div class="product-slider">
+    <img id="p568" src="1.jpg">
+    <div class="slider-btns">
+      <button onclick="p568.src='1.jpg'">۱</button>
+      <button onclick="p568.src='2.jpg'">۲</button>
+      <button onclick="p568.src='3.jpg'">۳</button>
+    </div>
     <div>کد ۵۶۸</div>
     <button class="buy-green">خرید</button>
   </div>
-  <div class="product-card">
+
+  <!-- 590 -->
+  <div class="product-slider">
     <img src="590.jpg">
     <div>کد ۵۹۰</div>
     <button class="buy-green">خرید</button>
   </div>
-  <div class="product-card">
+
+  <!-- 615 -->
+  <div class="product-slider">
     <img src="615.jpg">
     <div>کد ۶۱۵</div>
     <button class="buy-green">خرید</button>
   </div>
-  <div class="product-card">
+
+  <!-- 885 -->
+  <div class="product-slider">
     <img src="885.jpg">
     <div>کد ۸۸۵</div>
     <button class="buy-green">خرید</button>
   </div>
+
 </div>
 
-<!-- ===== 5 GRID PRODUCTS ===== -->
+<!-- گرید -->
+<div class="section-title">محصولات</div>
 <div class="products">
 
-<!-- 399 -->
-<div class="card">
-  <img src="399.jpg">
-  <div class="card-body">
-    کد ۳۹۹
-    <button class="buy-yellow">خرید</button>
+  <div class="card">
+    <img src="399.jpg">
+    <div class="card-body">کد ۳۹۹<br><button class="buy-yellow">خرید</button></div>
   </div>
-</div>
 
-<!-- 520 -->
-<div class="card">
-  <img src="520.jpg">
-  <div class="card-body">
-    کد ۵۲۰
-    <button class="buy-yellow">خرید</button>
+  <div class="card">
+    <img src="520.jpg">
+    <div class="card-body">کد ۵۲۰<br><button class="buy-yellow">خرید</button></div>
   </div>
-</div>
 
-<!-- 640 -->
-<div class="card">
-  <img src="640.jpg">
-  <div class="card-body">
-    کد ۶۴۰
-    <button class="buy-yellow">خرید</button>
+  <div class="card">
+    <img src="640.jpg">
+    <div class="card-body">کد ۶۴۰<br><button class="buy-yellow">خرید</button></div>
   </div>
-</div>
 
-<!-- 830 -->
-<div class="card">
-  <img src="830.jpg">
-  <div class="card-body">
-    کد ۸۳۰
-    <button class="buy-yellow">خرید</button>
+  <div class="card">
+    <img src="830.jpg">
+    <div class="card-body">کد ۸۳۰<br><button class="buy-yellow">خرید</button></div>
   </div>
-</div>
 
-<!-- 899 (چندعکسی) -->
-<div class="card">
-  <div class="img-wrapper">
-    <button class="nav left" onclick="prevImg(899)">‹</button>
-    <img id="img-899" src="4.jpg">
-    <button class="nav right" onclick="nextImg(899)">›</button>
+  <div class="card">
+    <img src="899.jpg">
+    <div class="card-body">کد ۸۹۹<br><button class="buy-yellow">خرید</button></div>
   </div>
-  <div class="card-body">
-    کد ۸۹۹
-    <button class="buy-yellow">خرید</button>
-  </div>
-</div>
 
 </div>
-
-<script>
-const images = {
-  899: ["4.jpg","5.jpg","6.jpg"]
-};
-
-const index = {};
-
-function nextImg(code){
-  index[code]=(index[code]??0)+1;
-  if(index[code]>=images[code].length) index[code]=0;
-  document.getElementById("img-"+code).src=images[code][index[code]];
-}
-function prevImg(code){
-  index[code]=(index[code]??0)-1;
-  if(index[code]<0) index[code]=images[code].length-1;
-  document.getElementById("img-"+code).src=images[code][index[code]];
-}
-</script>
 
 </body>
 </html>
