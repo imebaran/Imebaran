@@ -1,162 +1,123 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta charset="UTF-8">
-<title>ارزانسرای باران</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>گل یاس</title>
 <style>
-@font-face {
-  font-family: "Shekari";
-  src: url("https://raw.githubusercontent.com/baranaarzani/Barana/main/Shekari.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Adrin";
-  src: url("Adrin.ttf") format("truetype");
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:sans-serif;background:#fff;color:#000}
+.container{padding:16px}
+img{width:100%;display:block}
+
+/* Header */
+.header img{height:120px;object-fit:cover}
+
+/* Intro */
+.intro{margin:32px 0;text-align:center;font-weight:bold}
+
+/* Horizontal Slider */
+.slider{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
+.slider::-webkit-scrollbar{display:none}
+.slide{
+  flex:0 0 33.33%;
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
 }
 
-body {
-  margin: 0;
-  font-family: "Adrin", sans-serif;
-  direction: rtl;
-  background-color: #ffffff;
-  color: #222;
-  padding-bottom: 20px;
+/* Divider Image */
+.divider{margin:24px 0 8px}
+.divider img{height:60px;object-fit:cover}
+
+/* Button */
+.support-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#000;
+  color:#fff;
+  font-size:16px;
 }
 
-.hero {
-  width: 100%;
-  height: 147px;
-  overflow: hidden;
+/* Grid */
+.grid{
+  margin-top:32px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.card{
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
 }
-
-.intro-text {
-  text-align: center;
-  font-size: 22px;
-  font-family: "Shekari";
-  color: #3B4953;
-  margin: 20px 0 10px;
-  padding: 0 20px;
-  line-height: 1.8;
-}
-
-.horizontal-title {
-  font-family: "Shekari";
-  font-size: 20px;
-  margin: 20px 16px 10px;
-  color: #3B4953;
-}
-
-.horizontal-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 12px;
-  padding: 10px 16px;
-}
-.horizontal-scroll::-webkit-scrollbar { display: none; }
-
-.product-card {
-  flex: 0 0 auto;
-  width: 165px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  text-decoration: none;
-  color: #000;
-}
-.product-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
-.product-card .price {
-  font-size: 12px;
-  color: #3B4953;
-  font-weight: bold;
-}
-.product-card .buy-btn {
-  background: #2e8b57;
-  color: #fff;
-  border: none;
-  width: 80%;
-  padding: 4px 0;
-  margin: 6px auto;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-.products {
-  max-width: 900px;
-  margin: 10px auto 30px;
-  padding: 0 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-.card-body {
-  padding: 12px;
-}
-.card-body .price {
-  color: #3B4953;
-  font-weight: bold;
-}
-.card-body .buy-btn {
-  background: #ffcc00;
-  color: #000;
-  border: none;
-  width: 80%;
-  padding: 4px 0;
-  border-radius: 6px;
-  font-size: 12px;
+.price{
+  position:absolute;
+  bottom:6px;
+  left:6px;
+  background:#fff;
+  padding:4px 8px;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<!-- Header -->
+<div class="header">
   <img src="20251223_004831.jpg">
 </div>
 
-<div class="intro-text">
-از دلِ سادگی، زیبایی متولد می‌شود
+<div class="container">
+
+  <!-- Intro -->
+  <div class="intro">
+    فریب‌کار یکبار می‌فروشد، درستکار هزاربار
+  </div>
+
+  <!-- Slider (4 random products) -->
+  <div class="slider">
+    <div class="slide"><img src="1.jpg"></div>
+    <div class="slide"><img src="2.jpg"></div>
+    <div class="slide"><img src="3.jpg"></div>
+    <div class="slide"><img src="4.jpg"></div>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider">
+    <img src="yas.jpg">
+  </div>
+
+  <!-- Button -->
+  <button class="support-btn">حمایت از نیازمندان</button>
+
+  <!-- Grid -->
+  <div class="grid">
+    <div class="card"><img src="399.jpg"><div class="price">399</div></div>
+    <div class="card"><img src="520.jpg"><div class="price">520</div></div>
+    <div class="card"><img src="568.jpg"><div class="price">568</div></div>
+    <div class="card"><img src="590.jpg"><div class="price">590</div></div>
+    <div class="card"><img src="640.jpg"><div class="price">640</div></div>
+    <div class="card"><img src="830.jpg"><div class="price">830</div></div>
+    <div class="card"><img src="885.jpg"><div class="price">885</div></div>
+    <div class="card"><img src="899.jpg"><div class="price">899</div></div>
+
+    <div class="card"><img src="آجری.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="خاکستری.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="سبز.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="سدری.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="قهوه ای.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="قهوه ای کرم.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="مشکی.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="نسکافه ای.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="کرم.jpg"><div class="price">500</div></div>
+    <div class="card"><img src="کالباسی.jpg"><div class="price">500</div></div>
+  </div>
+
 </div>
-
-<div class="horizontal-title">محصولات پرفروش</div>
-
-<div class="horizontal-scroll">
-  <div class="product-card"><img src="540.jpg"><div class="price">۵۴۰,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div>
-  <div class="product-card"><img src="568.jpg"><div class="price">۵۶۸,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div>
-  <div class="product-card"><img src="575.jpg"><div class="price">۵۷۵,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div>
-  <div class="product-card"><img src="590.jpg"><div class="price">۵۹۰,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div>
-</div>
-
-<div class="products">
-  <div class="card"><img src="710.jpg"><div class="card-body"><div class="price">۷۱۰,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div></div>
-  <div class="card"><img src="840.jpg"><div class="card-body"><div class="price">۸۴۰,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div></div>
-  <div class="card"><img src="860.jpg"><div class="card-body"><div class="price">۸۶۰,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div></div>
-  <div class="card"><img src="869.jpg"><div class="card-body"><div class="price">۸۶۹,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div></div>
-  <div class="card"><img src="899.jpg"><div class="card-body"><div class="price">۸۹۹,۰۰۰ تومان</div><div class="buy-btn">خرید</div></div></div>
-</div>
-
 </body>
 </html>
