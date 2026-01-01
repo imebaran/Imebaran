@@ -3,209 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Imebaran</title>
 
 <style>
-@font-face{
-  font-family:'Trashin';
-  src:url('./trashin.ttf') format('truetype');
-}
+@font-face{font-family:Trashin;src:url('trashin.ttf')}
+*{box-sizing:border-box}
+body{margin:0;font-family:Trashin;background:#fff;font-size:18px}
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Trashin',sans-serif;
-  background:#fff;
-  color:#444;
-  font-size:18px;
-}
-img{width:100%;height:100%;object-fit:cover;display:block}
+header img{width:100%;height:220px;object-fit:cover;display:block}
 
-/* HEADER */
-.header img{width:100vw;height:220px}
+#quote{text-align:center;margin:32px 16px;font-size:24px;opacity:.8}
 
-/* INTRO */
-.intro{
-  text-align:center;
-  padding:32px 16px 48px;
-  font-size:22px;
-  opacity:.8;
-}
+.slider{display:flex;overflow-x:auto;gap:12px;padding:0 12px}
+.slide{flex:0 0 120px}
+.slide img{width:120px;height:120px;object-fit:cover}
+.price{font-size:14px;margin:4px 0}
+.old{text-decoration:line-through;opacity:.5;margin-left:6px}
+.buy{width:100%;border:0;padding:6px 0;font-family:Trashin;font-size:16px}
 
-/* SIZE LOCK */
-.product{
-  width:100%;
-  aspect-ratio:1/1;
-  border-radius:14px;
-  overflow:hidden;
-}
+.slide .buy{background:#2e7d32;color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.card .buy{background:#fbc02d;color:#000}
 
-/* SLIDER */
-.slider{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  padding:0 16px 40px;
-}
-.slider::-webkit-scrollbar{display:none}
-.slide{flex:0 0 33.33%}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  padding:16px;
-}
-
-/* PRICES */
-.prices{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin:6px 0 4px;
-  font-size:16px;
-  opacity:.7;
-}
-.old{text-decoration:line-through}
-.new{font-weight:bold}
-
-/* BUTTONS */
-.buy{
-  display:block;
-  width:60%;
-  margin:0 auto 6px;
-  padding:6px 0;
-  border:none;
-  border-radius:8px;
-  font-family:'Trashin';
-  font-size:16px;
-}
-.slider .buy{background:#2ecc71;color:#fff}
-.grid .buy{background:#f1c40f;color:#000}
-
-/* MORE */
-.more{
-  text-align:center;
-  margin:24px 0;
-  font-size:18px;
-  opacity:.8;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#0007;
-  justify-content:center;
-  align-items:center;
-}
-.modal form{
-  background:#fff;
-  width:90%;
-  padding:16px;
-  border-radius:14px;
-}
-.modal input,.modal button{
-  width:100%;
-  margin:6px 0;
-  padding:10px;
-  font-family:'Trashin';
-  font-size:16px;
-}
+.more{text-align:center;margin:16px 0 32px;opacity:.7}
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <img src="https://raw.githubusercontent.com/imebaran/Imebaran/refs/heads/main/هدر.jpg">
+<header>
+<img src="https://raw.githubusercontent.com/imebaran/Imebaran/refs/heads/main/هدر.jpg">
+</header>
+
+<div id="quote"></div>
+
+<div class="slider">
+<div class="slide"><img src="1.jpg"><div class="price"><span class="old">900</span><span>760</span></div><button class="buy" data-code="1">افزودن به سبد</button></div>
+<div class="slide"><img src="2.jpg"><div class="price"><span class="old">900</span><span>760</span></div><button class="buy" data-code="2">افزودن به سبد</button></div>
+<div class="slide"><img src="3.jpg"><div class="price"><span class="old">900</span><span>760</span></div><button class="buy" data-code="3">افزودن به سبد</button></div>
+<div class="slide"><img src="4.jpg"><div class="price"><span class="old">900</span><span>760</span></div><button class="buy" data-code="4">افزودن به سبد</button></div>
 </div>
 
-<div class="intro" id="intro"></div>
-
-<div class="slider" id="slider"></div>
-
 <div class="grid">
-  <div>
-    <div class="product"><img src="399.jpg"></div>
-    <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
-    <button class="buy" data-product="399">افزودن به سبد</button>
-  </div>
-  <div>
-    <div class="product"><img src="520.jpg"></div>
-    <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
-    <button class="buy" data-product="520">افزودن به سبد</button>
-  </div>
-  <div>
-    <div class="product"><img src="568.jpg"></div>
-    <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
-    <button class="buy" data-product="568">افزودن به سبد</button>
-  </div>
-  <div>
-    <div class="product"><img src="590.jpg"></div>
-    <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
-    <button class="buy" data-product="590">افزودن به سبد</button>
-  </div>
-  <div>
-    <div class="product"><img src="640.jpg"></div>
-    <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
-    <button class="buy" data-product="640">افزودن به سبد</button>
-  </div>
-  <div>
-    <div class="product"><img src="830.jpg"></div>
-    <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
-    <button class="buy" data-product="830">افزودن به سبد</button>
-  </div>
+<div class="card"><img src="5.jpg"><div class="price"><span class="old">900</span><span>760</span></div><button class="buy" data-code="5">افزودن به سبد</button></div>
+<div class="card"><img src="6.jpg"><div class="price"><span class="old">900</span><span>760</span></div><button class="buy" data-code="6">افزودن به سبد</button></div>
+<div class="card"><img src="7.jpg"><div class="price"><span class="old">500</span><span>500</span></div><button class="buy" data-code="7">افزودن به سبد</button></div>
+<div class="card"><img src="8.jpg"><div class="price"><span class="old">500</span><span>500</span></div><button class="buy" data-code="8">افزودن به سبد</button></div>
+<div class="card"><img src="9.jpg"><div class="price"><span class="old">500</span><span>500</span></div><button class="buy" data-code="9">افزودن به سبد</button></div>
+<div class="card"><img src="10.jpg"><div class="price"><span class="old">500</span><span>500</span></div><button class="buy" data-code="10">افزودن به سبد</button></div>
 </div>
 
 <div class="more">محصولات بیشتر</div>
 
-<div id="orderModal" class="modal">
-<form action="mailto:Melacotian@gmail.com" method="POST" enctype="text/plain">
-<input name="محصول" id="productInput" placeholder="نام محصول" required>
-<input name="نام" placeholder="نام شما" required>
-<input name="تماس" placeholder="شماره تماس" required>
-<input name="آدرس" placeholder="آدرس" required>
-<button type="submit">ثبت سفارش</button>
-</form>
-</div>
-
 <script>
-const texts=[/* 100 متن */
-'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.','دل، همیشه زودتر از عقل خسته می‌شود.','سکوت، بلندترین فریادِ انسان است.',
-'بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.','امید، آخرین چراغِ خانه‌ی دل است.','زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.',
-'عشق، اتفاقی‌ست که به دل می‌افتد.','گاهی نبودن، مهربان‌تر از بودن است.','دل اگر آرام باشد، جهان کوتاه می‌آید.',
-'خاطره‌ها پیر نمی‌شوند.','آدمی به اندازه‌ی رؤیاهایش زنده است.','بغض، واژه‌ای‌ست که راه گلو را گم کرده.',
-'بعضی نگاه‌ها، تاریخ انقضا ندارند.','تنهایی، شلوغ‌ترین جای دنیاست.','دل بستن، همیشه خطر داشته است.',
-'باران، دلتنگیِ آسمان است.','حقیقت، اغلب ساده اما تلخ است.','آدم‌ها می‌روند، ردپاها می‌مانند.',
-'شب، همدستِ خیال است.','صبر، شکل مؤدبانه‌ی درد است.',
-'دل، قانون نمی‌شناسد.','فاصله‌ها از یک سلام شروع می‌شوند.','لبخند، کوتاه‌ترین راهِ آرامش است.',
-'گاهی باید رفت تا پیدا شد.','زندگی، تمرینِ دوام آوردن است.','خاطره، بوی زمان می‌دهد.',
-'بعضی حرف‌ها، باید نانوشته بمانند.','دل‌تنگی، وزن ندارد اما سنگین است.',
-'عشق، بلد نیست کم باشد.','هر پایان، شروعی خجالتی دارد.',
-'زندگی، ادامه دارد.'
+const texts=[/* ۱۰۰ متن */ 
+"شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.","دل، همیشه زودتر از عقل خسته می‌شود.","سکوت، بلندترین فریادِ انسان است.","بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.","امید، آخرین چراغِ خانه‌ی دل است.","زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.","عشق، اتفاقی‌ست که به دل می‌افتد.","گاهی نبودن، مهربان‌تر از بودن است.","دل اگر آرام باشد، جهان کوتاه می‌آید.","خاطره‌ها پیر نمی‌شوند.","آدمی به اندازه‌ی رؤیاهایش زنده است.","بغض، واژه‌ای‌ست که راه گلو را گم کرده.","بعضی نگاه‌ها، تاریخ انقضا ندارند.","تنهایی، شلوغ‌ترین جای دنیاست.","دل بستن، همیشه خطر داشته است.","باران، دلتنگیِ آسمان است.","حقیقت، اغلب ساده اما تلخ است.","آدم‌ها می‌روند، ردپاها می‌مانند.","شب، همدستِ خیال است.","صبر، شکل مؤدبانه‌ی درد است.",
+"دل، قانون نمی‌شناسد.","فاصله‌ها از یک سلام شروع می‌شوند.","لبخند، کوتاه‌ترین راهِ آرامش است.","گاهی باید رفت تا پیدا شد.","زندگی، تمرینِ دوام آوردن است.","خاطره، بوی زمان می‌دهد.","بعضی حرف‌ها، باید نانوشته بمانند.","دل‌تنگی، وزن ندارد اما سنگین است.","عشق، بلد نیست کم باشد.","هر پایان، شروعی خجالتی دارد.",
+"آدمی از جایی می‌شکند که فکرش را نمی‌کند.","سکوت، پاسخِ سؤال‌های بی‌جواب است.","دل اگر بخواهد، عقل ساکت می‌شود.","بعضی نبودن‌ها، پررنگ‌ترند.","زندگی، مکث‌های کوتاه میان رفتن‌هاست.","خاطره‌ها راهِ بازگشت ندارند.","نگاهت، دلیلِ باور من است.","امید، همیشه دیر می‌رسد اما می‌رسد.","دل، خانه‌ای‌ست بی‌قفل.","شب، رازدارِ اشک‌هاست.",
+"بعضی آدم‌ها، فصل‌اند.","فاصله، سوءتفاهمِ مکان است.","دل‌سپردن، جرأت می‌خواهد.","زمان، صبورتر از ماست.","عشق، توضیح نمی‌خواهد.","سکوت، همیشه به معنای رضایت نیست.","دل، حافظه‌ی قوی‌تری دارد.","بعضی رفتن‌ها، بی‌صدا می‌شکنند.","زندگی، کوتاه‌تر از بهانه‌هاست.","نگاه، آغازِ اعتراف است.",
+"آدمی به امید زنده است.","دلتنگی، همسایه‌ی شب است.","بعضی سؤال‌ها، جواب ندارند.","عشق، از دل شروع می‌شود.","فاصله، همیشه کیلومتر نیست.","سکوت، احترامِ درد است.","دل، زود باور است.","زمان، همه‌چیز را عوض نمی‌کند.","بعضی لحظه‌ها، تکرار نمی‌شوند.","زندگی، ساده نیست اما جاری‌ست",
+"خاطره، بی‌اجازه می‌آید.","نگاهت، ادامه‌ی حرف‌هاست.","دل، بلدِ فراموشی نیست.","شب، طولانی‌تر از روز می‌فهمد.","بعضی آدم‌ها، همیشه دیر می‌آیند.","عشق، تمرینِ ازخودگذشتگی است.","سکوت، امن‌ترین پناه است.","دل، راه خودش را می‌رود.","فاصله، گاهی لازم است.","زندگی، منتظرِ کامل شدن نمی‌ماند",
+"خاطره‌ها، بی‌دعوت می‌مانند.","نگاه، صادق‌تر از زبان است.","دل، با منطق قهر است.","شب، آینه‌ی فکرهاست.","بعضی دوست‌داشتن‌ها، عمیق‌اند.","زمان، حقیقت را لو می‌دهد.","عشق، همیشه ریسک است.","سکوت، پایانِ بحث نیست.","دل، زخم‌پذیر است.","زندگی، کوتاه‌تر از انتظار است"
 ];
 
-document.getElementById('intro').innerText =
-texts[Math.floor(Math.random()*texts.length)];
+quote.innerText=texts[Math.floor(Math.random()*texts.length)];
 
-const slider=document.getElementById('slider');
-[['1.jpg','900','760'],['2.jpg','900','760'],['3.jpg','900','760'],['4.jpg','900','760']]
-.forEach(i=>{
-slider.innerHTML+=`
-<div class="slide">
- <div class="product"><img src="${i[0]}"></div>
- <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
- <button class="buy" data-product="${i[2]}">افزودن به سبد</button>
-</div>`;
-});
-
-const modal=document.getElementById('orderModal');
-const productInput=document.getElementById('productInput');
 document.querySelectorAll('.buy').forEach(b=>{
  b.onclick=()=>{
-  productInput.value=b.dataset.product;
-  modal.style.display='flex';
+  location.href=`sms:09221620355?body=${encodeURIComponent('کد محصول: '+b.dataset.code)}`;
  };
 });
 </script>
