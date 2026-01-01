@@ -14,85 +14,36 @@ img{width:100%;display:block}
 .header img{width:100vw;height:200px;object-fit:cover}
 
 /* Intro */
-@font-face{
-font-family:'Shekari';
-src:url('shekari.ttf');
-}
+@font-face{font-family:'Shekari';src:url('shekari.ttf')}
 .intro{
 font-family:'Shekari';
 text-align:center;
 margin:28px 16px;
-font-size:20px;
+font-size:20px
 }
 
 /* Slider */
-.slider{
-display:flex;
-gap:12px;
-overflow-x:auto;
-padding:0 16px 32px
-}
+.slider{display:flex;gap:12px;overflow-x:auto;padding:0 16px 32px}
 .slider::-webkit-scrollbar{display:none}
-.slide{
-flex:0 0 33.33%;
-aspect-ratio:1;
-border-radius:12px;
-overflow:hidden;
-position:relative
-}
-.slide .buy{
-position:absolute;
-bottom:6px;
-left:50%;
-transform:translateX(-50%);
-width:65%;
-padding:8px 0;
-border:none;
-border-radius:10px;
-background:#2ecc71;
-color:#fff;
-font-size:13px;
-white-space:nowrap
-}
+.slide{flex:0 0 33.33%;aspect-ratio:1;border-radius:12px;overflow:hidden}
 
 /* Grid */
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-padding:16px
-}
-.card{
-aspect-ratio:1;
-border-radius:12px;
-overflow:hidden;
-position:relative
-}
-.card .buy{
-position:absolute;
-bottom:6px;
-left:50%;
-transform:translateX(-50%);
-width:50%;
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:16px}
+.card{border-radius:12px;overflow:hidden}
+.price{font-size:13px;margin:6px 0 4px;text-align:center}
+.buy{
+width:60%;
+margin:0 auto 6px;
+display:block;
 padding:6px 0;
 border:none;
 border-radius:8px;
 background:#f1c40f;
-font-size:13px;
-white-space:nowrap
+font-size:13px
 }
 
 /* More */
-.more{
-text-align:center;
-margin:24px 0;
-font-size:15px;
-}
-.more a{
-text-decoration:none;
-color:#000;
-font-weight:bold
-}
+.more{text-align:center;margin:24px 0;font-weight:bold}
 </style>
 </head>
 
@@ -109,21 +60,15 @@ font-weight:bold
 <div class="slider"></div>
 
 <div class="grid">
-<div class="card"><img src="399.jpg"><button class="buy">399 تومان</button></div>
-<div class="card"><img src="520.jpg"><button class="buy">520 تومان</button></div>
-<div class="card"><img src="568.jpg"><button class="buy">568 تومان</button></div>
-<div class="card"><img src="590.jpg"><button class="buy">590 تومان</button></div>
-<div class="card"><img src="640.jpg"><button class="buy">640 تومان</button></div>
-<div class="card"><img src="830.jpg"><button class="buy">830 تومان</button></div>
-<div class="card"><img src="885.jpg"><button class="buy">885 تومان</button></div>
-<div class="card"><img src="899.jpg"><button class="buy">899 تومان</button></div>
-<div class="card"><img src="آجری.jpg"><button class="buy">500 تومان</button></div>
-<div class="card"><img src="خاکستری.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="399.jpg"><div class="price">399 تومان</div><button class="buy">افزودن به سبد</button></div>
+<div class="card"><img src="520.jpg"><div class="price">520 تومان</div><button class="buy">افزودن به سبد</button></div>
+<div class="card"><img src="568.jpg"><div class="price">568 تومان</div><button class="buy">افزودن به سبد</button></div>
+<div class="card"><img src="590.jpg"><div class="price">590 تومان</div><button class="buy">افزودن به سبد</button></div>
+<div class="card"><img src="640.jpg"><div class="price">640 تومان</div><button class="buy">افزودن به سبد</button></div>
+<div class="card"><img src="830.jpg"><div class="price">830 تومان</div><button class="buy">افزودن به سبد</button></div>
 </div>
 
-<div class="more">
-<a href="products.html">محصولات بیشتر</a>
-</div>
+<div class="more">محصولات بیشتر</div>
 
 <script>
 const slider=document.querySelector('.slider');
@@ -132,17 +77,10 @@ const items=[
 ['5.jpg','760 تومان'],['6.jpg','760 تومان'],
 ['399.jpg','399 تومان'],['520.jpg','520 تومان'],['568.jpg','568 تومان'],
 ['590.jpg','590 تومان'],['640.jpg','640 تومان'],['830.jpg','830 تومان'],
-['885.jpg','885 تومان'],['899.jpg','899 تومان'],
-['آجری.jpg','500 تومان'],['خاکستری.jpg','500 تومان'],['سبز.jpg','500 تومان'],
-['سدری.jpg','500 تومان'],['قهوه ای.jpg','500 تومان'],['قهوه ای کرم.jpg','500 تومان'],
-['مشکی.jpg','500 تومان'],['نسکافه ای.jpg','500 تومان'],['کرم.jpg','500 تومان'],['کالباسی.jpg','500 تومان']
+['885.jpg','885 تومان'],['899.jpg','899 تومان']
 ];
 items.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
-slider.innerHTML+=`
-<div class="slide">
-<img src="${i[0]}">
-<button class="buy">${i[1]}</button>
-</div>`;
+slider.innerHTML+=`<div class="slide"><img src="${i[0]}"></div>`;
 });
 </script>
 
