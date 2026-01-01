@@ -2,121 +2,154 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محصولات حجاب با تخفیف ویژه</title>
 
 <style>
-@font-face{
- font-family:'Trashin';
- src:url('./trashin.ttf') format('truetype');
+@font-face {
+    font-family: 'Trashin';
+    src: url('./trashin.ttf') format('truetype');
 }
-@font-face{
- font-family:'Yagut';
- src:url('./Far_YagutBd.ttf') format('truetype');
+@font-face {
+    font-family: 'Yagut';
+    src: url('./Far_YagutBd.ttf') format('truetype');
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{
- font-family:'Trashin',sans-serif;
- background:#fff;
- color:#444;
- font-size:16px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-img{width:100%;height:100%;object-fit:cover;display:block}
+
+body {
+    font-family: 'Trashin', system-ui, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* hijab big product */
-.hijab-product{
- margin:12px 16px 32px;
- border-radius:18px;
- overflow:hidden;
+.hijab-product {
+    margin: 12px 16px 32px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.hijab-product img{
- width:100%;
- height:180px;
- object-fit:cover;
+
+.hijab-product img {
+    height: 220px;
 }
-.hijab-btn{
- width:100%;
- padding:12px 0;
- border:none;
- font-size:18px;
- font-family:'Trashin';
- color:#fff;
- background:rgba(0,0,0,.25);
- backdrop-filter:blur(6px);
+
+.hijab-btn {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    font-size: 19px;
+    font-family: 'Trashin';
+    color: white;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
 }
 
 /* intro */
-.intro{
- text-align:center;
- padding:32px 16px 48px;
- font-size:24px;
- opacity:.85;
+.intro {
+    text-align: center;
+    padding: 32px 20px 48px;
+    font-size: 23px;
+    opacity: 0.9;
+    line-height: 1.4;
 }
 
-/* size lock */
-.product{
- width:100%;
- aspect-ratio:1/1;
- border-radius:12px;
- overflow:hidden;
-}
-.product img{
- width:100%;
- height:100%;
- object-fit:cover;
+/* product card */
+.product {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eee;
 }
 
 /* slider */
-.slider{
- display:flex;
- gap:12px;
- overflow-x:auto;
- padding:0 16px 32px;
+.slider {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 0 16px 32px;
+    scroll-snap-type: x mandatory;
 }
-.slider::-webkit-scrollbar{display:none}
-.slide{flex:0 0 33.33%}
+
+.slider::-webkit-scrollbar { display: none; }
+
+.slide {
+    flex: 0 0 75%;
+    scroll-snap-align: start;
+}
 
 /* grid */
-.grid{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:12px;
- padding:16px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    padding: 0 16px 40px;
 }
 
 /* prices */
-.prices{
- display:flex;
- justify-content:center;
- gap:6px;
- margin:6px 0 4px;
- font-family:'Yagut';
- font-size:15px;
- opacity:.75;
+.prices {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0 6px;
+    font-family: 'Yagut', sans-serif;
+    font-size: 15px;
+    opacity: 0.85;
 }
-.old{text-decoration:line-through}
-.new{font-weight:bold}
+
+.old { text-decoration: line-through; color: #888; }
+.new { font-weight: bold; color: #d32f2f; }
 
 /* buy buttons */
-.buy{
- display:block;
- width:60%;
- margin:0 auto 6px;
- padding:7px 0;
- border:none;
- border-radius:8px;
- font-size:16px;
- font-family:'Trashin';
+.buy {
+    display: block;
+    width: 80%;
+    margin: 0 auto 8px;
+    padding: 9px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Trashin';
+    cursor: pointer;
 }
-.slider .buy{background:#2ecc71;color:#fff}
-.grid .buy{background:#f1c40f;color:#000}
 
-/* more */
-.more{
- text-align:center;
- margin:24px 0;
- font-size:18px;
- opacity:.75;
+.slider .buy {
+    background: #27ae60;
+    color: white;
+}
+
+.grid .buy {
+    background: #f39c12;
+    color: white;
+}
+
+.more {
+    text-align: center;
+    margin: 32px 0;
+    font-size: 19px;
+    opacity: 0.8;
+    padding-bottom: 40px;
+}
+
+/* responsive */
+@media (min-width: 600px) {
+    .slide { flex: 0 0 40%; }
+    .hijab-product img { height: 280px; }
 }
 </style>
 </head>
@@ -124,112 +157,108 @@ img{width:100%;height:100%;object-fit:cover;display:block}
 <body>
 
 <div class="hijab-product">
- <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/حجاب.jpeg">
- <button class="hijab-btn">محصولات حجاب ما با تخفیف ویژه</button>
+    <img src="https://www.ayeshas-collection.com/cdn/shop/articles/Unveiling_the_Hijab_A_Comprehensive_Guide_to_Different_Types.png?v=1765791565&width=1100" alt="چادر مشکی شیک">
+    <button class="hijab-btn">محصولات حجاب با تخفیف ویژه</button>
 </div>
 
 <div class="intro" id="intro"></div>
 
 <div class="slider" id="slider"></div>
 
-<div class="grid">
-<div>
- <div class="product"><img src="399.jpg"></div>
- <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
- <button class="buy" data-code="399">افزودن به سبد</button>
-</div>
-<div>
- <div class="product"><img src="520.jpg"></div>
- <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
- <button class="buy" data-code="520">افزودن به سبد</button>
-</div>
-<div>
- <div class="product"><img src="568.jpg"></div>
- <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
- <button class="buy" data-code="568">افزودن به سبد</button>
-</div>
-<div>
- <div class="product"><img src="590.jpg"></div>
- <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
- <button class="buy" data-code="590">افزودن به سبد</button>
-</div>
-<div>
- <div class="product"><img src="640.jpg"></div>
- <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
- <button class="buy" data-code="640">افزودن به سبد</button>
-</div>
-<div>
- <div class="product"><img src="830.jpg"></div>
- <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
- <button class="buy" data-code="830">افزودن به سبد</button>
-</div>
-</div>
+<div class="grid" id="grid"></div>
 
-<div class="more">محصولات بیشتر</div>
+<div class="more">محصولات بیشتر در راه است...</div>
 
 <script>
-/* 100 texts */
-const texts=[
-'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
-'دل، همیشه زودتر از عقل خسته می‌شود.',
-'سکوت، بلندترین فریادِ انسان است.',
-'بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.',
-'امید، آخرین چراغِ خانه‌ی دل است.',
-'زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.',
-'عشق، اتفاقی‌ست که به دل می‌افتد.',
-'گاهی نبودن، مهربان‌تر از بودن است.',
-'دل اگر آرام باشد، جهان کوتاه می‌آید.',
-'خاطره‌ها پیر نمی‌شوند.',
-'آدمی به اندازه‌ی رؤیاهایش زنده است.',
-'بغض، واژه‌ای‌ست که راه گلو را گم کرده.',
-'بعضی نگاه‌ها، تاریخ انقضا ندارند.',
-'تنهایی، شلوغ‌ترین جای دنیاست.',
-'دل بستن، همیشه خطر داشته است.',
-'باران، دلتنگیِ آسمان است.',
-'حقیقت، اغلب ساده اما تلخ است.',
-'آدم‌ها می‌روند، ردپاها می‌مانند.',
-'شب، همدستِ خیال است.',
-'صبر، شکل مؤدبانه‌ی درد است.',
-'دل، قانون نمی‌شناسد.',
-'فاصله‌ها از یک سلام شروع می‌شوند.',
-'لبخند، کوتاه‌ترین راهِ آرامش است.',
-'گاهی باید رفت تا پیدا شد.',
-'زندگی، تمرینِ دوام آوردن است.',
-'خاطره، بوی زمان می‌دهد.',
-'بعضی حرف‌ها، باید نانوشته بمانند.',
-'دل‌تنگی، وزن ندارد اما سنگین است.',
-'عشق، بلد نیست کم باشد.',
-'هر پایان، شروعی خجالتی دارد.',
-'زندگی، ادامه دارد.'
+// نقل قول‌های زیبا
+const texts = [
+    'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
+    'دل، همیشه زودتر از عقل خسته می‌شود.',
+    'سکوت، بلندترین فریادِ انسان است.',
+    'بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.',
+    'امید، آخرین چراغِ خانه‌ی دل است.',
+    'زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.',
+    'عشق، اتفاقی‌ست که به دل می‌افتد.',
+    'گاهی نبودن، مهربان‌تر از بودن است.',
+    'دل اگر آرام باشد، جهان کوتاه می‌آید.',
+    'خاطره‌ها پیر نمی‌شوند.',
+    'آدمی به اندازه‌ی رؤیاهایش زنده است.',
+    'بغض، واژه‌ای‌ست که راه گلو را گم کرده.',
+    'بعضی نگاه‌ها، تاریخ انقضا ندارند.',
+    'تنهایی، شلوغ‌ترین جای دنیاست.',
+    'دل بستن، همیشه خطر داشته است.',
+    'باران، دلتنگیِ آسمان است.',
+    'حقیقت، اغلب ساده اما تلخ است.',
+    'آدم‌ها می‌روند، ردپاها می‌مانند.',
+    'شب، همدستِ خیال است.',
+    'صبر، شکل مؤدبانه‌ی درد است.',
+    'دل، قانون نمی‌شناسد.',
+    'فاصله‌ها از یک سلام شروع می‌شوند.',
+    'لبخند، کوتاه‌ترین راهِ آرامش است.',
+    'گاهی باید رفت تا پیدا شد.',
+    'زندگی، تمرینِ دوام آوردن است.',
+    'خاطره، بوی زمان می‌دهد.',
+    'بعضی حرف‌ها، باید نانوشته بمانند.',
+    'دل‌تنگی، وزن ندارد اما سنگین است.',
+    'عشق، بلد نیست کم باشد.',
+    'هر پایان، شروعی خجالتی دارد.',
+    'زندگی، ادامه دارد.'
 ];
-intro.innerText=texts[Math.floor(Math.random()*texts.length)];
+document.getElementById('intro').innerText = texts[Math.floor(Math.random() * texts.length)];
 
-/* slider */
-const slider=document.getElementById('slider');
-const items=[
-['1.jpg','900','760'],
-['2.jpg','900','760'],
-['3.jpg','900','760'],
-['4.jpg','900','760'],
-['5.jpg','900','760'],
-['6.jpg','900','760']
+// محصولات اسلایدر (۶ مورد - چادر و مانتو)
+const sliderItems = [
+    { img: 'https://media.gettyimages.com/id/1259032623/photo/iran-fashion-hijab-and-chastity.jpg?s=594x594&w=gi&k=20&c=OquLgzG3G6vjrZoCs1RGjl2oAEO_gDxAGeFbDIbC7MQ=', old: '980,000', new: '760,000', code: '760' },
+    { img: 'https://img.abayakart.com/general/2025/04/25/6d2204f1f3153fb6b04902ee166f5aa8.jpg', old: '1,200,000', new: '890,000', code: '890' },
+    { img: 'https://manteausdaily.wordpress.com/wp-content/uploads/2014/01/pooshspring20138.jpg?w=1200', old: '950,000', new: '720,000', code: '720' },
+    { img: 'https://www.mybatua.com/cdn/shop/articles/History_And_Evolution_Of_Abaya_89.jpg?v=1727123023&width=1920', old: '1,350,000', new: '980,000', code: '980' },
+    { img: 'https://fashiongtonpost.com/wp-content/uploads/2024/10/iranclothing_4.webp', old: '880,000', new: '650,000', code: '650' },
+    { img: 'https://i.ytimg.com/vi/7SG5P2yyBAQ/hq720.jpg', old: '1,100,000', new: '830,000', code: '830' }
 ];
-items.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
- slider.innerHTML+=`
- <div class="slide">
-  <div class="product"><img src="${i[0]}"></div>
-  <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
-  <button class="buy" data-code="${i[2]}">افزودن به سبد</button>
- </div>`;
+
+const slider = document.getElementById('slider');
+sliderItems.forEach(item => {
+    slider.innerHTML += `
+    <div class="slide">
+        <div class="product"><img src="${item.img}" alt="محصول حجاب"></div>
+        <div class="prices">
+            <span class="old">${item.old}</span>
+            <span class="new">${item.new} تومان</span>
+        </div>
+        <button class="buy" data-code="${item.code}">افزودن به سبد</button>
+    </div>`;
 });
 
-/* sms */
-document.querySelectorAll('.buy').forEach(b=>{
- b.onclick=()=>{
-  location.href=`sms:09221620355?body=کد محصول: ${b.dataset.code}`;
- };
+// محصولات گرید (۶ مورد)
+const gridItems = [
+    { img: 'https://fashiongtonpost.com/wp-content/uploads/2024/10/iranclothing_m.webp', old: '920,000', new: '680,000', code: '680' },
+    { img: 'https://cdn01.eavartravel.com/2023/7/09d9300f-aa7e-4abb-a230-e02db1ac7616.jpg', old: '850,000', new: '590,000', code: '590' },
+    { img: 'https://www.bordersofadventure.com/wp-content/uploads/2021/11/Iran-tourism-Golestan-Palace-Tiles-Tehran.jpg', old: '990,000', new: '740,000', code: '740' },
+    { img: 'https://manteausdaily.wordpress.com/wp-content/uploads/2014/01/poosharticlepointing.jpg', old: '1,050,000', new: '799,000', code: '799' },
+    { img: 'https://s.alicdn.com/@sc02/kf/Had11301ea4824f55b7143b7dd1a41ad2V.jpg_1200x1200.jpg', old: '780,000', new: '520,000', code: '520' },
+    { img: 'https://media.newindianexpress.com/TNIE%2Fimport%2F2016%2F1%2F5%2F23%2Foriginal%2FIranian.jpg', old: '1,150,000', new: '870,000', code: '870' }
+];
+
+const grid = document.getElementById('grid');
+gridItems.forEach(item => {
+    grid.innerHTML += `
+    <div>
+        <div class="product"><img src="${item.img}" alt="محصول حجاب"></div>
+        <div class="prices">
+            <span class="old">${item.old}</span>
+            <span class="new">${item.new} تومان</span>
+        </div>
+        <button class="buy" data-code="${item.code}">افزودن به سبد</button>
+    </div>`;
+});
+
+// دکمه‌های خرید → ارسال sms
+document.querySelectorAll('.buy').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const code = btn.dataset.code;
+        window.location.href = `sms:09221620355?body=کد محصول: ${code} - درخواست خرید`;
+    });
 });
 </script>
-
 </body>
 </html>
