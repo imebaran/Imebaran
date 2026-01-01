@@ -263,6 +263,24 @@ slider.innerHTML+=`
 </div>`;
 });
 </script>
+const TOKEN='PASTE_YOUR_NEW_TOKEN_HERE';
+const CHAT_ID='8564441672';
 
+document.querySelectorAll('.buy').forEach(b=>{
+ b.onclick=()=>orderModal.style.display='flex';
+});
+
+orderForm.onsubmit=async e=>{
+ e.preventDefault();
+ const f=new FormData(orderForm);
+ const text=`سفارش جدید\nنام:${f.get('name')}\nتماس:${f.get('phone')}\nآدرس:${f.get('address')}`;
+ await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
+  method:'POST',headers:{'Content-Type':'application/json'},
+  body:JSON.stringify({chat_id:CHAT_ID,text})
+ });
+ orderModal.style.display='none';
+ alert('ارسال شد');
+};
+</script>
 </body>
 </html>
