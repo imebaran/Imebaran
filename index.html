@@ -25,7 +25,7 @@ body {
     font-family: 'Trashin', system-ui, sans-serif;
     background: #f9f9f9;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 img {
@@ -35,70 +35,70 @@ img {
     display: block;
 }
 
-/* hijab big product */
+/* big header product */
 .hijab-product {
-    margin: 12px 16px 32px;
-    border-radius: 18px;
+    margin: 12px 16px 28px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
 .hijab-product img {
-    height: 220px;
+    height: 180px;
 }
 
 .hijab-btn {
     width: 100%;
-    padding: 14px 0;
+    padding: 12px 0;
     border: none;
-    font-size: 19px;
+    font-size: 18px;
     font-family: 'Trashin';
     color: white;
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
     cursor: pointer;
 }
 
-/* intro */
+/* intro quote */
 .intro {
     text-align: center;
-    padding: 32px 20px 48px;
-    font-size: 23px;
-    opacity: 0.9;
-    line-height: 1.4;
+    padding: 28px 18px 40px;
+    font-size: 22px;
+    opacity: 0.88;
 }
 
 /* product card */
 .product {
     width: 100%;
-    aspect-ratio: 3/4;
-    border-radius: 12px;
+    aspect-ratio: 3/4;          /* کمی کشیده‌تر برای لباس */
+    border-radius: 10px;
     overflow: hidden;
     background: #eee;
 }
 
-/* slider */
+/* slider - نمایش ۳ محصول در صفحه اول */
 .slider {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     overflow-x: auto;
-    padding: 0 16px 32px;
+    padding: 0 16px 28px;
     scroll-snap-type: x mandatory;
 }
 
 .slider::-webkit-scrollbar { display: none; }
 
 .slide {
-    flex: 0 0 75%;
+    flex: 0 0 33.33%;           /* دقیقاً ۳ تا در عرض صفحه */
     scroll-snap-align: start;
+    max-width: 140px;           /* محدود کردن حداکثر عرض */
 }
 
-/* grid */
+/* grid - ۲ ستون */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 14px;
-    padding: 0 16px 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 16px 36px;
 }
 
 /* prices */
@@ -106,50 +106,49 @@ img {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin: 8px 0 6px;
+    margin: 6px 0 4px;
     font-family: 'Yagut', sans-serif;
-    font-size: 15px;
-    opacity: 0.85;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-.old { text-decoration: line-through; color: #888; }
-.new { font-weight: bold; color: #d32f2f; }
+.old { text-decoration: line-through; color: #777; }
+.new { font-weight: bold; color: #c62828; }
 
 /* buy buttons */
 .buy {
     display: block;
-    width: 80%;
-    margin: 0 auto 8px;
-    padding: 9px 0;
+    width: 86%;
+    margin: 0 auto 6px;
+    padding: 8px 0;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 15px;
     font-family: 'Trashin';
     cursor: pointer;
 }
 
 .slider .buy {
-    background: #27ae60;
+    background: #2e7d32;
     color: white;
 }
 
 .grid .buy {
-    background: #f39c12;
+    background: #f57c00;
     color: white;
 }
 
 .more {
     text-align: center;
-    margin: 32px 0;
-    font-size: 19px;
+    margin: 28px 0 40px;
+    font-size: 18px;
     opacity: 0.8;
-    padding-bottom: 40px;
 }
 
-/* responsive */
-@media (min-width: 600px) {
-    .slide { flex: 0 0 40%; }
-    .hijab-product img { height: 280px; }
+/* responsive کوچک برای موبایل */
+@media (max-width: 400px) {
+    .slide { flex: 0 0 45%; }
+    .hijab-product img { height: 160px; }
 }
 </style>
 </head>
@@ -157,8 +156,8 @@ img {
 <body>
 
 <div class="hijab-product">
-    <img src="https://www.ayeshas-collection.com/cdn/shop/articles/Unveiling_the_Hijab_A_Comprehensive_Guide_to_Different_Types.png?v=1765791565&width=1100" alt="چادر مشکی شیک">
-    <button class="hijab-btn">محصولات حجاب با تخفیف ویژه</button>
+    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/%D8%AD%D8%AC%D8%A7%D8%A8.jpeg" alt="محصول حجاب">
+    <button class="hijab-btn">محصولات حجاب ما با تخفیف ویژه</button>
 </div>
 
 <div class="intro" id="intro"></div>
@@ -170,7 +169,7 @@ img {
 <div class="more">محصولات بیشتر در راه است...</div>
 
 <script>
-// نقل قول‌های زیبا
+// نقل‌قول‌های زیبا
 const texts = [
     'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
     'دل، همیشه زودتر از عقل خسته می‌شود.',
@@ -206,14 +205,14 @@ const texts = [
 ];
 document.getElementById('intro').innerText = texts[Math.floor(Math.random() * texts.length)];
 
-// محصولات اسلایدر (۶ مورد - چادر و مانتو)
+// اسلایدر - فقط از محصولات خودت (عددی)
 const sliderItems = [
-    { img: 'https://media.gettyimages.com/id/1259032623/photo/iran-fashion-hijab-and-chastity.jpg?s=594x594&w=gi&k=20&c=OquLgzG3G6vjrZoCs1RGjl2oAEO_gDxAGeFbDIbC7MQ=', old: '980,000', new: '760,000', code: '760' },
-    { img: 'https://img.abayakart.com/general/2025/04/25/6d2204f1f3153fb6b04902ee166f5aa8.jpg', old: '1,200,000', new: '890,000', code: '890' },
-    { img: 'https://manteausdaily.wordpress.com/wp-content/uploads/2014/01/pooshspring20138.jpg?w=1200', old: '950,000', new: '720,000', code: '720' },
-    { img: 'https://www.mybatua.com/cdn/shop/articles/History_And_Evolution_Of_Abaya_89.jpg?v=1727123023&width=1920', old: '1,350,000', new: '980,000', code: '980' },
-    { img: 'https://fashiongtonpost.com/wp-content/uploads/2024/10/iranclothing_4.webp', old: '880,000', new: '650,000', code: '650' },
-    { img: 'https://i.ytimg.com/vi/7SG5P2yyBAQ/hq720.jpg', old: '1,100,000', new: '830,000', code: '830' }
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/1.jpg', old: '900,000', new: '760,000', code: '760' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/2.jpg', old: '900,000', new: '760,000', code: '760' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/3.jpg', old: '900,000', new: '760,000', code: '760' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/4.jpg', old: '900,000', new: '760,000', code: '760' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/5.jpg', old: '900,000', new: '760,000', code: '760' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/6.jpg', old: '900,000', new: '760,000', code: '760' }
 ];
 
 const slider = document.getElementById('slider');
@@ -229,14 +228,14 @@ sliderItems.forEach(item => {
     </div>`;
 });
 
-// محصولات گرید (۶ مورد)
+// گرید - محصولات اصلی خودت
 const gridItems = [
-    { img: 'https://fashiongtonpost.com/wp-content/uploads/2024/10/iranclothing_m.webp', old: '920,000', new: '680,000', code: '680' },
-    { img: 'https://cdn01.eavartravel.com/2023/7/09d9300f-aa7e-4abb-a230-e02db1ac7616.jpg', old: '850,000', new: '590,000', code: '590' },
-    { img: 'https://www.bordersofadventure.com/wp-content/uploads/2021/11/Iran-tourism-Golestan-Palace-Tiles-Tehran.jpg', old: '990,000', new: '740,000', code: '740' },
-    { img: 'https://manteausdaily.wordpress.com/wp-content/uploads/2014/01/poosharticlepointing.jpg', old: '1,050,000', new: '799,000', code: '799' },
-    { img: 'https://s.alicdn.com/@sc02/kf/Had11301ea4824f55b7143b7dd1a41ad2V.jpg_1200x1200.jpg', old: '780,000', new: '520,000', code: '520' },
-    { img: 'https://media.newindianexpress.com/TNIE%2Fimport%2F2016%2F1%2F5%2F23%2Foriginal%2FIranian.jpg', old: '1,150,000', new: '870,000', code: '870' }
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg', old: '900,000', new: '399,000', code: '399' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg', old: '980,000', new: '520,000', code: '520' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg', old: '1050,000', new: '568,000', code: '568' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg', old: '1100,000', new: '590,000', code: '590' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg', old: '1200,000', new: '640,000', code: '640' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg', old: '1500,000', new: '830,000', code: '830' }
 ];
 
 const grid = document.getElementById('grid');
@@ -252,7 +251,7 @@ gridItems.forEach(item => {
     </div>`;
 });
 
-// دکمه‌های خرید → ارسال sms
+// ارسال sms برای خرید
 document.querySelectorAll('.buy').forEach(btn => {
     btn.addEventListener('click', () => {
         const code = btn.dataset.code;
