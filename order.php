@@ -11,8 +11,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             "آدرس: $address\n".
             "محصول: $product";
 
-    $token = "8564441672:AAGRh4W_IX5Y884utwiH0BM8YKILCKeqKdk"; // توکن ربات
-    $chat_id = "8067180596"; // آی‌دی شما
+    $token = "8564441672:AAGRh4W_IX5Y884utwiH0BM8YKILCKeqKdk"; // 
+    $chat_id = "8067180596"; //
 
     $url = "https://api.telegram.org/bot$token/sendMessage";
     $data = ["chat_id"=>$chat_id,"text"=>$text];
