@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>محصولات حجاب با تخفیف ویژه</title>
 
-<!-- فونت مدرن و شیک Vazirmatn از Google Fonts (پیشنهاد شده برای فارسی ۱۴۰۴-۱۴۰۵) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 * {
     margin: 0;
@@ -18,167 +13,137 @@
 }
 
 body {
-    font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #f5f0e9 0%, #ebe4d9 100%); /* پس‌زمینه شیک و مدرن - گرادیان نرم بژ/کرم */
-    color: #2c2c2c;
-    line-height: 1.6;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.5;
+    padding: 16px;
 }
 
-/* هدر جدید - عرض کامل، ارتفاع کم، شیک و لوکس */
-header {
-    width: 100%;
-    height: 90px;                  /* ارتفاع کم و مدرن */
-    background: linear-gradient(to right, #1a1a1a, #2c2c2c); /* گرادیان مشکی لوکس */
-    color: #e0c9a6;                /* رنگ طلایی ملایم */
+/* کارت محصول - شبیه به نمونه مورد نظر، اندازه کوچکتر، دو ستونی */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    padding: 10px;
     position: relative;
-    overflow: hidden;
 }
 
-header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('https://www.shutterstock.com/image-vector/luxury-background-dark-blue-gold-260nw-2517207751.jpg') center/cover no-repeat;
-    opacity: 0.15;                 /* بافت ظریف لوکس */
-    z-index: 0;
+.checkbox {
+    margin-left: 8px;
 }
 
-header h1 {
-    position: relative;
-    z-index: 1;
-}
-
-/* محصول مربعی */
-.product {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 10px;
+.product-img-container {
+    width: 80px;               /* اندازه کوچک مربعی */
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 8px;
     overflow: hidden;
     background: #f0f0f0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-img {
+.product-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-/* slider - ۳ محصول در نگاه اول */
-.slider {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 0 16px 24px;
-    scroll-snap-type: x mandatory;
+.product-info {
+    flex: 1;
+    padding-right: 12px;
 }
 
-.slider::-webkit-scrollbar { display: none; }
-
-.slide {
-    flex: 0 0 33.33%;
-    scroll-snap-align: start;
-    max-width: 130px;
+.product-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #222;
 }
 
-/* grid - ۲ ستون */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 16px 32px;
-}
-
-/* prices */
 .prices {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 8px 0 6px;
-    font-size: 14px;
-    opacity: 0.9;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 13px;
+    margin-bottom: 4px;
 }
 
-.old { text-decoration: line-through; color: #777; }
-.new { font-weight: 700; color: #b91c1c; }
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
 
-/* buy buttons */
-.buy {
-    display: block;
-    width: 88%;
-    margin: 0 auto 8px;
-    padding: 9px 0;
+.new-price {
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.discount {
+    font-size: 12px;
+    color: #e53935;
+    background: rgba(229,57,53,0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.add-btn {
+    background: #1976d2;
+    color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
     cursor: pointer;
-    transition: all 0.2s;
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
 }
 
-.slider .buy {
-    background: #3a7d44;
-    color: white;
+/* دو ستونی در صفحه */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
 
-.grid .buy {
-    background: #d97706;
-    color: white;
+/* هدر ساده */
+header {
+    text-align: center;
+    padding: 16px 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
 }
 
-.buy:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
+/* نقل قول */
 .intro {
     text-align: center;
-    padding: 28px 18px 36px;
-    font-size: 21px;
-    opacity: 0.92;
-    font-weight: 400;
-}
-
-.more {
-    text-align: center;
-    margin: 32px 0 48px;
     font-size: 18px;
-    opacity: 0.75;
-    color: #555;
-}
-
-/* responsive */
-@media (max-width: 400px) {
-    .slide { flex: 0 0 40%; }
-    header { height: 80px; font-size: 1.3rem; }
+    opacity: 0.85;
+    margin: 20px 0 24px;
+    padding: 0 12px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>محصولات حجاب با تخفیف ویژه</h1>
-</header>
+<header>محصولات حجاب با تخفیف ویژه</header>
 
 <div class="intro" id="intro"></div>
 
-<div class="slider" id="slider"></div>
-
-<div class="grid" id="grid"></div>
-
-<div class="more">محصولات بیشتر در راه است...</div>
+<div class="grid" id="products"></div>
 
 <script>
-// نقل‌قول‌ها
+// نقل قول‌های تصادفی
 const texts = [
     'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
     'دل، همیشه زودتر از عقل خسته می‌شود.',
@@ -214,54 +179,40 @@ const texts = [
 ];
 document.getElementById('intro').innerText = texts[Math.floor(Math.random() * texts.length)];
 
-// اسلایدر محصولات
-const sliderItems = [
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/1.jpg', old: '900,000', new: '760,000', code: '760' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/2.jpg', old: '900,000', new: '760,000', code: '760' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/3.jpg', old: '900,000', new: '760,000', code: '760' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/4.jpg', old: '900,000', new: '760,000', code: '760' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/5.jpg', old: '900,000', new: '760,000', code: '760' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/6.jpg', old: '900,000', new: '760,000', code: '760' }
+// محصولات (با اطلاعات نمونه - می‌تونی تغییر بدی)
+const products = [
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg', title: 'چادر مشکی ساده مدل ۳۹۹', old: '۹۰۰,۰۰۰', new: '۳۹۹,۰۰۰', discount: '۵۶٪', code: '399' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg', title: 'مانتو بلند کرپ مدل ۵۲۰', old: '۹۸۰,۰۰۰', new: '۵۲۰,۰۰۰', discount: '۴۷٪', code: '520' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg', title: 'چادر مجلسی مدل ۵۶۸', old: '۱,۰۵۰,۰۰۰', new: '۵۶۸,۰۰۰', discount: '۴۶٪', code: '568' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg', title: 'ست حجاب مدل ۵۹۰', old: '۱,۱۰۰,۰۰۰', new: '۵۹۰,۰۰۰', discount: '۴۶٪', code: '590' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg', title: 'مانتو عبایی مدل ۶۴۰', old: '۱,۲۰۰,۰۰۰', new: '۶۴۰,۰۰۰', discount: '۴۷٪', code: '640' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg', title: 'چادر کرپ مجلسی مدل ۸۳۰', old: '۱,۵۰۰,۰۰۰', new: '۸۳۰,۰۰۰', discount: '۴۵٪', code: '830' },
+    // می‌تونی محصولات بیشتری اضافه کنی
 ];
 
-const slider = document.getElementById('slider');
-sliderItems.forEach(item => {
-    slider.innerHTML += `
-    <div class="slide">
-        <div class="product"><img src="${item.img}" alt="محصول حجاب"></div>
-        <div class="prices">
-            <span class="old">${item.old}</span>
-            <span class="new">${item.new} تومان</span>
+const container = document.getElementById('products');
+
+products.forEach(product => {
+    container.innerHTML += `
+    <div class="product-card">
+        <input type="checkbox" class="checkbox">
+        <div class="product-img-container">
+            <img src="\( {product.img}" alt=" \){product.title}" class="product-img">
         </div>
-        <button class="buy" data-code="${item.code}">افزودن به سبد</button>
+        <div class="product-info">
+            <div class="product-title">${product.title}</div>
+            <div class="prices">
+                <span class="old-price">${product.old} تومان</span>
+                <span class="new-price">${product.new} تومان</span>
+            </div>
+            <div class="discount">${product.discount} تخفیف</div>
+            <button class="add-btn" data-code="${product.code}">افزودن به سبد</button>
+        </div>
     </div>`;
 });
 
-// گرید محصولات
-const gridItems = [
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg', old: '900,000', new: '399,000', code: '399' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg', old: '980,000', new: '520,000', code: '520' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg', old: '1,050,000', new: '568,000', code: '568' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg', old: '1,100,000', new: '590,000', code: '590' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg', old: '1,200,000', new: '640,000', code: '640' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg', old: '1,500,000', new: '830,000', code: '830' }
-];
-
-const grid = document.getElementById('grid');
-gridItems.forEach(item => {
-    grid.innerHTML += `
-    <div>
-        <div class="product"><img src="${item.img}" alt="محصول حجاب"></div>
-        <div class="prices">
-            <span class="old">${item.old}</span>
-            <span class="new">${item.new} تومان</span>
-        </div>
-        <button class="buy" data-code="${item.code}">افزودن به سبد</button>
-    </div>`;
-});
-
-// sms خرید
-document.querySelectorAll('.buy').forEach(btn => {
+// عملکرد دکمه افزودن به سبد (ارسال sms)
+document.querySelectorAll('.add-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const code = btn.dataset.code;
         window.location.href = `sms:09221620355?body=کد محصول: ${code} - درخواست خرید`;
