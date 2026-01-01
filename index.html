@@ -5,16 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>محصولات حجاب با تخفیف ویژه</title>
 
-<style>
-@font-face {
-    font-family: 'Trashin';
-    src: url('./trashin.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Yagut';
-    src: url('./Far_YagutBd.ttf') format('truetype');
-}
+<!-- فونت مدرن و شیک Vazirmatn از Google Fonts (پیشنهاد شده برای فارسی ۱۴۰۴-۱۴۰۵) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -22,10 +18,51 @@
 }
 
 body {
-    font-family: 'Trashin', system-ui, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.5;
+    font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f5f0e9 0%, #ebe4d9 100%); /* پس‌زمینه شیک و مدرن - گرادیان نرم بژ/کرم */
+    color: #2c2c2c;
+    line-height: 1.6;
+}
+
+/* هدر جدید - عرض کامل، ارتفاع کم، شیک و لوکس */
+header {
+    width: 100%;
+    height: 90px;                  /* ارتفاع کم و مدرن */
+    background: linear-gradient(to right, #1a1a1a, #2c2c2c); /* گرادیان مشکی لوکس */
+    color: #e0c9a6;                /* رنگ طلایی ملایم */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://www.shutterstock.com/image-vector/luxury-background-dark-blue-gold-260nw-2517207751.jpg') center/cover no-repeat;
+    opacity: 0.15;                 /* بافت ظریف لوکس */
+    z-index: 0;
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+}
+
+/* محصول مربعی */
+.product {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 img {
@@ -35,62 +72,21 @@ img {
     display: block;
 }
 
-/* big header product */
-.hijab-product {
-    margin: 12px 16px 28px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
-
-.hijab-product img {
-    height: 180px;
-}
-
-.hijab-btn {
-    width: 100%;
-    padding: 12px 0;
-    border: none;
-    font-size: 18px;
-    font-family: 'Trashin';
-    color: white;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(6px);
-    cursor: pointer;
-}
-
-/* intro quote */
-.intro {
-    text-align: center;
-    padding: 28px 18px 40px;
-    font-size: 22px;
-    opacity: 0.88;
-}
-
-/* محصول به شکل مربع */
-.product {
-    width: 100%;
-    aspect-ratio: 1 / 1;          /* کاملاً مربع */
-    border-radius: 10px;
-    overflow: hidden;
-    background: #eee;
-}
-
-/* slider - نمایش ۳ محصول در صفحه اول */
+/* slider - ۳ محصول در نگاه اول */
 .slider {
     display: flex;
     gap: 10px;
     overflow-x: auto;
-    padding: 0 16px 28px;
+    padding: 0 16px 24px;
     scroll-snap-type: x mandatory;
 }
 
 .slider::-webkit-scrollbar { display: none; }
 
 .slide {
-    flex: 0 0 33.33%;           /* دقیقاً ۳ تا در عرض صفحه */
+    flex: 0 0 33.33%;
     scroll-snap-align: start;
-    max-width: 130px;           /* اندازه کوچکتر و یکنواخت */
+    max-width: 130px;
 }
 
 /* grid - ۲ ستون */
@@ -98,7 +94,7 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 0 16px 36px;
+    padding: 0 16px 32px;
 }
 
 /* prices */
@@ -106,59 +102,72 @@ img {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin: 6px 0 4px;
-    font-family: 'Yagut', sans-serif;
+    margin: 8px 0 6px;
     font-size: 14px;
     opacity: 0.9;
 }
 
 .old { text-decoration: line-through; color: #777; }
-.new { font-weight: bold; color: #c62828; }
+.new { font-weight: 700; color: #b91c1c; }
 
 /* buy buttons */
 .buy {
     display: block;
-    width: 86%;
-    margin: 0 auto 6px;
-    padding: 8px 0;
+    width: 88%;
+    margin: 0 auto 8px;
+    padding: 9px 0;
     border: none;
     border-radius: 8px;
     font-size: 15px;
-    font-family: 'Trashin';
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .slider .buy {
-    background: #2e7d32;
+    background: #3a7d44;
     color: white;
 }
 
 .grid .buy {
-    background: #f57c00;
+    background: #d97706;
     color: white;
+}
+
+.buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.intro {
+    text-align: center;
+    padding: 28px 18px 36px;
+    font-size: 21px;
+    opacity: 0.92;
+    font-weight: 400;
 }
 
 .more {
     text-align: center;
-    margin: 28px 0 40px;
+    margin: 32px 0 48px;
     font-size: 18px;
-    opacity: 0.8;
+    opacity: 0.75;
+    color: #555;
 }
 
-/* responsive برای موبایل‌های خیلی کوچک */
+/* responsive */
 @media (max-width: 400px) {
     .slide { flex: 0 0 40%; }
-    .hijab-product img { height: 160px; }
+    header { height: 80px; font-size: 1.3rem; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="hijab-product">
-    <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/%D8%AD%D8%AC%D8%A7%D8%A8.jpeg" alt="محصول حجاب">
-    <button class="hijab-btn">محصولات حجاب ما با تخفیف ویژه</button>
-</div>
+<header>
+    <h1>محصولات حجاب با تخفیف ویژه</h1>
+</header>
 
 <div class="intro" id="intro"></div>
 
@@ -169,7 +178,7 @@ img {
 <div class="more">محصولات بیشتر در راه است...</div>
 
 <script>
-// نقل‌قول‌های زیبا
+// نقل‌قول‌ها
 const texts = [
     'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
     'دل، همیشه زودتر از عقل خسته می‌شود.',
@@ -205,7 +214,7 @@ const texts = [
 ];
 document.getElementById('intro').innerText = texts[Math.floor(Math.random() * texts.length)];
 
-// اسلایدر - فقط محصولات خودت
+// اسلایدر محصولات
 const sliderItems = [
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/1.jpg', old: '900,000', new: '760,000', code: '760' },
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/2.jpg', old: '900,000', new: '760,000', code: '760' },
@@ -228,7 +237,7 @@ sliderItems.forEach(item => {
     </div>`;
 });
 
-// گرید - محصولات اصلی
+// گرید محصولات
 const gridItems = [
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg', old: '900,000', new: '399,000', code: '399' },
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg', old: '980,000', new: '520,000', code: '520' },
@@ -251,7 +260,7 @@ gridItems.forEach(item => {
     </div>`;
 });
 
-// ارسال sms
+// sms خرید
 document.querySelectorAll('.buy').forEach(btn => {
     btn.addEventListener('click', () => {
         const code = btn.dataset.code;
