@@ -6,19 +6,18 @@
 
 <style>
 @font-face{
-  font-family:'SHPanda';
-  src:url('./SH Panda.ttf') format('truetype');
+  font-family:'FarYagutBd';
+  src:url('./Far_YagutBd.ttf') format('truetype');
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:'SHPanda',sans-serif;
+  font-family:'FarYagutBd',sans-serif;
   background:#fff;
   font-size:18px;
   color:#444;
   font-weight:700;
 }
-
 img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Header */
@@ -30,14 +29,6 @@ img{width:100%;height:100%;object-fit:cover;display:block}
   padding:28px 16px 42px;
   font-size:24px;
   opacity:.85;
-}
-
-/* SIZE LOCK */
-.product{
-  width:100%;
-  aspect-ratio:1/1;
-  border-radius:12px;
-  overflow:hidden;
 }
 
 /* Slider */
@@ -79,7 +70,7 @@ img{width:100%;height:100%;object-fit:cover;display:block}
   border:none;
   border-radius:8px;
   font-size:16px;
-  font-family:'SHPanda';
+  font-family:'FarYagutBd';
   font-weight:900;
   opacity:.95;
   cursor:pointer;
@@ -223,14 +214,13 @@ const texts=[
 'بعضی دوست‌داشتن‌ها، عمیق‌اند.',
 'زمان، حقیقت را لو می‌دهد.',
 'عشق، همیشه ریسک است.',
-'سکوت، پایانِ بحث نیست.', 
+'سکوت، پایانِ بحث نیست.',
 'دل، زخم‌پذیر است.',
 'زندگی، کوتاه‌تر از انتظار است.'
 ];
 
-intro.innerText = texts[Math.floor(Math.random()*texts.length)];
+intro.innerText=texts[Math.floor(Math.random()*texts.length)];
 
-/* اسلایدر */
 const slider=document.getElementById('slider');
 [['1.jpg','900','760'],['2.jpg','900','760'],['3.jpg','900','760'],['4.jpg','900','760']]
 .forEach(i=>{
