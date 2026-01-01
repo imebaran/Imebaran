@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
-@font-face {
-  font-family: 'TahomaCustom';
-  src: url('./Tahoma.ttf') format('truetype');
+@font-face{
+ font-family:'Neirizi';
+ src:url('./Neirizi.ttf') format('truetype');
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:'TahomaCustom',sans-serif;
-  background:#fff;
-  font-size:17px;
-  color:#444;
-  font-weight:600;
+ font-family:'Neirizi',sans-serif;
+ background:#fff;
+ font-size:18px;
+ color:#444;
+ font-weight:700;
 }
-
 img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Header */
@@ -26,74 +25,74 @@ img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Intro */
 .intro{
-  text-align:center;
-  padding:28px 16px 42px;
-  font-size:22px;
-  opacity:.85;
+ text-align:center;
+ padding:28px 16px 42px;
+ font-size:24px;
+ opacity:.85;
 }
 
-/* Size Lock */
+/* SIZE LOCK */
 .product{
-  width:100%;
-  aspect-ratio:1/1;
-  border-radius:12px;
-  overflow:hidden;
+ width:100%;
+ aspect-ratio:1/1;
+ border-radius:12px;
+ overflow:hidden;
 }
 
 /* Slider */
 .slider{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  padding:0 16px 32px
+ display:flex;
+ gap:12px;
+ overflow-x:auto;
+ padding:0 16px 32px
 }
 .slider::-webkit-scrollbar{display:none}
 .slide{flex:0 0 33.33%}
 
 /* Grid */
 .grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  padding:16px
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+ padding:16px
 }
 
 /* Prices */
 .prices{
-  display:flex;
-  justify-content:center;
-  gap:6px;
-  margin:6px 0 4px;
-  font-size:15px;
-  opacity:.85
+ display:flex;
+ justify-content:center;
+ gap:8px;
+ margin:6px 0 4px;
+ font-size:16px;
+ opacity:.85
 }
 .old{text-decoration:line-through}
-.new{font-weight:700}
+.new{font-weight:900}
 
 /* Buttons */
 .buy{
-  display:block;
-  width:60%;
-  margin:0 auto 6px;
-  padding:6px 0;
-  border:none;
-  border-radius:8px;
-  font-size:15px;
-  font-family:'TahomaCustom',sans-serif;
-  font-weight:700;
-  opacity:.95;
-  cursor:pointer;
+ display:block;
+ width:60%;
+ margin:0 auto 6px;
+ padding:7px 0;
+ border:none;
+ border-radius:8px;
+ font-size:16px;
+ font-family:'Neirizi';
+ font-weight:900;
+ opacity:.95;
+ cursor:pointer;
 }
 .slider .buy{background:#2ecc71;color:#fff}
 .grid .buy{background:#f1c40f;color:#000}
 
 /* More */
 .more{
-  text-align:center;
-  margin:24px 0;
-  font-weight:700;
-  font-size:18px;
-  opacity:.85;
+ text-align:center;
+ margin:24px 0;
+ font-weight:900;
+ font-size:19px;
+ opacity:.85;
 }
 </style>
 </head>
@@ -101,7 +100,7 @@ img{width:100%;height:100%;object-fit:cover;display:block}
 <body>
 
 <div class="header">
-  <img src="https://raw.githubusercontent.com/imebaran/Imebaran/refs/heads/main/هدر.jpg">
+ <img src="https://raw.githubusercontent.com/imebaran/Imebaran/refs/heads/main/هدر.jpg">
 </div>
 
 <div class="intro" id="intro"></div>
@@ -109,42 +108,41 @@ img{width:100%;height:100%;object-fit:cover;display:block}
 <div class="slider" id="slider"></div>
 
 <div class="grid">
-  <div>
-    <div class="product"><img src="399.jpg"></div>
-    <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
-    <a class="buy" href="sms:09221620355?body=کد محصول: 399">افزودن به سبد</a>
-  </div>
-  <div>
-    <div class="product"><img src="520.jpg"></div>
-    <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
-    <a class="buy" href="sms:09221620355?body=کد محصول: 520">افزودن به سبد</a>
-  </div>
-  <div>
-    <div class="product"><img src="568.jpg"></div>
-    <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
-    <a class="buy" href="sms:09221620355?body=کد محصول: 568">افزودن به سبد</a>
-  </div>
-  <div>
-    <div class="product"><img src="590.jpg"></div>
-    <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
-    <a class="buy" href="sms:09221620355?body=کد محصول: 590">افزودن به سبد</a>
-  </div>
-  <div>
-    <div class="product"><img src="640.jpg"></div>
-    <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
-    <a class="buy" href="sms:09221620355?body=کد محصول: 640">افزودن به سبد</a>
-  </div>
-  <div>
-    <div class="product"><img src="830.jpg"></div>
-    <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
-    <a class="buy" href="sms:09221620355?body=کد محصول: 830">افزودن به سبد</a>
-  </div>
+<div>
+ <div class="product"><img src="399.jpg"></div>
+ <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 399">افزودن به سبد</a>
+</div>
+<div>
+ <div class="product"><img src="520.jpg"></div>
+ <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 520">افزودن به سبد</a>
+</div>
+<div>
+ <div class="product"><img src="568.jpg"></div>
+ <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 568">افزودن به سبد</a>
+</div>
+<div>
+ <div class="product"><img src="590.jpg"></div>
+ <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 590">افزودن به سبد</a>
+</div>
+<div>
+ <div class="product"><img src="640.jpg"></div>
+ <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 640">افزودن به سبد</a>
+</div>
+<div>
+ <div class="product"><img src="830.jpg"></div>
+ <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 830">افزودن به سبد</a>
+</div>
 </div>
 
 <div class="more">محصولات بیشتر</div>
 
 <script>
-/* 100 متن کامل */
 const texts=[
 'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
 'دل، همیشه زودتر از عقل خسته می‌شود.',
@@ -176,70 +174,19 @@ const texts=[
 'دل‌تنگی، وزن ندارد اما سنگین است.',
 'عشق، بلد نیست کم باشد.',
 'هر پایان، شروعی خجالتی دارد.',
-'زندگی، ادامه دارد.',
-'آدمی از جایی می‌شکند که فکرش را نمی‌کند.',
-'سکوت، پاسخِ سؤال‌های بی‌جواب است.',
-'دل اگر بخواهد، عقل ساکت می‌شود.',
-'بعضی نبودن‌ها، پررنگ‌ترند.',
-'زندگی، مکث‌های کوتاه میان رفتن‌هاست.',
-'خاطره‌ها راهِ بازگشت ندارند.',
-'نگاهت، دلیلِ باور من است.',
-'امید، همیشه دیر می‌رسد اما می‌رسد.',
-'دل، خانه‌ای‌ست بی‌قفل.',
-'شب، رازدارِ اشک‌هاست.',
-'بعضی آدم‌ها، فصل‌اند.',
-'فاصله، سوءتفاهمِ مکان است.',
-'دل‌سپردن، جرأت می‌خواهد.',
-'زمان، صبورتر از ماست.',
-'عشق، توضیح نمی‌خواهد.',
-'سکوت، همیشه به معنای رضایت نیست.',
-'دل، حافظه‌ی قوی‌تری دارد.',
-'بعضی رفتن‌ها، بی‌صدا می‌شکنند.',
-'زندگی، کوتاه‌تر از بهانه‌هاست.',
-'نگاه، آغازِ اعتراف است.',
-'آدمی به امید زنده است.',
-'دلتنگی، همسایه‌ی شب است.',
-'بعضی سؤال‌ها، جواب ندارند.',
-'عشق، از دل شروع می‌شود.',
-'فاصله، همیشه کیلومتر نیست.',
-'سکوت، احترامِ درد است.',
-'دل، زود باور است.',
-'زمان، همه‌چیز را عوض نمی‌کند.',
-'بعضی لحظه‌ها، تکرار نمی‌شوند.',
-'زندگی، ساده نیست اما جاری‌ست.',
-'خاطره، بی‌اجازه می‌آید.',
-'نگاهت، ادامه‌ی حرف‌هاست.',
-'دل، بلدِ فراموشی نیست.',
-'شب، طولانی‌تر از روز می‌فهمد.',
-'بعضی آدم‌ها، همیشه دیر می‌آیند.',
-'عشق، تمرینِ ازخودگذشتگی است.',
-'سکوت، امن‌ترین پناه است.',
-'دل، راه خودش را می‌رود.',
-'فاصله، گاهی لازم است.',
-'زندگی، منتظرِ کامل شدن نمی‌ماند.',
-'خاطره‌ها، بی‌دعوت می‌مانند.',
-'نگاه، صادق‌تر از زبان است.',
-'دل، با منطق قهر است.',
-'شب، آینه‌ی فکرهاست.',
-'بعضی دوست‌داشتن‌ها، عمیق‌اند.',
-'زمان، حقیقت را لو می‌دهد.',
-'عشق، همیشه ریسک است.',
-'سکوت، پایانِ بحث نیست.',
-'دل، زخم‌پذیر است.',
-'زندگی، کوتاه‌تر از انتظار است.'
+'زندگی، ادامه دارد.'
 ];
-
 intro.innerText=texts[Math.floor(Math.random()*texts.length)];
 
-/* slider */
 const slider=document.getElementById('slider');
-[['1.jpg','900','760'],['2.jpg','900','760'],['3.jpg','900','760'],['4.jpg','900','760']].forEach(i=>{
-  slider.innerHTML+=`
-  <div class="slide">
-   <div class="product"><img src="${i[0]}"></div>
-   <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
-   <a class="buy" href="sms:09221620355?body=کد محصول: ${i[2]}">افزودن به سبد</a>
-  </div>`;
+[['1.jpg','900','760'],['2.jpg','900','760'],['3.jpg','900','760'],['4.jpg','900','760']]
+.forEach(i=>{
+ slider.innerHTML+=`
+ <div class="slide">
+  <div class="product"><img src="${i[0]}"></div>
+  <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
+  <a class="buy" href="sms:09221620355?body=کد محصول: ${i[2]}">افزودن به سبد</a>
+ </div>`;
 });
 </script>
 
