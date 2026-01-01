@@ -67,10 +67,10 @@ img {
     opacity: 0.88;
 }
 
-/* product card */
+/* محصول به شکل مربع */
 .product {
     width: 100%;
-    aspect-ratio: 3/4;          /* کمی کشیده‌تر برای لباس */
+    aspect-ratio: 1 / 1;          /* کاملاً مربع */
     border-radius: 10px;
     overflow: hidden;
     background: #eee;
@@ -90,7 +90,7 @@ img {
 .slide {
     flex: 0 0 33.33%;           /* دقیقاً ۳ تا در عرض صفحه */
     scroll-snap-align: start;
-    max-width: 140px;           /* محدود کردن حداکثر عرض */
+    max-width: 130px;           /* اندازه کوچکتر و یکنواخت */
 }
 
 /* grid - ۲ ستون */
@@ -145,9 +145,9 @@ img {
     opacity: 0.8;
 }
 
-/* responsive کوچک برای موبایل */
+/* responsive برای موبایل‌های خیلی کوچک */
 @media (max-width: 400px) {
-    .slide { flex: 0 0 45%; }
+    .slide { flex: 0 0 40%; }
     .hijab-product img { height: 160px; }
 }
 </style>
@@ -205,7 +205,7 @@ const texts = [
 ];
 document.getElementById('intro').innerText = texts[Math.floor(Math.random() * texts.length)];
 
-// اسلایدر - فقط از محصولات خودت (عددی)
+// اسلایدر - فقط محصولات خودت
 const sliderItems = [
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/1.jpg', old: '900,000', new: '760,000', code: '760' },
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/2.jpg', old: '900,000', new: '760,000', code: '760' },
@@ -228,14 +228,14 @@ sliderItems.forEach(item => {
     </div>`;
 });
 
-// گرید - محصولات اصلی خودت
+// گرید - محصولات اصلی
 const gridItems = [
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg', old: '900,000', new: '399,000', code: '399' },
     { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg', old: '980,000', new: '520,000', code: '520' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg', old: '1050,000', new: '568,000', code: '568' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg', old: '1100,000', new: '590,000', code: '590' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg', old: '1200,000', new: '640,000', code: '640' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg', old: '1500,000', new: '830,000', code: '830' }
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg', old: '1,050,000', new: '568,000', code: '568' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg', old: '1,100,000', new: '590,000', code: '590' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg', old: '1,200,000', new: '640,000', code: '640' },
+    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg', old: '1,500,000', new: '830,000', code: '830' }
 ];
 
 const grid = document.getElementById('grid');
@@ -251,7 +251,7 @@ gridItems.forEach(item => {
     </div>`;
 });
 
-// ارسال sms برای خرید
+// ارسال sms
 document.querySelectorAll('.buy').forEach(btn => {
     btn.addEventListener('click', () => {
         const code = btn.dataset.code;
