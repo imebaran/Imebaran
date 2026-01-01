@@ -6,13 +6,13 @@
 
 <style>
 @font-face{
-font-family:'Jomhuri';
-src:url('./جمهوری.ttf') format('truetype');
+font-family:'Ordibehesht';
+src:url('./Ordibehesht.TTF') format('truetype');
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-font-family:'Jomhuri',sans-serif;
+font-family:'Ordibehesht',sans-serif;
 background:#fff;
 font-size:16px;
 }
@@ -75,7 +75,7 @@ padding:6px 0;
 border:none;
 border-radius:8px;
 font-size:15px;
-font-family:'Jomhuri'
+font-family:'Ordibehesht'
 }
 .slider .buy{background:#2ecc71;color:#fff}
 .grid .buy{background:#f1c40f;color:#000}
@@ -144,7 +144,6 @@ const items=[
 ['3.jpg','900','760'],['4.jpg','900','760'],
 ['5.jpg','900','760'],['6.jpg','900','760']
 ];
-
 items.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
 slider.innerHTML+=`
 <div class="slide">
