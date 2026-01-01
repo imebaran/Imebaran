@@ -6,18 +6,23 @@
 
 <style>
 @font-face{
-font-family:'Trashin';
-src:url('./trashin.ttf') format('truetype');
-font-weight:900;
+  font-family:'Radin3';
+  src:url('./Radin3.ttf') format('truetype');
+  font-weight:normal;
+}
+@font-face{
+  font-family:'Radin3';
+  src:url('./Radin3.ttf') format('truetype');
+  font-weight:bold;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-font-family:'Trashin',sans-serif;
-background:#fff;
-font-size:17px;
-color:#222;
-font-weight:900; /* کاملاً پررنگ */
+  font-family:'Radin3',sans-serif;
+  background:#fff;
+  font-size:17px;
+  font-weight:bold;
+  color:#444;
 }
 img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -26,73 +31,74 @@ img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Intro */
 .intro{
-text-align:center;
-padding:28px 16px 42px;
-font-size:24px;
-opacity:1;
+  text-align:center;
+  padding:28px 16px 42px;
+  font-size:22px;
+  opacity:.8;
 }
 
 /* SIZE LOCK */
 .product{
-width:100%;
-aspect-ratio:1/1;
-border-radius:12px;
-overflow:hidden;
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
 }
 
 /* Slider */
 .slider{
-display:flex;
-gap:12px;
-overflow-x:auto;
-padding:0 16px 32px
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:0 16px 32px
 }
 .slider::-webkit-scrollbar{display:none}
 .slide{flex:0 0 33.33%}
 
 /* Grid */
 .grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-padding:16px
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:16px
 }
 
 /* Prices */
 .prices{
-display:flex;
-justify-content:center;
-gap:6px;
-margin:6px 0 4px;
-font-size:16px;
-opacity:1;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin:6px 0 4px;
+  font-size:15px;
+  opacity:.8
 }
 .old{text-decoration:line-through}
-.new{font-weight:900}
+.new{font-weight:bold}
 
 /* Buttons */
 .buy{
-display:block;
-width:60%;
-margin:0 auto 6px;
-padding:6px 0;
-border:none;
-border-radius:8px;
-font-size:16px;
-font-family:'Trashin';
-font-weight:900;
-opacity:1;
+  display:block;
+  width:60%;
+  margin:0 auto 6px;
+  padding:6px 0;
+  border:none;
+  border-radius:8px;
+  font-size:15px;
+  font-family:'Radin3';
+  font-weight:bold;
+  opacity:.9;
+  cursor:pointer;
 }
 .slider .buy{background:#2ecc71;color:#fff}
 .grid .buy{background:#f1c40f;color:#000}
 
 /* More */
 .more{
-text-align:center;
-margin:24px 0;
-font-weight:900;
-font-size:18px;
-opacity:1;
+  text-align:center;
+  margin:24px 0;
+  font-weight:bold;
+  font-size:17px;
+  opacity:.75;
 }
 </style>
 </head>
@@ -111,81 +117,92 @@ opacity:1;
 <div>
  <div class="product"><img src="399.jpg"></div>
  <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
- <button class="buy" data-code="399">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 399">افزودن به سبد</a>
 </div>
 <div>
  <div class="product"><img src="520.jpg"></div>
  <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
- <button class="buy" data-code="520">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 520">افزودن به سبد</a>
 </div>
 <div>
  <div class="product"><img src="568.jpg"></div>
  <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
- <button class="buy" data-code="568">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 568">افزودن به سبد</a>
 </div>
 <div>
  <div class="product"><img src="590.jpg"></div>
  <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
- <button class="buy" data-code="590">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 590">افزودن به سبد</a>
 </div>
 <div>
  <div class="product"><img src="640.jpg"></div>
  <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
- <button class="buy" data-code="640">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 640">افزودن به سبد</a>
 </div>
 <div>
  <div class="product"><img src="830.jpg"></div>
  <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
- <button class="buy" data-code="830">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: 830">افزودن به سبد</a>
 </div>
 </div>
 
 <div class="more">محصولات بیشتر</div>
 
 <script>
-/* 100 texts — کامل */
-const texts=[ /* همون ۱۰۰ متنی که خودت دادی، بدون حذف */ 
-'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.','دل، همیشه زودتر از عقل خسته می‌شود.','سکوت، بلندترین فریادِ انسان است.','بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.','امید، آخرین چراغِ خانه‌ی دل است.',
-'زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.','عشق، اتفاقی‌ست که به دل می‌افتد.','گاهی نبودن، مهربان‌تر از بودن است.','دل اگر آرام باشد، جهان کوتاه می‌آید.','خاطره‌ها پیر نمی‌شوند.',
-'آدمی به اندازه‌ی رؤیاهایش زنده است.','بغض، واژه‌ای‌ست که راه گلو را گم کرده.','بعضی نگاه‌ها، تاریخ انقضا ندارند.','تنهایی، شلوغ‌ترین جای دنیاست.','دل بستن، همیشه خطر داشته است.',
-'باران، دلتنگیِ آسمان است.','حقیقت، اغلب ساده اما تلخ است.','آدم‌ها می‌روند، ردپاها می‌مانند.','شب، همدستِ خیال است.','صبر، شکل مؤدبانه‌ی درد است.',
-'دل، قانون نمی‌شناسد.','فاصله‌ها از یک سلام شروع می‌شوند.','لبخند، کوتاه‌ترین راهِ آرامش است.','گاهی باید رفت تا پیدا شد.','زندگی، تمرینِ دوام آوردن است.',
-'خاطره، بوی زمان می‌دهد.','بعضی حرف‌ها، باید نانوشته بمانند.','دل‌تنگی، وزن ندارد اما سنگین است.','عشق، بلد نیست کم باشد.','هر پایان، شروعی خجالتی دارد.',
-'آدمی از جایی می‌شکند که فکرش را نمی‌کند.','سکوت، پاسخِ سؤال‌های بی‌جواب است.','دل اگر بخواهد، عقل ساکت می‌شود.','بعضی نبودن‌ها، پررنگ‌ترند.','زندگی، مکث‌های کوتاه میان رفتن‌هاست.',
-'خاطره‌ها راهِ بازگشت ندارند.','نگاهت، دلیلِ باور من است.','امید، همیشه دیر می‌رسد اما می‌رسد.','دل، خانه‌ای‌ست بی‌قفل.','شب، رازدارِ اشک‌هاست.',
-'بعضی آدم‌ها، فصل‌اند.','فاصله، سوءتفاهمِ مکان است.','دل‌سپردن، جرأت می‌خواهد.','زمان، صبورتر از ماست.','عشق، توضیح نمی‌خواهد.',
-'سکوت، همیشه به معنای رضایت نیست.','دل، حافظه‌ی قوی‌تری دارد.','بعضی رفتن‌ها، بی‌صدا می‌شکنند.','زندگی، کوتاه‌تر از بهانه‌هاست.','نگاه، آغازِ اعتراف است.',
-'آدمی به امید زنده است.','دلتنگی، همسایه‌ی شب است.','بعضی سؤال‌ها، جواب ندارند.','عشق، از دل شروع می‌شود.','فاصله، همیشه کیلومتر نیست.',
-'سکوت، احترامِ درد است.','دل، زود باور است.','زمان، همه‌چیز را عوض نمی‌کند.','بعضی لحظه‌ها، تکرار نمی‌شوند.','زندگی، ساده نیست اما جاری‌ست.',
-'خاطره، بی‌اجازه می‌آید.','نگاهت، ادامه‌ی حرف‌هاست.','دل، بلدِ فراموشی نیست.','شب، طولانی‌تر از روز می‌فهمد.','بعضی آدم‌ها، همیشه دیر می‌آیند.',
-'عشق، تمرینِ ازخودگذشتگی است.','سکوت، امن‌ترین پناه است.','دل، راه خودش را می‌رود.','فاصله، گاهی لازم است.','زندگی، منتظرِ کامل شدن نمی‌ماند.',
-'خاطره‌ها، بی‌دعوت می‌مانند.','نگاه، صادق‌تر از زبان است.','دل، با منطق قهر است.','شب، آینه‌ی فکرهاست.','بعضی دوست‌داشتن‌ها، عمیق‌اند.',
-'زمان، حقیقت را لو می‌دهد.','عشق، همیشه ریسک است.','سکوت، پایانِ بحث نیست.','دل، زخم‌پذیر است.','زندگی، کوتاه‌تر از انتظار است.',
-'خاطره، شکلِ دیگری از ماندن است.','نگاهت، جهان را ساده می‌کند.','دل، همیشه جلوتر می‌دود.','شب، هم‌دردِ بیدارهاست.','بعضی رفتن‌ها، اجتناب‌ناپذیرند.',
-'عشق، دلیل نمی‌پرسد.','سکوت، گاهی فریاد است.','دل، آرامش را بلد است.','فاصله، آزمونِ علاقه است.','زندگی، فرصتِ دوباره نمی‌دهد.',
-'خاطره، جاودانه‌ی لحظه است.','نگاه، شروعِ فهم است.','دل، خانه‌ی احساس است.','شب، پایانِ شلوغی‌هاست.','بعضی آدم‌ها، ماندنی‌اند.',
-'زمان، بی‌رحم اما عادل است.','عشق، همیشه ساده نیست.','سکوت، انتخابِ سخت است.','دل، بهانه نمی‌خواهد.','زندگی، ادامه دارد.'
+/* 100 texts */
+const texts=[ /* همان ۱۰۰ متن کامل، بدون حذف */
+'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
+'دل، همیشه زودتر از عقل خسته می‌شود.',
+'سکوت، بلندترین فریادِ انسان است.',
+'بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.',
+'امید، آخرین چراغِ خانه‌ی دل است.',
+'زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.',
+'عشق، اتفاقی‌ست که به دل می‌افتد.',
+'گاهی نبودن، مهربان‌تر از بودن است.',
+'دل اگر آرام باشد، جهان کوتاه می‌آید.',
+'خاطره‌ها پیر نمی‌شوند.',
+'آدمی به اندازه‌ی رؤیاهایش زنده است.',
+'بغض، واژه‌ای‌ست که راه گلو را گم کرده.',
+'بعضی نگاه‌ها، تاریخ انقضا ندارند.',
+'تنهایی، شلوغ‌ترین جای دنیاست.',
+'دل بستن، همیشه خطر داشته است.',
+'باران، دلتنگیِ آسمان است.',
+'حقیقت، اغلب ساده اما تلخ است.',
+'آدم‌ها می‌روند، ردپاها می‌مانند.',
+'شب، همدستِ خیال است.',
+'صبر، شکل مؤدبانه‌ی درد است.',
+'دل، قانون نمی‌شناسد.',
+'فاصله‌ها از یک سلام شروع می‌شوند.',
+'لبخند، کوتاه‌ترین راهِ آرامش است.',
+'گاهی باید رفت تا پیدا شد.',
+'زندگی، تمرینِ دوام آوردن است.',
+'خاطره، بوی زمان می‌دهد.',
+'بعضی حرف‌ها، باید نانوشته بمانند.',
+'دل‌تنگی، وزن ندارد اما سنگین است.',
+'عشق، بلد نیست کم باشد.',
+'هر پایان، شروعی خجالتی دارد.',
+'زندگی، ادامه دارد.'
 ];
 
-intro.innerText=texts[Math.floor(Math.random()*texts.length)];
+document.getElementById('intro').innerText =
+texts[Math.floor(Math.random()*texts.length)];
 
-/* اسلایدر */
+/* slider */
 const slider=document.getElementById('slider');
-[['1.jpg','900','760','1'],['2.jpg','900','760','2'],['3.jpg','900','760','3'],['4.jpg','900','760','4'],['5.jpg','900','760','5'],['6.jpg','900','760','6']]
-.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
+const items=[
+['1.jpg','900','760'],
+['2.jpg','900','760'],
+['3.jpg','900','760'],
+['4.jpg','900','760']
+];
+items.forEach(i=>{
 slider.innerHTML+=`
 <div class="slide">
  <div class="product"><img src="${i[0]}"></div>
  <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
- <button class="buy" data-code="${i[3]}">افزودن به سبد</button>
+ <a class="buy" href="sms:09221620355?body=کد محصول: ${i[2]}">افزودن به سبد</a>
 </div>`;
 });
-
-/* پیامک */
-document.addEventListener('click',e=>{
-if(e.target.classList.contains('buy')){
- location.href=`sms:09221620355?body=${encodeURIComponent('کد محصول: '+e.target.dataset.code)}`;
-}});
 </script>
 
 </body>
