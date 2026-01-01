@@ -15,7 +15,7 @@ body{font-family:'Shekari',sans-serif;background:#fff}
 img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Header */
-.header img{width:100vw;height:200px;object-fit:cover}
+.header img{width:100vw;height:200px}
 
 /* Intro */
 .intro{text-align:center;margin:28px 16px;font-size:20px}
@@ -29,29 +29,25 @@ overflow:hidden;
 }
 
 /* Slider */
-.slider{
-display:flex;
-gap:12px;
-overflow-x:auto;
-padding:0 16px 32px
-}
+.slider{display:flex;gap:12px;overflow-x:auto;padding:0 16px 32px}
 .slider::-webkit-scrollbar{display:none}
 .slide{flex:0 0 33.33%}
 
 /* Grid */
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-padding:16px
-}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:16px}
 
-/* Price + Button */
-.price{
-text-align:center;
-font-size:13px;
-margin:6px 0 4px
+/* Prices */
+.prices{
+display:flex;
+justify-content:center;
+gap:6px;
+margin:6px 0 4px;
+font-size:13px
 }
+.old{text-decoration:line-through;opacity:.5}
+.new{font-weight:bold}
+
+/* Buttons */
 .buy{
 display:block;
 width:60%;
@@ -61,8 +57,6 @@ border:none;
 border-radius:8px;
 font-size:13px
 }
-
-/* Button colors */
 .slider .buy{background:#2ecc71;color:#fff}
 .grid .buy{background:#f1c40f;color:#000}
 
@@ -81,40 +75,38 @@ font-size:13px
 فریب‌کار یکبار می‌فروشد، درستکار هزاربار
 </div>
 
-<!-- Slider -->
 <div class="slider" id="slider"></div>
 
-<!-- Grid (6 products) -->
 <div class="grid">
 <div>
-  <div class="product"><img src="399.jpg"></div>
-  <div class="price">399 تومان</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="399.jpg"></div>
+ <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>
 <div>
-  <div class="product"><img src="520.jpg"></div>
-  <div class="price">520 تومان</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="520.jpg"></div>
+ <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>
 <div>
-  <div class="product"><img src="568.jpg"></div>
-  <div class="price">568 تومان</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="568.jpg"></div>
+ <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>
 <div>
-  <div class="product"><img src="590.jpg"></div>
-  <div class="price">590 تومان</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="590.jpg"></div>
+ <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>
 <div>
-  <div class="product"><img src="640.jpg"></div>
-  <div class="price">640 تومان</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="640.jpg"></div>
+ <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>
 <div>
-  <div class="product"><img src="830.jpg"></div>
-  <div class="price">830 تومان</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="830.jpg"></div>
+ <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>
 </div>
 
@@ -123,17 +115,20 @@ font-size:13px
 <script>
 const slider=document.getElementById('slider');
 const items=[
-['1.jpg','760 تومان'],['2.jpg','760 تومان'],
-['3.jpg','760 تومان'],['4.jpg','760 تومان'],
-['5.jpg','760 تومان'],['6.jpg','760 تومان']
+['1.jpg','900','760'],
+['2.jpg','900','760'],
+['3.jpg','900','760'],
+['4.jpg','900','760'],
+['5.jpg','900','760'],
+['6.jpg','900','760']
 ];
 
 items.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
 slider.innerHTML+=`
 <div class="slide">
-  <div class="product"><img src="${i[0]}"></div>
-  <div class="price">${i[1]}</div>
-  <button class="buy">افزودن به سبد</button>
+ <div class="product"><img src="${i[0]}"></div>
+ <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
+ <button class="buy">افزودن به سبد</button>
 </div>`;
 });
 </script>
