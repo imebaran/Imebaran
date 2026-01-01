@@ -2,33 +2,52 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>گل یاس</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:sans-serif;background:#fff}
 img{width:100%;display:block}
-.header img{height:120px;object-fit:cover}
-.intro{text-align:center;margin:32px 16px;font-weight:bold}
+
+/* Header */
+.header img{width:100vw;height:180px;object-fit:cover}
+
+/* Intro */
+.intro{text-align:center;margin:24px 16px;font-weight:bold}
+
+/* Slider */
 .slider{display:flex;gap:12px;overflow-x:auto;padding:0 16px}
 .slider::-webkit-scrollbar{display:none}
-.slide{flex:0 0 33.33%;aspect-ratio:1;border-radius:12px;overflow:hidden}
-.buy{width:100%;border:none;padding:8px;margin-top:4px;border-radius:8px}
-.slider .buy{background:#2ecc71;color:#fff}
-.divider{margin:24px 0 6px}
-.divider img{height:60px;object-fit:cover}
-.support{width:100%;margin:0 16px;padding:14px;border:none;border-radius:10px;background:#000;color:#fff}
+.slide{flex:0 0 33.33%;aspect-ratio:1;border-radius:12px;overflow:hidden;position:relative}
+.slide .buy{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+width:50%;padding:6px;border:none;border-radius:8px;background:#2ecc71;color:#fff;font-size:13px}
+
+/* Divider + support */
+.divider img{width:100vw;height:60px;object-fit:cover}
+.support{width:calc(100% - 32px);margin:6px 16px 0;padding:12px;border:none;border-radius:10px;background:#000;color:#fff}
+
+/* Grid */
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:32px 16px}
 .card{aspect-ratio:1;border-radius:12px;overflow:hidden;position:relative}
-.card .buy{position:absolute;bottom:6px;left:6px;right:6px;background:#f1c40f}
-.price{position:absolute;top:6px;right:6px;background:#fff;padding:4px 6px;font-size:13px}
+.card .buy{
+position:absolute;
+bottom:6px;
+left:50%;
+transform:translateX(-50%);
+width:50%;
+padding:6px;
+border:none;
+border-radius:8px;
+background:#f1c40f;
+font-size:13px
+}
 </style>
 </head>
 
 <body>
 
 <div class="header">
-  <img src="۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg">
+<img src="۲۰۲۵۱۲۲۳_۰۰۴۸۳۱.jpg">
 </div>
 
 <div class="intro">
@@ -38,38 +57,52 @@ img{width:100%;display:block}
 <div class="slider"></div>
 
 <div class="divider">
-  <img src="yas.jpg">
+<img src="yas.jpg">
 </div>
 
 <button class="support">حمایت از نیازمندان</button>
 
 <div class="grid">
-  <div class="card"><img src="399.jpg"><div class="price">399</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="520.jpg"><div class="price">520</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="568.jpg"><div class="price">568</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="590.jpg"><div class="price">590</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="640.jpg"><div class="price">640</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="830.jpg"><div class="price">830</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="885.jpg"><div class="price">885</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="899.jpg"><div class="price">899</div><button class="buy">خرید</button></div>
+<div class="card"><img src="399.jpg"><button class="buy">399 تومان</button></div>
+<div class="card"><img src="520.jpg"><button class="buy">520 تومان</button></div>
+<div class="card"><img src="568.jpg"><button class="buy">568 تومان</button></div>
+<div class="card"><img src="590.jpg"><button class="buy">590 تومان</button></div>
+<div class="card"><img src="640.jpg"><button class="buy">640 تومان</button></div>
+<div class="card"><img src="830.jpg"><button class="buy">830 تومان</button></div>
+<div class="card"><img src="885.jpg"><button class="buy">885 تومان</button></div>
+<div class="card"><img src="899.jpg"><button class="buy">899 تومان</button></div>
 
-  <div class="card"><img src="آجری.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="خاکستری.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="سبز.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="سدری.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="قهوه ای.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="قهوه ای کرم.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="مشکی.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="نسکافه ای.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="کرم.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
-  <div class="card"><img src="کالباسی.jpg"><div class="price">500</div><button class="buy">خرید</button></div>
+<div class="card"><img src="آجری.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="خاکستری.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="سبز.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="سدری.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="قهوه ای.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="قهوه ای کرم.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="مشکی.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="نسکافه ای.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="کرم.jpg"><button class="buy">500 تومان</button></div>
+<div class="card"><img src="کالباسی.jpg"><button class="buy">500 تومان</button></div>
 </div>
 
 <script>
 const slider=document.querySelector('.slider');
-const files=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','399.jpg','520.jpg','568.jpg','590.jpg','640.jpg','830.jpg','885.jpg','899.jpg','آجری.jpg','خاکستری.jpg','سبز.jpg','سدری.jpg','قهوه ای.jpg','قهوه ای کرم.jpg','مشکی.jpg','نسکافه ای.jpg','کرم.jpg','کالباسی.jpg'];
-files.sort(()=>0.5-Math.random()).slice(0,4).forEach(f=>{
-slider.innerHTML+=`<div class="slide"><img src="${f}"><button class="buy">خرید</button></div>`;
+const items=[
+['1.jpg','760 تومان'],['2.jpg','760 تومان'],['3.jpg','760 تومان'],['4.jpg','760 تومان'],
+['5.jpg','760 تومان'],['6.jpg','760 تومان'],
+['399.jpg','399 تومان'],['520.jpg','520 تومان'],['568.jpg','568 تومان'],
+['590.jpg','590 تومان'],['640.jpg','640 تومان'],['830.jpg','830 تومان'],
+['885.jpg','885 تومان'],['899.jpg','899 تومان'],
+['آجری.jpg','500 تومان'],['خاکستری.jpg','500 تومان'],['سبز.jpg','500 تومان'],
+['سدری.jpg','500 تومان'],['قهوه ای.jpg','500 تومان'],['قهوه ای کرم.jpg','500 تومان'],
+['مشکی.jpg','500 تومان'],['نسکافه ای.jpg','500 تومان'],['کرم.jpg','500 تومان'],['کالباسی.jpg','500 تومان']
+];
+
+items.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
+slider.innerHTML+=`
+<div class="slide">
+<img src="${i[0]}">
+<button class="buy">${i[1]}</button>
+</div>`;
 });
 </script>
 
