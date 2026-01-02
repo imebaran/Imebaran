@@ -1,223 +1,157 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محصولات حجاب با تخفیف ویژه</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>محصولات من - سبک مایکت</title>
+  
+  <!-- فونت نزدیک به ایران‌سنس (رایگان و مشابه) -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+      background: #0a0e14;
+      color: #e6e6e6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      margin: 30px 0 40px;
+    }
+    h1 {
+      color: #ff6b00;
+      font-size: 2.1rem;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #a0a0a0;
+      font-size: 1.1rem;
+    }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background: #f8f9fa;
-    color: #333;
-    line-height: 1.5;
-    padding: 16px;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+    }
 
-/* کارت محصول - شبیه به نمونه مورد نظر، اندازه کوچکتر، دو ستونی */
-.product-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-}
+    .card {
+      background: #161b22;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+      transition: all 0.25s ease;
+      text-align: center;
+      position: relative;
+    }
 
-.checkbox {
-    margin-left: 8px;
-}
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(255,107,0,0.25);
+    }
 
-.product-img-container {
-    width: 80px;               /* اندازه کوچک مربعی */
-    height: 80px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #f0f0f0;
-}
+    .card img {
+      width: 100%;
+      height: 160px;           /* اندازه آیکون/عکس مایکت‌مانند */
+      object-fit: cover;
+      border-bottom: 1px solid #2a2f38;
+    }
 
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    .card-content {
+      padding: 14px 12px;
+    }
 
-.product-info {
-    flex: 1;
-    padding-right: 12px;
-}
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      color: #ffffff;
+      font-weight: 700;
+    }
 
-.product-title {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: #222;
-}
+    .card p {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
 
-.prices {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 13px;
-    margin-bottom: 4px;
-}
+    .btn {
+      background: #ff6b00;
+      color: white;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-block;
+    }
 
-.old-price {
-    text-decoration: line-through;
-    color: #999;
-}
+    .btn:hover {
+      background: #e65100;
+      transform: scale(1.04);
+    }
 
-.new-price {
-    font-weight: bold;
-    color: #d32f2f;
-}
-
-.discount {
-    font-size: 12px;
-    color: #e53935;
-    background: rgba(229,57,53,0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-top: 4px;
-}
-
-.add-btn {
-    background: #1976d2;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
-    margin-top: 4px;
-    width: 100%;
-    text-align: center;
-}
-
-/* دو ستونی در صفحه */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-/* هدر ساده */
-header {
-    text-align: center;
-    padding: 16px 0;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #222;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 16px;
-}
-
-/* نقل قول */
-.intro {
-    text-align: center;
-    font-size: 18px;
-    opacity: 0.85;
-    margin: 20px 0 24px;
-    padding: 0 12px;
-}
-</style>
+    @media (max-width: 480px) {
+      .grid { gap: 14px; }
+      .card img { height: 140px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>محصولات حجاب با تخفیف ویژه</header>
+  <header>
+    <h1>محصولات من</h1>
+    <p class="subtitle">رنگ‌ها و آیتم‌های مورد علاقه‌ام به سبک مایکت</p>
+  </header>
 
-<div class="intro" id="intro"></div>
+  <div class="container">
+    <div class="grid">
 
-<div class="grid" id="products"></div>
-
-<script>
-// نقل قول‌های تصادفی
-const texts = [
-    'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
-    'دل، همیشه زودتر از عقل خسته می‌شود.',
-    'سکوت، بلندترین فریادِ انسان است.',
-    'بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.',
-    'امید، آخرین چراغِ خانه‌ی دل است.',
-    'زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.',
-    'عشق، اتفاقی‌ست که به دل می‌افتد.',
-    'گاهی نبودن، مهربان‌تر از بودن است.',
-    'دل اگر آرام باشد، جهان کوتاه می‌آید.',
-    'خاطره‌ها پیر نمی‌شوند.',
-    'آدمی به اندازه‌ی رؤیاهایش زنده است.',
-    'بغض، واژه‌ای‌ست که راه گلو را گم کرده.',
-    'بعضی نگاه‌ها، تاریخ انقضا ندارند.',
-    'تنهایی، شلوغ‌ترین جای دنیاست.',
-    'دل بستن، همیشه خطر داشته است.',
-    'باران، دلتنگیِ آسمان است.',
-    'حقیقت، اغلب ساده اما تلخ است.',
-    'آدم‌ها می‌روند، ردپاها می‌مانند.',
-    'شب، همدستِ خیال است.',
-    'صبر، شکل مؤدبانه‌ی درد است.',
-    'دل، قانون نمی‌شناسد.',
-    'فاصله‌ها از یک سلام شروع می‌شوند.',
-    'لبخند، کوتاه‌ترین راهِ آرامش است.',
-    'گاهی باید رفت تا پیدا شد.',
-    'زندگی، تمرینِ دوام آوردن است.',
-    'خاطره، بوی زمان می‌دهد.',
-    'بعضی حرف‌ها، باید نانوشته بمانند.',
-    'دل‌تنگی، وزن ندارد اما سنگین است.',
-    'عشق، بلد نیست کم باشد.',
-    'هر پایان، شروعی خجالتی دارد.',
-    'زندگی، ادامه دارد.'
-];
-document.getElementById('intro').innerText = texts[Math.floor(Math.random() * texts.length)];
-
-// محصولات (با اطلاعات نمونه - می‌تونی تغییر بدی)
-const products = [
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/399.jpg', title: 'چادر مشکی ساده مدل ۳۹۹', old: '۹۰۰,۰۰۰', new: '۳۹۹,۰۰۰', discount: '۵۶٪', code: '399' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/520.jpg', title: 'مانتو بلند کرپ مدل ۵۲۰', old: '۹۸۰,۰۰۰', new: '۵۲۰,۰۰۰', discount: '۴۷٪', code: '520' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/568.jpg', title: 'چادر مجلسی مدل ۵۶۸', old: '۱,۰۵۰,۰۰۰', new: '۵۶۸,۰۰۰', discount: '۴۶٪', code: '568' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/590.jpg', title: 'ست حجاب مدل ۵۹۰', old: '۱,۱۰۰,۰۰۰', new: '۵۹۰,۰۰۰', discount: '۴۶٪', code: '590' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/640.jpg', title: 'مانتو عبایی مدل ۶۴۰', old: '۱,۲۰۰,۰۰۰', new: '۶۴۰,۰۰۰', discount: '۴۷٪', code: '640' },
-    { img: 'https://raw.githubusercontent.com/imebaran/Imebaran/main/830.jpg', title: 'چادر کرپ مجلسی مدل ۸۳۰', old: '۱,۵۰۰,۰۰۰', new: '۸۳۰,۰۰۰', discount: '۴۵٪', code: '830' },
-    // می‌تونی محصولات بیشتری اضافه کنی
-];
-
-const container = document.getElementById('products');
-
-products.forEach(product => {
-    container.innerHTML += `
-    <div class="product-card">
-        <input type="checkbox" class="checkbox">
-        <div class="product-img-container">
-            <img src="\( {product.img}" alt=" \){product.title}" class="product-img">
+      <div class="card">
+        <img src="مشکی.jpg" alt="مشکی">
+        <div class="card-content">
+          <h3>رنگ مشکی</h3>
+          <p>کلاسیک، شیک و همه‌کاره</p>
+          <button class="btn">انتخاب</button>
         </div>
-        <div class="product-info">
-            <div class="product-title">${product.title}</div>
-            <div class="prices">
-                <span class="old-price">${product.old} تومان</span>
-                <span class="new-price">${product.new} تومان</span>
-            </div>
-            <div class="discount">${product.discount} تخفیف</div>
-            <button class="add-btn" data-code="${product.code}">افزودن به سبد</button>
-        </div>
-    </div>`;
-});
+      </div>
 
-// عملکرد دکمه افزودن به سبد (ارسال sms)
-document.querySelectorAll('.add-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const code = btn.dataset.code;
-        window.location.href = `sms:09221620355?body=کد محصول: ${code} - درخواست خرید`;
-    });
-});
-</script>
+      <div class="card">
+        <img src="خاکستری.jpg" alt="خاکستری">
+        <div class="card-content">
+          <h3>خاکستری تیره</h3>
+          <p>مدرن و حرفه‌ای</p>
+          <button class="btn">انتخاب</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="قهوه ای.jpg" alt="قهوه‌ای">
+        <div class="card-content">
+          <h3>قهوه‌ای گرم</h3>
+          <p>طبیعی و آرامش‌بخش</p>
+          <button class="btn">انتخاب</button>
+        </div>
+      </div>
+
+      <!-- همینجا کارت‌های دیگه رو اضافه کن (کپی کن و فقط اسم عکس و متن رو عوض کن) -->
+
+    </div>
+  </div>
+
 </body>
 </html>
