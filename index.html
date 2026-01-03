@@ -15,8 +15,9 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .stats>div+div{border-right:1px solid #eee}
 .stats b{display:block;font-size:24px;color:#1fb6a6}
 .stats span{font-size:13px;color:#666}
-.rate b{direction:ltr;display:flex;justify-content:center;gap:2px}
-.rate .outof{color:#ff9800;font-size:24px}
+.rate b{direction:ltr;display:flex;justify-content:center;align-items:center;gap:2px}
+.rate .num{color:#1fb6a6;font-size:24px;line-height:1}
+.rate .outof{color:#ff9800;font-size:24px;line-height:1}
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
 .cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .cat svg{width:40px;height:40px}
@@ -60,10 +61,12 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 
 <script>
 document.querySelectorAll('.count').forEach(el=>{
-let t=+el.dataset.target,c=0,i=setInterval(()=>{c+=Math.ceil(t/40);if(c>=t){c=t;clearInterval(i)}
+let t=+el.dataset.target,c=0,i=setInterval(()=>{
+c+=Math.ceil(t/40);if(c>=t){c=t;clearInterval(i)}
 el.textContent='+'+c.toLocaleString('fa-IR')},30)})
 document.querySelectorAll('.score').forEach(s=>{
-let t=+s.dataset.target,c=0,i=setInterval(()=>{c+=0.1;if(c>=t){c=t;clearInterval(i)}
+let t=+s.dataset.target,c=0,i=setInterval(()=>{
+c+=0.1;if(c>=t){c=t;clearInterval(i)}
 s.querySelector('.num').textContent=c.toFixed(1)},40)})
 </script>
 
