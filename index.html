@@ -2,157 +2,70 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Imebaran</title>
-
 <style>
-@font-face{
-  font-family: Estedad;
-  src: url('Estedad-Regular.ttf');
-}
-body{
-  margin:0;
-  background:#f7f7f7;
-  font-family:Estedad;
-}
-
-/* ===== HEADER ===== */
+@font-face{font-family:Estedad;src:url('Estedad-Regular.ttf')}
+body{margin:0;background:#f7f7f7;font-family:Estedad}
 .header{padding:20px}
-.header-bar{
-  height:56px;
-  background:#fff;
-  border-radius:40px;
-  position:relative;
-  box-shadow:0 4px 12px rgba(0,0,0,.06)
-}
-.logo{
-  width:64px;height:64px;
-  background:#fff;
-  border-radius:50%;
-  position:absolute;
-  left:50%;top:50%;
-  transform:translate(-50%,-50%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-  box-shadow:0 4px 12px rgba(0,0,0,.08)
-}
-
-/* ===== STATS ===== */
-.stats{
-  display:flex;
-  background:#fff;
-  border-radius:24px;
-  padding:18px;
-  margin:20px;
-  box-shadow:0 6px 16px rgba(0,0,0,.06);
-  text-align:center
-}
+.header-bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
 .stats>div{flex:1}
 .stats>div+div{border-right:1px solid #eee}
-.stats b{
-  display:block;
-  font-size:24px;
-  color:#1fb6a6
-}
-.stats span{
-  font-size:13px;
-  color:#666
-}
-.rate b{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:2px
-}
-.rate .outof{
-  color:#ff9800;
-  font-size:24px
-}
-
-/* ===== CATEGORIES (قفل) ===== */
-.cats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin:20px
-}
-.cat{
-  background:#fff;
-  border-radius:16px;
-  aspect-ratio:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 12px rgba(0,0,0,.06)
-}
+.stats b{display:block;font-size:24px;color:#1fb6a6}
+.stats span{font-size:13px;color:#666}
+.rate b{direction:ltr;display:flex;justify-content:center;gap:2px}
+.rate .outof{color:#ff9800;font-size:24px}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
+.cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .cat svg{width:40px;height:40px}
-.cat svg *{
-  fill:none;
-  stroke:#C9A24D;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round
-}
-.cat span{
-  margin-top:6px;
-  font-size:13px;
-  color:#555
-}
+.cat svg *{fill:none;stroke:#C9A24D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cat span{margin-top:6px;font-size:13px;color:#555}
 </style>
 </head>
-
 <body>
 
 <header class="header">
-  <div class="header-bar">
-    <div class="logo">🌙</div>
-  </div>
+  <div class="header-bar"><div class="logo">🌙</div></div>
 </header>
 
 <section class="stats">
-  <div><b>+۸۰۰</b><span>فروش</span></div>
-  <div><b>+۲۰۰</b><span>مشتری</span></div>
+  <div><b class="count" data-target="800">+۰</b><span>فروش</span></div>
+  <div><b class="count" data-target="200">+۰</b><span>مشتری</span></div>
   <div class="rate">
-    <b>۴.۶<span class="outof">/۵</span></b>
+    <b class="score" data-target="4.6"><span class="num">۰.۰</span><span class="outof">/۵</span></b>
     <span>میانگین نظرات</span>
   </div>
 </section>
 
-<!-- ===== دکمه‌ها (قفل – بدون تغییر) ===== -->
+<!-- دکمه‌ها (قفل) -->
 <section class="cats">
-
 <div class="cat">
 <svg viewBox="0 0 64 64">
-<path d="M22 28 Q32 18 42 28"/>
-<path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/>
-<path d="M22 36 L42 36"/>
-</svg>
-<span>زنانه</span>
-</div>
-
+<path d="M22 28 Q32 18 42 28"/><path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/><path d="M22 36 L42 36"/>
+</svg><span>زنانه</span></div>
 <div class="cat">
 <svg viewBox="0 0 64 64">
-<path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/>
-<path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/>
-<path d="M22 29 L42 29"/>
-</svg>
-<span>مردانه</span>
-</div>
-
+<path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/><path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/><path d="M22 29 L42 29"/>
+</svg><span>مردانه</span></div>
 <div class="cat">
 <svg viewBox="0 0 64 64">
 <path d="M20 26 Q18 32 20 38 Q22 44 28 44 Q32 44 34 40 Q36 36 34 32 Q32 28 28 28 Q24 28 22 30 Z"/>
 <path d="M20 38 L20 42 Q24 46 28 46 Q32 46 36 42 L36 38"/>
 <path d="M30 22 Q28 28 30 34 Q32 40 38 40 Q42 40 44 36 Q46 32 44 28 Q42 24 38 24 Q34 24 32 26 Z"/>
 <path d="M24 46 Q18 50 22 54 Q28 58 36 56 Q42 54 46 56"/>
-</svg>
-<span>بچگانه</span>
-</div>
-
+</svg><span>بچگانه</span></div>
 </section>
+
+<script>
+document.querySelectorAll('.count').forEach(el=>{
+let t=+el.dataset.target,c=0,i=setInterval(()=>{c+=Math.ceil(t/40);if(c>=t){c=t;clearInterval(i)}
+el.textContent='+'+c.toLocaleString('fa-IR')},30)})
+document.querySelectorAll('.score').forEach(s=>{
+let t=+s.dataset.target,c=0,i=setInterval(()=>{c+=0.1;if(c>=t){c=t;clearInterval(i)}
+s.querySelector('.num').textContent=c.toFixed(1)},40)})
+</script>
 
 </body>
 </html>
