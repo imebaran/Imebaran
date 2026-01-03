@@ -1,58 +1,14 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Imebaran</title>
+<!doctype html><html lang=fa dir=rtl><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
 <style>
-@font-face{font-family:Estedad;src:url("Estedad-Regular.ttf")}
-body{margin:0;background:#F7F7F7;font-family:Estedad}
-.hdr{padding:20px}
-.bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;
-transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;
-box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.stats{display:flex;background:#fff;border-radius:24px;padding:20px;margin:20px;
-box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
-.stats div{flex:1}
-.stats b{display:block;font-size:24px;color:#1fb6a6}
-.stats span{font-size:14px;color:#666}
-.stats div+div{border-right:1px solid #eee}
+body{margin:0;background:#f7f7f7;font-family:Estedad}
+@font-face{font-family:Estedad;src:url(Estedad-Regular.ttf)}
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
-.cat{aspect-ratio:1;background:#fff;border-radius:16px;
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.cat svg{width:36px;height:36px;stroke:#C9A24D;fill:none;stroke-width:1.6}
-</style></head><body>
-
-<header class="hdr"><div class="bar"><div class="logo">🌙</div></div></header>
-
-<div class="stats">
-  <div><b>+۸۰۰</b><span>فروش</span></div>
-  <div><b>+۲۰۰</b><span>مشتری</span></div>
-  <div><b>۴.۵/۵</b><span>رضایت</span></div>
+.cat{aspect-ratio:1;background:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.cat img{width:36px;height:36px;filter:invert(67%) sepia(38%) saturate(420%) hue-rotate(6deg)}
+</style>
+<div class=cats>
+<div class=cat><img src="clothes-hanger--21293.svg"></div>
+<div class=cat><img src="boot--21292.svg"></div>
+<div class=cat><img src="hat-winter--21299.svg"></div>
 </div>
-
-<div class="cats">
-  <div class="cat">
-    <!-- لباس روی چوب‌لباسی -->
-    <svg viewBox="0 0 24 24">
-      <path d="M4 6h16"/>
-      <path d="M7 6l5 4 5-4"/>
-      <path d="M8 10l2 10h4l2-10"/>
-    </svg>
-  </div>
-  <div class="cat">
-    <!-- کفش زنانه -->
-    <svg viewBox="0 0 24 24">
-      <path d="M3 14h11l5 3v3H3z"/>
-      <path d="M15 14v3"/>
-    </svg>
-  </div>
-  <div class="cat">
-    <!-- کلاه -->
-    <svg viewBox="0 0 24 24">
-      <path d="M6 14a6 6 0 0 1 12 0"/>
-      <path d="M4 15h16"/>
-    </svg>
-  </div>
-</div>
-
-</body></html>
+</html>
