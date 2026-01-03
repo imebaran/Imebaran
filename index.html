@@ -16,10 +16,10 @@ box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
 .stats span{font-size:14px;color:#666}
 .stats div+div{border-right:1px solid #eee}
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
-.cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;
-align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.cat svg{width:32px;height:32px;stroke:#C9A24D}
-.cat span{margin-top:6px;font-size:13px;color:#555}
+.cat{aspect-ratio:1;background:#fff;border-radius:16px;
+display:flex;align-items:center;justify-content:center;
+box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.cat svg{width:34px;height:34px;stroke:#C9A24D;fill:none;stroke-width:1.5}
 </style></head><body>
 
 <header class="hdr"><div class="bar"><div class="logo">🌙</div></div></header>
@@ -27,31 +27,31 @@ align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 <div class="stats">
   <div><b>+۸۰۰</b><span>فروش</span></div>
   <div><b>+۲۰۰</b><span>مشتری</span></div>
-  <div><b>۴.۵/۵</b><span>میانگین نظرات</span></div>
+  <div><b>۴.۵/۵</b><span>رضایت</span></div>
 </div>
 
 <div class="cats">
   <div class="cat">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
-      <path d="M9 4l3 3 3-3"/>
-      <path d="M7 7l2 13h6l2-13"/>
+    <!-- لباس روی چوب‌لباسی -->
+    <svg viewBox="0 0 24 24">
+      <path d="M6 6l6 4 6-4"/>
+      <path d="M4 6c4 2 12 2 16 0"/>
+      <path d="M7 10l2 10h6l2-10"/>
     </svg>
-    <span>لباس مجلسی</span>
   </div>
-
   <div class="cat">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
-      <rect x="4" y="8" width="16" height="11" rx="3"/>
-      <path d="M9 8a3 3 0 0 1 6 0"/>
+    <!-- کفش زنانه -->
+    <svg viewBox="0 0 24 24">
+      <path d="M3 14h9l6 3c1 .5 2 .5 3 .5v2H3z"/>
+      <path d="M18 17v2"/>
     </svg>
-    <span>کیف</span>
   </div>
-
   <div class="cat">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
-      <path d="M3 15h10l6 3v2H3z"/>
+    <!-- کلاه -->
+    <svg viewBox="0 0 24 24">
+      <path d="M6 14a6 6 0 0 1 12 0"/>
+      <path d="M4 15h16"/>
     </svg>
-    <span>کفش زنانه</span>
   </div>
 </div>
 
