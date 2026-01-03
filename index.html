@@ -4,36 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Imebaran</title>
+
 <style>
 body{margin:0;background:#f7f7f7;font-family:Estedad}
 .header{padding:20px}
 .header-bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+
 .stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
 .stats div{flex:1}
 .stats b{display:block;font-size:24px;color:#1fb6a6}
 .stats span{font-size:13px;color:#666}
 .stats div+div{border-right:1px solid #eee}
+
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
 .cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.cat svg{width:40px;height:40px}
-.cat svg *{fill:none;stroke:#C9A24D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cat span{margin-top:6px;font-size:13px;color:#555}
+
 .product-slider{margin:20px}
 .slider{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
-.product{min-width:110px;aspect-ratio:1;background:#fff;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.06);scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:8px}
+.product{
+  min-width:110px;aspect-ratio:1;
+  background:#fff;border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  scroll-snap-align:start;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding-bottom:8px
+}
 .product img{width:100%;height:100%;object-fit:cover;border-radius:16px}
 .price{margin-top:4px;font-weight:bold}
-.code{font-size:12px;color:#999}
 .buy{margin-top:6px;padding:6px 14px;font-size:13px;border-radius:12px;background:#1FB6A6;color:#fff;border:none}
-.divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#1FB6A6}
+
+/* divider */
+.divider{
+  margin:26px 20px 10px;
+  text-align:center;
+  font-size:13px;
+  color:#E3A23A; /* نارنجی گرم نزدیک 🌙 */
+}
 </style>
 </head>
 
 <body>
 
 <header class="header">
-  <div class="header-bar"><div class="logo">🌙</div></div>
+  <div class="header-bar">
+    <div class="logo">🌙</div>
+  </div>
 </header>
 
 <section class="stats">
@@ -63,19 +81,21 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 
 <div class="divider">رنگ‌بندی محصولات</div>
 
-<!-- اسلایدر دوم (محصولات رنگی) -->
+<!-- اسلایدر دوم (نهایی) -->
 <section class="product-slider">
   <div class="slider">
+    <!-- ۶۱۵ -->
     <div class="product"><img src="آجری.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
     <div class="product"><img src="کالباسی.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
     <div class="product"><img src="سدری.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="مشکی.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
 
+    <!-- ۵۹۰ -->
     <div class="product"><img src="خاکستری.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
     <div class="product"><img src="قهوه ای کرم.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
 
+    <!-- ۸۸۵ -->
+    <div class="product"><img src="مشکی.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
     <div class="product"><img src="سبز.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="نسکافه‌ای.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
   </div>
 </section>
 
