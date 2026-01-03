@@ -1,14 +1,71 @@
-<!doctype html><html lang=fa dir=rtl><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Imebaran</title>
+
 <style>
+@font-face{font-family:Estedad;src:url("Estedad-Regular.ttf")}
 body{margin:0;background:#f7f7f7;font-family:Estedad}
-@font-face{font-family:Estedad;src:url(Estedad-Regular.ttf)}
+
+/* header */
+.header{padding:20px}
+.header-bar{height:56px;background:#fff;border-radius:40px;position:relative;
+box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.logo{width:64px;height:64px;background:#fff;border-radius:50%;
+position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+display:flex;align-items:center;justify-content:center;font-size:26px;
+box-shadow:0 4px 12px rgba(0,0,0,.08)}
+
+/* stats */
+.stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;
+box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
+.stats div{flex:1}
+.stats b{display:block;font-size:24px;color:#1fb6a6}
+.stats span{font-size:13px;color:#666}
+.stats div+div{border-right:1px solid #eee}
+
+/* buttons */
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
-.cat{aspect-ratio:1;background:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.cat img{width:36px;height:36px;filter:invert(67%) sepia(38%) saturate(420%) hue-rotate(6deg)}
+.cat{background:#fff;border-radius:16px;aspect-ratio:1;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.cat img{width:38px;height:38px;
+filter:grayscale(1) brightness(0) invert(1)
+sepia(1) saturate(600%) hue-rotate(8deg)}
+.cat span{margin-top:6px;font-size:13px;color:#555}
 </style>
-<div class=cats>
-<div class=cat><img src="clothes-hanger--21293.svg"></div>
-<div class=cat><img src="boot--21292.svg"></div>
-<div class=cat><img src="hat-winter--21299.svg"></div>
-</div>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-bar">
+    <div class="logo">🌙</div>
+  </div>
+</header>
+
+<section class="stats">
+  <div><b>+۸۰۰</b><span>فروش</span></div>
+  <div><b>+۲۰۰</b><span>مشتری</span></div>
+  <div><b>۴.۵/۵</b><span>رضایت</span></div>
+</section>
+
+<section class="cats">
+  <div class="cat">
+    <img src="24090_512.svg" alt="زنانه">
+    <span>زنانه</span>
+  </div>
+  <div class="cat">
+    <img src="24101_512.svg" alt="مردانه">
+    <span>مردانه</span>
+  </div>
+  <div class="cat">
+    <img src="24115_512.svg" alt="بچگانه">
+    <span>بچگانه</span>
+  </div>
+</section>
+
+</body>
 </html>
