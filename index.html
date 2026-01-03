@@ -1,46 +1,150 @@
-<!doctype html><html lang="fa" dir="rtl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Imebaran</title>
-<style>
-@font-face{font-family:Estedad;src:url("Estedad-Regular.ttf")}
-body{margin:0;background:#f7f7f7;font-family:Estedad}
-.header{padding:20px}.bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px #0001}
-.logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;
-transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px #0002}
-.stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px #0001;text-align:center}
-.stats div{flex:1}.stats b{display:block;font-size:24px;color:#1fb6a6}.stats span{font-size:13px;color:#666}
-.stats div+div{border-right:1px solid #eee}
-.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
-.cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;
-align-items:center;justify-content:center;box-shadow:0 4px 12px #0001}
-.cat svg{width:38px;height:38px}
-.cat svg *{fill:none!important;stroke:#C9A24D;stroke-width:1.6}
-.cat span{margin-top:6px;font-size:13px;color:#555}
-</style></head><body>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imebaran</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f7f7f7;
+      font-family: Estedad;
+    }
 
-<header class="header"><div class="bar"><div class="logo">🌙</div></div></header>
+    /* Header */
+    .header {
+      padding: 20px;
+    }
 
-<section class="stats">
-<div><b>+۸۰۰</b><span>فروش</span></div>
-<div><b>+۲۰۰</b><span>مشتری</span></div>
-</section>
+    .header-bar {
+      height: 56px;
+      background: #fff;
+      border-radius: 40px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    }
 
-<section class="cats">
-<div class="cat">
-<!-- زنانه -->
-<?xml version="1.0"?><?= file_get_contents("dress--24090.svg"); ?>
-<span>زنانه</span>
-</div>
-<div class="cat">
-<!-- مردانه -->
-<?xml version="1.0"?><?= file_get_contents("hat--24101.svg"); ?>
-<span>مردانه</span>
-</div>
-<div class="cat">
-<!-- بچگانه -->
-<?xml version="1.0"?><?= file_get_contents("bow-tie--24130.svg"); ?>
-<span>بچگانه</span>
-</div>
-</section>
+    .logo {
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    }
 
-</body></html>
+    /* Stats */
+    .stats {
+      display: flex;
+      background: #fff;
+      border-radius: 24px;
+      padding: 18px;
+      margin: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+      text-align: center;
+    }
+
+    .stats div {
+      flex: 1;
+    }
+
+    .stats b {
+      display: block;
+      font-size: 24px;
+      color: #1fb6a6;
+    }
+
+    .stats span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .stats div + div {
+      border-right: 1px solid #eee;
+    }
+
+    /* Buttons */
+    .cats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px;
+    }
+
+    .cat {
+      background: #fff;
+      border-radius: 16px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    }
+
+    .cat svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .cat svg * {
+      fill: none !important;
+      stroke: #C9A24D;
+      stroke-width: 1.6;
+    }
+
+    .cat span {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-bar">
+      <div class="logo">🌙</div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div><b>+۸۰۰</b><span>فروش</span></div>
+    <div><b>+۲۰۰</b><span>مشتری</span></div>
+  </section>
+
+  <section class="cats">
+    <div class="cat">
+      <!-- زنانه (لباس) -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24D" stroke-width="1.6">
+        <path d="M12 2C10 2 8 4 8 6V8L6 14H18L16 8V6C16 4 14 2 12 2Z"/>
+      </svg>
+      <span>زنانه</span>
+    </div>
+    <div class="cat">
+      <!-- مردانه (کلاه) -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24D" stroke-width="1.6">
+        <path d="M5 11C7 9 9 10 12 10C15 10 17 9 19 11C21 13 19 16 16 17H8C5 16 3 13 5 11Z"/>
+      </svg>
+      <span>مردانه</span>
+    </div>
+    <div class="cat">
+      <!-- بچگانه (پاپیون) -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24D" stroke-width="1.6">
+        <path d="M16 12L8 12L8 14L16 14L16 12ZM9.5 11L8 10L8 12L9.5 11ZM15.5 11L14 10L14 12L15.5 11Z"/>
+      </svg>
+      <span>بچگانه</span>
+    </div>
+  </section>
+
+</body>
+
+</html>
