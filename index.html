@@ -33,10 +33,9 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 
 .divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
-/* trust box (ONLY ADDITION) */
-.trust{display:flex;gap:12px;margin:20px;padding:14px;background:#fff;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.06);text-align:center;font-size:12px;color:#666}
-.trust div{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
-.trust svg{width:22px;height:22px;stroke:#C9A24D;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* grid products */
+.grid-products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px}
+.grid-products .product{min-width:auto;aspect-ratio:1}
 </style>
 </head>
 
@@ -105,19 +104,13 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   </div>
 </section>
 
-<section class="trust">
-  <div>
-    <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M5 12l2 4h10l2-4"/></svg>
-    <span>ارسال سریع</span>
-  </div>
-  <div>
-    <svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-7 9-7 9s-7-4-7-9V7z"/></svg>
-    <span>پرداخت امن</span>
-  </div>
-  <div>
-    <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-    <span>پشتیبانی واتساپی</span>
-  </div>
+<section class="grid-products">
+  <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="2.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="3.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="4.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="5.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="6.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
 </section>
 
 </body>
