@@ -7,10 +7,13 @@
 
 <style>
 body{margin:0;background:#f7f7f7;font-family:Estedad}
+
+/* header */
 .header{padding:20px}
 .header-bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
 
+/* stats */
 .stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
 .stats div{flex:1}
 .stats b{display:block;font-size:24px;color:#1fb6a6}
@@ -24,23 +27,55 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .cat svg *{fill:none;stroke:#C9A24D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cat span{margin-top:6px;font-size:13px;color:#555}
 
+/* slider */
 .product-slider{margin:20px}
 .slider{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
-.product{min-width:110px;aspect-ratio:1;background:#fff;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.06);scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:8px}
+.product{
+  min-width:110px;
+  aspect-ratio:1;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  scroll-snap-align:start;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  padding-bottom:8px
+}
 .product img{width:100%;height:100%;object-fit:cover;border-radius:16px}
 .price{margin-top:4px;font-weight:bold}
 .buy{margin-top:6px;padding:6px 14px;font-size:13px;border-radius:12px;background:#1FB6A6;color:#fff;border:none}
 
+/* divider */
 .divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
-/* grid products – 2 columns full mobile width */
-.grid-products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px}
-.grid-products .product{width:100%;aspect-ratio:1}
+/* grid products (NEW) */
+.grid-products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:20px
+}
+.grid-products .product{
+  min-width:unset;
+  width:100%;
+  aspect-ratio:1
+}
 
-/* trust box (LOCKED SVG) */
-.trust{background:#fff;border-radius:20px;margin:20px;padding:14px;display:flex;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.trust div{flex:1;text-align:center;font-size:12px;color:#555}
-.trust svg{width:28px;height:28px;stroke:#1FB6A6;fill:none;stroke-width:2}
+/* trust box (LOCKED) */
+.trust{
+  margin:20px;
+  background:#fff;
+  border-radius:20px;
+  padding:16px;
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.06)
+}
+.trust svg{width:28px;height:28px}
+.trust span{display:block;font-size:12px;margin-top:6px;color:#555}
 </style>
 </head>
 
@@ -56,11 +91,33 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 </section>
 
 <section class="cats">
-  <div class="cat"><svg viewBox="0 0 64 64"><path d="M22 28 Q32 18 42 28"/><path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/><path d="M22 36 L42 36"/></svg><span>زنانه</span></div>
-  <div class="cat"><svg viewBox="0 0 64 64"><path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/><path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/><path d="M22 29 L42 29"/></svg><span>مردانه</span></div>
-  <div class="cat"><svg viewBox="0 0 64 64"><path d="M20 26 Q18 32 20 38 Q22 44 28 44"/><path d="M20 38 L20 42 Q24 46 28 46"/><path d="M30 22 Q28 28 30 34 Q32 40 38 40"/></svg><span>بچگانه</span></div>
+  <div class="cat">
+    <svg viewBox="0 0 64 64">
+      <path d="M22 28 Q32 18 42 28"/>
+      <path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/>
+      <path d="M22 36 L42 36"/>
+    </svg>
+    <span>زنانه</span>
+  </div>
+  <div class="cat">
+    <svg viewBox="0 0 64 64">
+      <path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/>
+      <path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/>
+      <path d="M22 29 L42 29"/>
+    </svg>
+    <span>مردانه</span>
+  </div>
+  <div class="cat">
+    <svg viewBox="0 0 64 64">
+      <path d="M20 26 Q18 32 20 38 Q22 44 28 44"/>
+      <path d="M20 38 L20 42 Q24 46 28 46"/>
+      <path d="M30 22 Q28 28 30 34 Q32 40 38 40"/>
+    </svg>
+    <span>بچگانه</span>
+  </div>
 </section>
 
+<!-- اسلایدرها (بدون تغییر) -->
 <section class="product-slider">
   <div class="slider">
     <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
@@ -83,17 +140,22 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
     <div class="product"><img src="خاکستری.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
     <div class="product"><img src="قهوه ای کرم.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
     <div class="product"><img src="مشکی.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="سبز.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
   </div>
 </section>
 
-<!-- TRUST BOX (UNDER SLIDER) -->
+<!-- باکس امن (قفل) -->
 <section class="trust">
-  <div><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg><br>پرداخت امن</div>
-  <div><svg viewBox="0 0 24 24"><path d="M3 12h18M7 12v8M17 12v8"/></svg><br>ارسال سریع</div>
-  <div><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><br>پشتیبانی</div>
+  <div>
+    <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg>
+    <span>پرداخت امن</span>
+  </div>
+  <div>
+    <svg viewBox="0 0 24 24"><path d="M3 12l5 5L21 4"/></svg>
+    <span>تضمین کیفیت</span>
+  </div>
 </section>
 
+<!-- گرید ثابت محصولات -->
 <section class="grid-products">
   <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
   <div class="product"><img src="2.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
