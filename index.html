@@ -33,18 +33,23 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 
 .divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
-/* grid products (MOBILE ONLY) */
+/* grid products – SAME SIZE AS SLIDER */
 .grid-products{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin:16px;
-  max-width:480px;
+  grid-template-columns:repeat(2,110px);
+  gap:12px;
+  margin:16px auto;
+  justify-content:center;
 }
 .grid-products .product{
-  min-width:auto;
+  width:110px;
   aspect-ratio:1;
 }
+
+/* trust box */
+.trust{background:#fff;border-radius:20px;margin:20px;padding:14px;display:flex;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.trust div{flex:1;text-align:center;font-size:12px;color:#555}
+.trust svg{width:28px;height:28px;stroke:#1FB6A6;fill:none;stroke-width:2}
 </style>
 </head>
 
@@ -65,24 +70,21 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
       <path d="M22 28 Q32 18 42 28"/>
       <path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/>
       <path d="M22 36 L42 36"/>
-    </svg>
-    <span>زنانه</span>
+    </svg><span>زنانه</span>
   </div>
   <div class="cat">
     <svg viewBox="0 0 64 64">
       <path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/>
       <path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/>
       <path d="M22 29 L42 29"/>
-    </svg>
-    <span>مردانه</span>
+    </svg><span>مردانه</span>
   </div>
   <div class="cat">
     <svg viewBox="0 0 64 64">
       <path d="M20 26 Q18 32 20 38 Q22 44 28 44"/>
       <path d="M20 38 L20 42 Q24 46 28 46"/>
       <path d="M30 22 Q28 28 30 34 Q32 40 38 40"/>
-    </svg>
-    <span>بچگانه</span>
+    </svg><span>بچگانه</span>
   </div>
 </section>
 
@@ -119,6 +121,12 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   <div class="product"><img src="4.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
   <div class="product"><img src="5.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
   <div class="product"><img src="6.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
+</section>
+
+<section class="trust">
+  <div><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg><br>پرداخت امن</div>
+  <div><svg viewBox="0 0 24 24"><path d="M3 12h18M7 12v8M17 12v8"/></svg><br>ارسال سریع</div>
+  <div><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><br>پشتیبانی</div>
 </section>
 
 </body>
