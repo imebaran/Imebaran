@@ -33,9 +33,18 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 
 .divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
-/* grid products */
-.grid-products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px}
-.grid-products .product{min-width:auto;aspect-ratio:1}
+/* grid products (MOBILE ONLY) */
+.grid-products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:16px;
+  max-width:480px;
+}
+.grid-products .product{
+  min-width:auto;
+  aspect-ratio:1;
+}
 </style>
 </head>
 
@@ -83,7 +92,6 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
     <div class="product"><img src="520.jpg"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
     <div class="product"><img src="568.jpg"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
     <div class="product"><img src="590.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="615.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
     <div class="product"><img src="640.jpg"><div class="price">۶۴۰</div><button class="buy">خرید</button></div>
     <div class="product"><img src="830.jpg"><div class="price">۸۳۰</div><button class="buy">خرید</button></div>
     <div class="product"><img src="885.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
