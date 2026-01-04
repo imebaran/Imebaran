@@ -20,23 +20,39 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .stats span{font-size:13px;color:#666}
 .stats div+div{border-right:1px solid #eee}
 
-/* cats LOCKED */
+/* cats (LOCKED) */
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
 .cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.cat svg{width:40px;height:40px}
-.cat svg *{fill:none;stroke:#C9A24D;stroke-width:2}
+.cat svg{width:40px;height:40px;display:block}
+.cat svg *{fill:none;stroke:#C9A24D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cat span{margin-top:6px;font-size:13px;color:#555}
 
-/* sliders */
+/* slider */
 .product-slider{margin:20px}
 .slider{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
-.product{min-width:110px;aspect-ratio:1;background:#fff;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.06);scroll-snap-align:start;display:flex;flex-direction:column}
+.product{
+  min-width:110px;aspect-ratio:1;
+  background:#fff;border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  scroll-snap-align:start;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding-bottom:8px
+}
 .product img{width:100%;height:100%;object-fit:cover;border-radius:16px}
-.price{text-align:center;font-weight:bold;margin-top:4px}
-.buy{margin:6px auto 8px;padding:6px 14px;font-size:13px;border-radius:12px;background:#1FB6A6;color:#fff;border:none}
+.price{margin-top:4px;font-weight:bold}
+.buy{
+  margin-top:6px;
+  padding:6px 14px;
+  font-size:13px;
+  border-radius:12px;
+  background:#1FB6A6;
+  color:#fff;
+  border:none;
+}
 
 /* divider */
-.divider{text-align:center;margin:26px 20px 10px;font-size:13px;color:#E3A23A}
+.divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
 /* trust image */
 .trust-img{margin:20px}
@@ -44,7 +60,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   width:100%;
   height:120px;
   object-fit:cover;
-  object-position:top center;
+  object-position:top 20%;
   border-radius:16px;
 }
 
@@ -56,7 +72,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   gap:12px;
   margin:20px;
 }
-.grid-products .product{min-width:110px}
+.grid-products .product{width:110px}
 .grid-products .buy{background:#E3A23A}
 </style>
 </head>
@@ -64,9 +80,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 <body>
 
 <header class="header">
-  <div class="header-bar">
-    <div class="logo">🌙</div>
-  </div>
+  <div class="header-bar"><div class="logo">🌙</div></div>
 </header>
 
 <section class="stats">
@@ -75,50 +89,68 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 </section>
 
 <section class="cats">
-  <div class="cat"><span>زنانه</span></div>
-  <div class="cat"><span>مردانه</span></div>
-  <div class="cat"><span>بچگانه</span></div>
+  <div class="cat">
+    <svg viewBox="0 0 64 64">
+      <path d="M22 28 Q32 18 42 28"/>
+      <path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/>
+      <path d="M22 36 L42 36"/>
+    </svg>
+    <span>زنانه</span>
+  </div>
+  <div class="cat">
+    <svg viewBox="0 0 64 64">
+      <path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/>
+      <path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/>
+      <path d="M22 29 L42 29"/>
+    </svg>
+    <span>مردانه</span>
+  </div>
+  <div class="cat">
+    <svg viewBox="0 0 64 64">
+      <path d="M20 26 Q18 32 20 38 Q22 44 28 44"/>
+      <path d="M20 38 L20 42 Q24 46 28 46"/>
+      <path d="M30 22 Q28 28 30 34 Q32 40 38 40"/>
+    </svg>
+    <span>بچگانه</span>
+  </div>
 </section>
 
-<!-- slider 1 -->
 <section class="product-slider">
   <div class="slider">
-    <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="520.jpg"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="568.jpg"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="590.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="640.jpg"><div class="price">۶۴۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="830.jpg"><div class="price">۸۳۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="885.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="520.jpg"><div class="price">۵۲۰</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="568.jpg"><div class="price">۵۶۸</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="590.jpg"><div class="price">۵۹۰</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="640.jpg"><div class="price">۶۴۰</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="830.jpg"><div class="price">۸۳۰</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="885.jpg"><div class="price">۸۸۵</div><button class="buy">🛒 خرید</button></div>
   </div>
 </section>
 
 <div class="divider">رنگ‌بندی محصولات</div>
 
-<!-- slider 2 -->
 <section class="product-slider">
   <div class="slider">
-    <div class="product"><img src="آجری.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="کالباسی.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="سدری.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="خاکستری.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="قهوه ای کرم.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="مشکی.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="آجری.jpg"><div class="price">۶۱۵</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="کالباسی.jpg"><div class="price">۶۱۵</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="سدری.jpg"><div class="price">۶۱۵</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="خاکستری.jpg"><div class="price">۵۹۰</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="قهوه ای کرم.jpg"><div class="price">۵۹۰</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="مشکی.jpg"><div class="price">۸۸۵</div><button class="buy">🛒 خرید</button></div>
+    <div class="product"><img src="سبز.jpg"><div class="price">۸۸۵</div><button class="buy">🛒 خرید</button></div>
   </div>
 </section>
 
-<!-- trust image -->
 <section class="trust-img">
-  <img src="image_1767487670494.jpeg">
+  <img src="image_1767487670494.jpeg" alt="اعتماد">
 </section>
 
-<!-- grid products (5 items) -->
 <section class="grid-products">
-  <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
-  <div class="product"><img src="3.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
-  <div class="product"><img src="4.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
-  <div class="product"><img src="5.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
-  <div class="product"><img src="6.jpg"><div class="price">۷۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">🛒 خرید</button></div>
+  <div class="product"><img src="3.jpg"><div class="price">۴۸۰</div><button class="buy">🛒 خرید</button></div>
+  <div class="product"><img src="4.jpg"><div class="price">۷۸۰</div><button class="buy">🛒 خرید</button></div>
+  <div class="product"><img src="5.jpg"><div class="price">۷۸۰</div><button class="buy">🛒 خرید</button></div>
+  <div class="product"><img src="6.jpg"><div class="price">۷۸۰</div><button class="buy">🛒 خرید</button></div>
 </section>
 
 </body>
