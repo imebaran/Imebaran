@@ -27,20 +27,16 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .cat svg *{fill:none;stroke:#C9A24D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cat span{margin-top:6px;font-size:13px;color:#555}
 
-/* slider */
+/* slider (LOCKED) */
 .product-slider{margin:20px}
 .slider{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
 .product{
-  min-width:110px;
-  aspect-ratio:1;
-  background:#fff;
-  border-radius:16px;
+  min-width:110px;aspect-ratio:1;
+  background:#fff;border-radius:16px;
   box-shadow:0 4px 12px rgba(0,0,0,.06);
   scroll-snap-align:start;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-end;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
   padding-bottom:8px
 }
 .product img{width:100%;height:100%;object-fit:cover;border-radius:16px}
@@ -50,20 +46,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 /* divider */
 .divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
-/* grid products (NEW) */
-.grid-products{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin:20px
-}
-.grid-products .product{
-  min-width:unset;
-  width:100%;
-  aspect-ratio:1
-}
-
-/* trust box (LOCKED) */
+/* trust box (LOCKED, FIXED) */
 .trust{
   margin:20px;
   background:#fff;
@@ -74,8 +57,23 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   text-align:center;
   box-shadow:0 4px 12px rgba(0,0,0,.06)
 }
-.trust svg{width:28px;height:28px}
+.trust svg{width:26px;height:26px}
+.trust svg *{stroke:#C9A24D;fill:none;stroke-width:1.8}
 .trust span{display:block;font-size:12px;margin-top:6px;color:#555}
+
+/* grid products (FIXED SIZE) */
+.grid-products{
+  display:grid;
+  grid-template-columns:repeat(3,110px);
+  justify-content:center;
+  gap:12px;
+  margin:20px
+}
+.grid-products .product{
+  width:110px;
+  min-width:110px;
+  aspect-ratio:1
+}
 </style>
 </head>
 
@@ -91,33 +89,11 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 </section>
 
 <section class="cats">
-  <div class="cat">
-    <svg viewBox="0 0 64 64">
-      <path d="M22 28 Q32 18 42 28"/>
-      <path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/>
-      <path d="M22 36 L42 36"/>
-    </svg>
-    <span>زنانه</span>
-  </div>
-  <div class="cat">
-    <svg viewBox="0 0 64 64">
-      <path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/>
-      <path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/>
-      <path d="M22 29 L42 29"/>
-    </svg>
-    <span>مردانه</span>
-  </div>
-  <div class="cat">
-    <svg viewBox="0 0 64 64">
-      <path d="M20 26 Q18 32 20 38 Q22 44 28 44"/>
-      <path d="M20 38 L20 42 Q24 46 28 46"/>
-      <path d="M30 22 Q28 28 30 34 Q32 40 38 40"/>
-    </svg>
-    <span>بچگانه</span>
-  </div>
+  <div class="cat"><svg viewBox="0 0 64 64"><path d="M22 28 Q32 18 42 28"/><path d="M18 28 Q18 44 22 44 L42 44 Q46 44 46 28 Z"/><path d="M22 36 L42 36"/></svg><span>زنانه</span></div>
+  <div class="cat"><svg viewBox="0 0 64 64"><path d="M14 34 Q32 28 50 34 Q32 40 14 34 Z"/><path d="M22 24 Q32 18 42 24 L42 32 Q32 36 22 32 Z"/><path d="M22 29 L42 29"/></svg><span>مردانه</span></div>
+  <div class="cat"><svg viewBox="0 0 64 64"><path d="M20 26 Q18 32 20 38 Q22 44 28 44"/><path d="M20 38 L20 42 Q24 46 28 46"/><path d="M30 22 Q28 28 30 34 Q32 40 38 40"/></svg><span>بچگانه</span></div>
 </section>
 
-<!-- اسلایدرها (بدون تغییر) -->
 <section class="product-slider">
   <div class="slider">
     <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
@@ -143,19 +119,11 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   </div>
 </section>
 
-<!-- باکس امن (قفل) -->
 <section class="trust">
-  <div>
-    <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg>
-    <span>پرداخت امن</span>
-  </div>
-  <div>
-    <svg viewBox="0 0 24 24"><path d="M3 12l5 5L21 4"/></svg>
-    <span>تضمین کیفیت</span>
-  </div>
+  <div><svg viewBox="0 0 24 24"><path d="M12 2l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5z"/></svg><span>پرداخت امن</span></div>
+  <div><svg viewBox="0 0 24 24"><path d="M3 12l5 5L21 4"/></svg><span>تضمین کیفیت</span></div>
 </section>
 
-<!-- گرید ثابت محصولات -->
 <section class="grid-products">
   <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
   <div class="product"><img src="2.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
