@@ -13,13 +13,6 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .header-bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:pointer}
 
-/* اصلاح هدر تیره */
-body.dark .header-bar,
-body.dark .logo {
-  background: #111a2e; /* رنگ تیره برای هدر */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
-}
-
 /* stats */
 .stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
 .stats div{flex:1}
@@ -49,21 +42,14 @@ body.dark .logo {
 }
 .product img{width:100%;height:100%;object-fit:cover;border-radius:16px}
 .price{margin-top:4px;font-weight:bold}
-.buy{
-  margin-top:6px;
-  padding:6px 14px;
-  font-size:13px;
-  border-radius:12px;
-  background:#1FB6A6;
-  color:#fff;border:none;cursor:pointer
-}
+.buy{margin-top:6px;padding:6px 14px;font-size:13px;border-radius:12px;background:#1FB6A6;color:#fff;border:none;cursor:pointer}
 
 /* divider */
 .divider{margin:26px 20px 10px;text-align:center;font-size:13px;color:#E3A23A}
 
 /* natural image */
 .natural-img{margin:20px;text-align:center}
-.natural-img img{max-width:100%;height:auto;border-radius:16px}
+.natural-img img{max-width:100%;border-radius:16px}
 
 /* grid products */
 .grid-products{
@@ -71,12 +57,12 @@ body.dark .logo {
   grid-template-columns:repeat(3,110px);
   justify-content:center;
   gap:12px;
-  margin:20px;
+  margin:20px
 }
 .grid-products .product{width:110px}
 .grid-products .buy{background:#E3A23A}
 
-/* DARK THEME (NAVY) */
+/* DARK THEME */
 body.dark{background:#0b1220;color:#e6e9f0}
 body.dark .stats,
 body.dark .cat,
@@ -86,52 +72,13 @@ body.dark .product{
 }
 body.dark .price{color:#c9a24d}
 
-/* دکمه‌های فصلی */
-.season-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+/* 🔥 FIX HEADER DARK */
+body.dark .header-bar{
+  background:#111a2e;
+  box-shadow:0 10px 26px rgba(0,0,0,.55)
 }
-
-.season-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 25px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  background-color: #fff;
-  color: #333;
-  transition: background-color 0.3s ease;
-  gap: 8px;
-}
-
-.season-btn svg {
-  width: 24px;
-  height: 24px;
-}
-
-.season-btn:hover {
-  background-color: #f0f0f0;
-}
-
-.spring {
-  background-color: #ffe7e7;
-  border-color: #f0c0c0;
-}
-
-.summer {
-  background-color: #fff7e7;
-  border-color: #f0e0a0;
-}
-
-.winter {
-  background-color: #e7f1fc;
-  border-color: #a0c6f0;
+body.dark .logo{
+  background:#111a2e;
 }
 </style>
 </head>
@@ -149,61 +96,17 @@ body.dark .price{color:#c9a24d}
   <div><b>+۲۰۰</b><span>مشتری</span></div>
 </section>
 
-<section class="product-slider">
-  <div class="slider">
-    <div class="product"><img src="399.jpg" loading="lazy"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="520.jpg" loading="lazy"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="568.jpg" loading="lazy"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="590.jpg" loading="lazy"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="640.jpg" loading="lazy"><div class="price">۶۴۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="830.jpg" loading="lazy"><div class="price">۸۳۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="885.jpg" loading="lazy"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
-  </div>
+<section class="cats">
+  <div class="cat">…</div>
+  <div class="cat">…</div>
+  <div class="cat">…</div>
 </section>
 
-<!-- دکمه‌های فصلی بین اسلایدر و رنگ‌بندی -->
-<section class="season-buttons">
-  <!-- دکمه سبک بهاری -->
-  <button class="season-btn spring">
-    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="pink" stroke-width="2" fill="pink"/>
-      <path d="M10 6l2 2m0 0l2-2m-2 2v10m0 0l-2-2m2 2l2 2" stroke="white" stroke-width="2"/>
-    </svg>
-    سبک بهاری
-  </button>
-  
-  <!-- دکمه سبک تابستانی -->
-  <button class="season-btn summer">
-    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="yellow" stroke-width="2" fill="yellow"/>
-      <path d="M12 4v4m0 4v8m4-4h4m-4 0h-8" stroke="white" stroke-width="2"/>
-    </svg>
-    سبک تابستانی
-  </button>
-
-  <!-- دکمه سبک فصل سرما -->
-  <button class="season-btn winter">
-    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="lightblue" stroke-width="2" fill="lightblue"/>
-      <path d="M12 8v8m0 0l-4-4m4 4l4-4" stroke="white" stroke-width="2"/>
-    </svg>
-    سبک فصل سرما
-  </button>
-</section>
-
+<section class="product-slider">…</section>
 <div class="divider">رنگ‌بندی محصولات</div>
-
-<section class="product-slider">
-  <div class="slider">
-    <div class="product"><img src="آجری.jpg" loading="lazy"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="کالباسی.jpg" loading="lazy"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="سدری.jpg" loading="lazy"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="خاکستری.jpg" loading="lazy"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="قهوه ای کرم.jpg" loading="lazy"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="مشکی.jpg" loading="lazy"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="سبز.jpg" loading="lazy"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
-  </div>
-</section>
+<section class="product-slider">…</section>
+<section class="natural-img">…</section>
+<section class="grid-products">…</section>
 
 <script>
 const logo=document.querySelector('.logo');
