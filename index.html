@@ -33,7 +33,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .stats span{font-size:13px;color:#666}
 .stats div+div{border-right:1px solid #eee}
 
-/* cats & buttons */
+/* cats / buttons */
 .cats{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:12px;margin:20px
@@ -43,7 +43,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   display:flex;flex-direction:column;align-items:center;
   justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)
 }
-.cat svg{width:40px;height:40px}
+.cat svg{width:38px;height:38px}
 .cat svg *{
   fill:none;stroke:#C9A24D;stroke-width:2;
   stroke-linecap:round;stroke-linejoin:round
@@ -78,11 +78,11 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
   font-size:13px;color:#E3A23A
 }
 
-/* natural image */
+/* image */
 .natural-img{margin:20px;text-align:center}
 .natural-img img{max-width:100%;border-radius:16px}
 
-/* grid products */
+/* grid */
 .grid-products{
   display:grid;grid-template-columns:repeat(3,110px);
   justify-content:center;gap:12px;margin:20px
@@ -116,6 +116,7 @@ body.dark .price{color:#c9a24d}
   <div><b>+۲۰۰</b><span>مشتری</span></div>
 </section>
 
+<!-- اسلایدر افقی -->
 <section class="product-slider">
   <div class="slider">
     <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
@@ -124,35 +125,39 @@ body.dark .price{color:#c9a24d}
   </div>
 </section>
 
-<!-- دکمه‌ها زیر اسلایدر -->
+<!-- دکمه‌ها دقیقاً اینجا -->
 <section class="cats">
   <div class="cat">
     <svg viewBox="0 0 24 24"><path d="M12 3l3 6 6 .9-4.5 4.4 1 6.2L12 17l-5.5 3.5 1-6.2L3 9.9 9 9z"/></svg>
     <span>چالش‌ها</span>
   </div>
   <div class="cat">
-    <svg viewBox="0 0 24 24"><path d="M4 4h16v10H7l-3 3V4z"/><path d="M9 9h6"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M4 4h16v10H7l-3 3V4z"/></svg>
     <span>پشتیبانی</span>
   </div>
   <div class="cat">
-    <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+    <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8"/></svg>
     <span>کد رهگیری</span>
   </div>
 </section>
 
 <div class="divider">رنگ‌بندی محصولات</div>
 
+<!-- اسلایدر رنگ‌بندی -->
 <section class="product-slider">
   <div class="slider">
     <div class="product"><img src="ajori.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
     <div class="product"><img src="black.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="green.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
   </div>
 </section>
 
+<!-- عکس زیر رنگ‌بندی -->
 <section class="natural-img">
   <img src="20260104_043432.jpg">
 </section>
 
+<!-- گرید محصولات -->
 <section class="grid-products">
   <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
   <div class="product"><img src="3.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
