@@ -13,6 +13,13 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 .header-bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:pointer}
 
+/* اصلاح هدر تیره */
+body.dark .header-bar,
+body.dark .logo {
+  background: #111a2e; /* رنگ تیره برای هدر */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+}
+
 /* stats */
 .stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
 .stats div{flex:1}
@@ -23,7 +30,7 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 /* cats (LOCKED) */
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px}
 .cat{background:#fff;border-radius:16px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.cat svg{width:40px;height:40px;display:block}
+.cat svg{width:40px;height:40px}
 .cat svg *{fill:none;stroke:#C9A24D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cat span{margin-top:6px;font-size:13px;color:#555}
 
@@ -125,13 +132,6 @@ body.dark .price{color:#c9a24d}
 .winter {
   background-color: #e7f1fc;
   border-color: #a0c6f0;
-}
-
-/* اصلاح هدر تیره */
-body.dark .header-bar,
-body.dark .logo {
-  background: #111a2e; /* رنگ تیره برای هدر */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
 }
 </style>
 </head>
