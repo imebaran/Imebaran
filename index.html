@@ -11,38 +11,8 @@ body{margin:0;background:#f7f7f7;font-family:Estedad}
 /* header */
 .header{padding:20px}
 .header-bar{height:56px;background:#fff;border-radius:40px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.logo{
-  width:64px;
-  height:64px;
-  background:#fff;
-  border-radius:50%;
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-  cursor:pointer;
-  z-index:1;
-}
-/* هاله نور */
-.logo::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:radial-gradient(circle, rgba(255,255,200,0.6) 0%, rgba(255,255,200,0) 70%);
-  animation:halo 2.5s infinite ease-in-out;
-  z-index:-1;
-}
-@keyframes halo{
-  0%{transform:scale(1);opacity:0.7}
-  50%{transform:scale(1.4);opacity:0.4}
-  100%{transform:scale(1);opacity:0.7}
-}
+.logo{width:64px;height:64px;background:#fff;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.08);cursor:pointer;overflow:visible}
+.logo img{width:90px;height:auto;position:absolute;top:-5px;left:-13px}
 
 /* stats */
 .stats{display:flex;background:#fff;border-radius:24px;padding:18px;margin:20px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:center}
@@ -87,9 +57,6 @@ body.dark .product{background:#111a2e;box-shadow:0 10px 26px rgba(0,0,0,.55)}
 body.dark .price{color:#c9a24d}
 body.dark .header-bar{background:#111a2e;box-shadow:0 10px 26px rgba(0,0,0,.55)}
 body.dark .logo{background:#111a2e;color:#c9a24d}
-body.dark .logo::before{
-  background:radial-gradient(circle, rgba(201,162,77,0.6) 0%, rgba(201,162,77,0) 70%);
-}
 </style>
 </head>
 
@@ -97,7 +64,9 @@ body.dark .logo::before{
 
 <header class="header">
   <div class="header-bar">
-    <div class="logo">🌙</div>
+    <div class="logo">
+      <img src="روسری.png" alt="Imebaran Logo">
+    </div>
   </div>
 </header>
 
@@ -114,13 +83,13 @@ body.dark .logo::before{
 
 <section class="product-slider">
   <div class="slider">
-    <div class="product"><img src="399.jpg" alt="399"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="520.jpg" alt="520"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="568.jpg" alt="568"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="590.jpg" alt="590"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="640.jpg" alt="640"><div class="price">۶۴۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="830.jpg" alt="830"><div class="price">۸۳۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="885.jpg" alt="885"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="520.jpg"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="568.jpg"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="590.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="640.jpg"><div class="price">۶۴۰</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="830.jpg"><div class="price">۸۳۰</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="885.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
   </div>
 </section>
 
@@ -128,8 +97,20 @@ body.dark .logo::before{
 
 <section class="product-slider">
   <div class="slider">
-    <div class="product"><img src="آجری.jpg" alt="آجری"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="کالباسی.jpg" alt="کالباسی"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="سدری.jpg" alt="سدری"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="خاکستری.jpg" alt="خاکستری"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
-    <div class="product"><img src="قهوه ای کر
+    <div class="product"><img src="آجری.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="کالباسی.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="سدری.jpg"><div class="price">۶۱۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="خاکستری.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="قهوه ای کرم.jpg"><div class="price">۵۹۰</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="مشکی.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
+    <div class="product"><img src="سبز.jpg"><div class="price">۸۸۵</div><button class="buy">خرید</button></div>
+  </div>
+</section>
+
+<section class="natural-img">
+  <img src="۲۰۲۶۰۱۰۴_۰۴۳۴۳۲.jpg">
+</section>
+
+<section class="grid-products">
+  <div class="product"><img src="1.jpg"><div class="price">۴۸۰</div><button class="buy">خرید</button></div>
+  <div class="product"><img src="3.jpg"><div class="price">۴۸۰</div><button class
