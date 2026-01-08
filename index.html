@@ -27,7 +27,7 @@
     .logo {
       width: 64px;
       height: 64px;
-      background: #fff;
+      background: #fff;       /* دایره مثل سر */
       border-radius: 50%;
       position: absolute;
       left: 50%;
@@ -37,20 +37,19 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0,0,0,.08);
-      cursor: pointer;
-      overflow: visible; /* اجازه می‌ده روسری از دایره بیرون بزنه */
+      overflow: visible;
     }
 
     .logo img {
-      width: 90px;
+      width: 100px;           /* کمی بزرگتر از دایره */
       height: auto;
       position: absolute;
-      top: -5px;
-      left: -13px;
-      background: transparent;
+      top: -35px;             /* کلاه روی دایره قرار می‌گیره */
+      left: -18px;
+      pointer-events: none;
     }
 
-    /* نمونه بخش آمار */
+    /* بخش آمار */
     .stats {
       display: flex;
       background: #fff;
@@ -126,11 +125,11 @@
 </head>
 <body>
 
-  <!-- هدر با لوگوی جدید -->
+  <!-- هدر با کلاه روی دایره -->
   <header class="header">
     <div class="header-bar">
       <div class="logo">
-        <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/image_1767828252298.png" alt="Imebaran Logo">
+        <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/image_1767832336651.png" alt="Winter Hat Logo">
       </div>
     </div>
   </header>
