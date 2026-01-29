@@ -1,113 +1,104 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imebaran</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imebaran</title>
 
-  <!-- آخرین نسخه Remix Icon برای مطمئن بودن نمایش همه آیکون‌ها -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      background: #f7f7f7;
-      font-family: system-ui, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .wrapper {
-      text-align: center;
-    }
-
-    .title {
-      font-size: 15px;
-      margin-bottom: 22px;
-      color: #1FB6A6;
-    }
-
-    .title .highlight {
-      color: #FF8A3D;
-      font-weight: 600;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 140px);
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .btn {
-      background: #fff;
-      border-radius: 18px;
-      width: 140px;
-      height: 140px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,.08);
-      text-decoration: none;
-      color: #333;
-      transition: .2s;
-    }
-
-    .btn i {
-      font-size: 36px;
-      color: #1FB6A6;
-      margin-bottom: 10px;
-    }
-
-    .btn span {
-      font-size: 14px;
-      font-weight: 500;
-      text-align: center;
-    }
-
-    .btn:active {
-      transform: scale(.95);
-    }
-  </style>
+<style>
+body {
+  margin: 0;
+  background: #f7f7f7;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.wrapper {
+  text-align: center;
+}
+.title {
+  font-size: 15px;
+  margin-bottom: 22px;
+  color: #1FB6A6;
+}
+.title .highlight {
+  color: #FF8A3D;
+  font-weight: 600;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  gap: 20px;
+  justify-content: center;
+}
+.btn {
+  background: #fff;
+  border-radius: 18px;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  text-decoration: none;
+  color: #333;
+  transition: .2s;
+}
+.btn i {
+  font-size: 36px;
+  color: #1FB6A6;
+  margin-bottom: 10px;
+}
+.btn span {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+.btn:active {
+  transform: scale(.95);
+}
+</style>
 </head>
 <body>
 
-  <div class="wrapper">
-    <div class="title">
-      لطفاً یکی از سرویس‌ها را
-      <span class="highlight">انتخاب</span>
-      کنید
-    </div>
-
-    <div class="buttons">
-      <!-- آنلاین شاپ -->
-      <a href="shop.html" class="btn">
-        <i class="ri-shopping-bag-line"></i>
-        <span>آنلاین شاپ</span>
-      </a>
-
-      <!-- اعلام بار -->
-      <a href="cargo.html" class="btn">
-        <i class="ri-truck-line"></i>
-        <span>اعلام بار</span>
-      </a>
-
-      <!-- آرایشی بهداشتی -->
-      <a href="beauty.html" class="btn">
-        <i class="ri-lipstick-line"></i> <!-- همون آیکون قبلی -->
-        <span>آرایشی بهداشتی</span>
-      </a>
-
-      <!-- اکسسوری -->
-      <a href="accessory.html" class="btn">
-        <i class="ri-handbag-line"></i>
-        <span>اکسسوری</span>
-      </a>
-    </div>
+<div class="wrapper">
+  <div class="title">
+    لطفاً یکی از سرویس‌ها را
+    <span class="highlight">انتخاب</span>
+    کنید
   </div>
+
+  <div class="buttons">
+    <!-- آنلاین شاپ -->
+    <a href="shop.html" class="btn">
+      <i class="ri-shopping-bag-line"></i>
+      <span>آنلاین شاپ</span>
+    </a>
+
+    <!-- اعلام بار -->
+    <a href="cargo.html" class="btn">
+      <i class="ri-truck-line"></i>
+      <span>اعلام بار</span>
+    </a>
+
+    <!-- آرایشی بهداشتی -->
+    <a href="beauty.html" class="btn">
+      <i class="ri-makeup-line"></i>
+      <span>آرایشی بهداشتی</span>
+    </a>
+
+    <!-- اکسسوری -->
+    <a href="accessory.html" class="btn">
+      <i class="ri-handbag-line"></i>
+      <span>اکسسوری</span>
+    </a>
+  </div>
+</div>
 
 </body>
 </html>
