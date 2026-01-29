@@ -15,11 +15,11 @@ body{
 
 /* هدر */
 .header{
-  background:#ffffff;
-  padding:16px;
+  background:#fff;
+  padding:18px;
   text-align:center;
-  font-weight:bold;
-  font-size:17px;
+  font-weight:800;
+  font-size:18px;
   box-shadow:0 4px 12px rgba(0,0,0,.06);
   position:sticky;
   top:0;
@@ -31,39 +31,49 @@ body{
   padding:14px;
 }
 
-/* کارت بار */
+/* کارت */
 .card{
   background:#fff;
-  border-radius:16px;
-  padding:14px;
-  margin-bottom:12px;
-  box-shadow:0 6px 16px rgba(0,0,0,.06);
+  border-radius:18px;
+  padding:16px;
+  margin-bottom:16px;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
 }
 
 /* مسیر */
 .route{
-  font-size:15px;
-  font-weight:bold;
-  margin-bottom:6px;
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:8px;
 }
 
-/* مشخصات */
+/* توضیحات */
+.desc{
+  font-size:14px;
+  font-weight:600;
+  color:#444;
+  margin-bottom:10px;
+}
+
+/* برچسب‌ها */
 .meta{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-bottom:10px;
+  margin-bottom:14px;
 }
 
 .badge{
-  font-size:12px;
-  padding:4px 10px;
-  border-radius:12px;
+  font-size:13px;
+  font-weight:700;
+  padding:6px 12px;
+  border-radius:14px;
   background:#f0f0f0;
   color:#555;
 }
 
 .truck{ background:#e8f7f5; color:#1FB6A6; }
+.weight{ background:#eef1f4; }
 .fast{ background:#fff1e6; color:#ff7a00; }
 
 /* پایین کارت */
@@ -71,30 +81,37 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  margin-bottom:14px;
 }
 
 .date{
-  font-size:12px;
+  font-size:13px;
+  font-weight:600;
   color:#777;
 }
 
-.btn{
-  padding:8px 16px;
+/* دکمه تماس */
+.call-btn{
+  width:100%;
+  padding:14px;
   border:none;
-  border-radius:12px;
-  background:#1FB6A6;
+  border-radius:16px;
+  background:#ff7a00;
   color:#fff;
-  font-size:13px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
 }
 
 /* برگشت */
 .back{
   display:block;
   text-align:center;
-  padding:18px;
+  padding:20px;
   text-decoration:none;
   color:#1FB6A6;
   font-size:14px;
+  font-weight:700;
 }
 </style>
 </head>
@@ -107,52 +124,56 @@ body{
 
   <div class="card">
     <div class="route">تهران → مشهد</div>
+    <div class="desc">بار لوازم خانگی، نیاز به خودروی مسقف و راننده باتجربه</div>
     <div class="meta">
       <span class="badge truck">تریلی</span>
-      <span class="badge">۲۲ تن</span>
+      <span class="badge weight">۲۲ تن</span>
       <span class="badge fast">فوری</span>
     </div>
     <div class="bottom">
-      <span class="date">امروز</span>
-      <button class="btn">مشاهده</button>
+      <span class="date">بارگیری: امروز</span>
     </div>
+    <button class="call-btn">تماس با صاحب بار</button>
   </div>
 
   <div class="card">
     <div class="route">اصفهان → شیراز</div>
+    <div class="desc">بار مواد غذایی، تحویل درب انبار، بدون توقف</div>
     <div class="meta">
       <span class="badge truck">کامیون</span>
-      <span class="badge">۱۰ تن</span>
+      <span class="badge weight">۱۰ تن</span>
     </div>
     <div class="bottom">
-      <span class="date">فردا</span>
-      <button class="btn">مشاهده</button>
+      <span class="date">بارگیری: فردا</span>
     </div>
+    <button class="call-btn">تماس با صاحب بار</button>
   </div>
 
   <div class="card">
     <div class="route">تبریز → تهران</div>
+    <div class="desc">بار پوشاک، بسته‌بندی شده، حساس به رطوبت</div>
     <div class="meta">
       <span class="badge truck">خاور</span>
-      <span class="badge">۴ تن</span>
+      <span class="badge weight">۴ تن</span>
     </div>
     <div class="bottom">
-      <span class="date">امروز</span>
-      <button class="btn">مشاهده</button>
+      <span class="date">بارگیری: امروز</span>
     </div>
+    <button class="call-btn">تماس با صاحب بار</button>
   </div>
 
   <div class="card">
     <div class="route">قم → کرج</div>
+    <div class="desc">بار صنعتی، تخلیه سریع، کرایه توافقی</div>
     <div class="meta">
       <span class="badge truck">کامیونت</span>
-      <span class="badge">۳ تن</span>
+      <span class="badge weight">۳ تن</span>
       <span class="badge fast">فوری</span>
     </div>
     <div class="bottom">
-      <span class="date">امشب</span>
-      <button class="btn">مشاهده</button>
+      <span class="date">بارگیری: امشب</span>
     </div>
+    <button class="call-btn">تماس با صاحب بار</button>
   </div>
 
 </div>
