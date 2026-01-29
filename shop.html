@@ -1,155 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>آنلاین شاپ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- آیکون خطی -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+@font-face{
+ font-family:'Trashin';
+ src:url('./trashin.ttf') format('truetype');
+}
+@font-face{
+ font-family:'Yagut';
+ src:url('./Far_YagutBd.ttf') format('truetype');
+}
 
-  <style>
-    body {
-      margin: 0;
-      background: #f7f7f7;
-      font-family: Estedad, system-ui, sans-serif;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:'Trashin',sans-serif;
+ background:#fff;
+ color:#444;
+ font-size:16px;
+}
+img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* هدر */
-    .header {
-      padding: 20px;
-    }
+/* hijab big product */
+.hijab-product{
+ margin:12px 16px 32px;
+ border-radius:18px;
+ overflow:hidden;
+}
+.hijab-product img{
+ width:100%;
+ height:180px;
+ object-fit:cover;
+}
+.hijab-btn{
+ width:100%;
+ padding:12px 0;
+ border:none;
+ font-size:18px;
+ font-family:'Trashin';
+ color:#fff;
+ background:rgba(0,0,0,.25);
+ backdrop-filter:blur(6px);
+}
 
-    .header-bar {
-      height: 56px;
-      background: #fff;
-      border-radius: 40px;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,.06);
-      display: flex;
-      align-items: center;
-      padding: 0 16px;
-      gap: 12px;
-    }
+/* intro */
+.intro{
+ text-align:center;
+ padding:32px 16px 48px;
+ font-size:24px;
+ opacity:.85;
+}
 
-    .back {
-      text-decoration: none;
-      color: #1FB6A6;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-    }
+/* size lock */
+.product{
+ width:100%;
+ aspect-ratio:1/1;
+ border-radius:12px;
+ overflow:hidden;
+}
+.product img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
 
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #333;
-    }
+/* slider */
+.slider{
+ display:flex;
+ gap:12px;
+ overflow-x:auto;
+ padding:0 16px 32px;
+}
+.slider::-webkit-scrollbar{display:none}
+.slide{flex:0 0 33.33%}
 
-    /* دسته‌بندی‌ها */
-    .cats {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin:20px;
-    }
-    .cat {
-      background:#fff;
-      border-radius:16px;
-      aspect-ratio:1;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 4px 12px rgba(0,0,0,.06);
-    }
-    .cat span { margin-top:6px; font-size:13px; color:#555; }
+/* grid */
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+ padding:16px;
+}
 
-    /* محصولات */
-    .product-slider { margin:20px; }
-    .slider {
-      display:flex;
-      gap:12px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .slider::-webkit-scrollbar { display:none; }
-    .product {
-      min-width:110px;
-      aspect-ratio:1;
-      background:#fff;
-      border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,.06);
-      scroll-snap-align:start;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-end;
-      padding-bottom:8px;
-    }
-    .product img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:16px;
-    }
-    .price { margin-top:4px; font-weight:bold; }
-    .buy {
-      margin-top:6px;
-      padding:6px 14px;
-      font-size:13px;
-      border-radius:12px;
-      background:#1FB6A6;
-      color:#fff;
-      border:none;
-      cursor: pointer;
-      transition: .2s;
-    }
-    .buy:active {
-      transform: scale(.95);
-    }
-  </style>
+/* prices */
+.prices{
+ display:flex;
+ justify-content:center;
+ gap:6px;
+ margin:6px 0 4px;
+ font-family:'Yagut';
+ font-size:15px;
+ opacity:.75;
+}
+.old{text-decoration:line-through}
+.new{font-weight:bold}
+
+/* buy buttons */
+.buy{
+ display:block;
+ width:60%;
+ margin:0 auto 6px;
+ padding:7px 0;
+ border:none;
+ border-radius:8px;
+ font-size:16px;
+ font-family:'Trashin';
+}
+.slider .buy{background:#2ecc71;color:#fff}
+.grid .buy{background:#f1c40f;color:#000}
+
+/* more */
+.more{
+ text-align:center;
+ margin:24px 0;
+ font-size:18px;
+ opacity:.75;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- هدر با دکمه بازگشت -->
-  <header class="header">
-    <div class="header-bar">
-      <a href="index.html" class="back">
-        <i class="ri-arrow-right-line"></i>
-      </a>
-      <div class="title">آنلاین شاپ</div>
-    </div>
-  </header>
+<div class="hijab-product">
+ <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/حجاب.jpeg">
+ <button class="hijab-btn">محصولات حجاب ما با تخفیف ویژه</button>
+</div>
 
-  <!-- دسته‌بندی‌ها -->
-  <section class="cats">
-    <div class="cat"><span>زنانه</span></div>
-    <div class="cat"><span>مردانه</span></div>
-    <div class="cat"><span>بچگانه</span></div>
-  </section>
+<div class="intro" id="intro"></div>
 
-  <!-- محصولات نمونه -->
-  <section class="product-slider">
-    <div class="slider">
-      <div class="product">
-        <img src="399.jpg" alt="محصول ۳۹۹">
-        <div class="price">۳۹۹</div>
-        <button class="buy">خرید</button>
-      </div>
-      <div class="product">
-        <img src="520.jpg" alt="محصول ۵۲۰">
-        <div class="price">۵۲۰</div>
-        <button class="buy">خرید</button>
-      </div>
-      <div class="product">
-        <img src="568.jpg" alt="محصول ۵۶۸">
-        <div class="price">۵۶۸</div>
-        <button class="buy">خرید</button>
-      </div>
-    </div>
-  </section>
+<div class="slider" id="slider"></div>
+
+<div class="grid">
+<div>
+ <div class="product"><img src="399.jpg"></div>
+ <div class="prices"><span class="old">900</span><span class="new">399 تومان</span></div>
+ <button class="buy" data-code="399">افزودن به سبد</button>
+</div>
+<div>
+ <div class="product"><img src="520.jpg"></div>
+ <div class="prices"><span class="old">980</span><span class="new">520 تومان</span></div>
+ <button class="buy" data-code="520">افزودن به سبد</button>
+</div>
+<div>
+ <div class="product"><img src="568.jpg"></div>
+ <div class="prices"><span class="old">1050</span><span class="new">568 تومان</span></div>
+ <button class="buy" data-code="568">افزودن به سبد</button>
+</div>
+<div>
+ <div class="product"><img src="590.jpg"></div>
+ <div class="prices"><span class="old">1100</span><span class="new">590 تومان</span></div>
+ <button class="buy" data-code="590">افزودن به سبد</button>
+</div>
+<div>
+ <div class="product"><img src="640.jpg"></div>
+ <div class="prices"><span class="old">1200</span><span class="new">640 تومان</span></div>
+ <button class="buy" data-code="640">افزودن به سبد</button>
+</div>
+<div>
+ <div class="product"><img src="830.jpg"></div>
+ <div class="prices"><span class="old">1500</span><span class="new">830 تومان</span></div>
+ <button class="buy" data-code="830">افزودن به سبد</button>
+</div>
+</div>
+
+<div class="more">محصولات بیشتر</div>
+
+<script>
+/* 100 texts */
+const texts=[
+'شب، نام دیگرِ فکرهایی‌ست که خواب ندارند.',
+'دل، همیشه زودتر از عقل خسته می‌شود.',
+'سکوت، بلندترین فریادِ انسان است.',
+'بعضی رفتن‌ها، ماندگارتر از ماندن‌اند.',
+'امید، آخرین چراغِ خانه‌ی دل است.',
+'زمان، زخم‌ها را نمی‌بندد؛ عادتشان می‌دهد.',
+'عشق، اتفاقی‌ست که به دل می‌افتد.',
+'گاهی نبودن، مهربان‌تر از بودن است.',
+'دل اگر آرام باشد، جهان کوتاه می‌آید.',
+'خاطره‌ها پیر نمی‌شوند.',
+'آدمی به اندازه‌ی رؤیاهایش زنده است.',
+'بغض، واژه‌ای‌ست که راه گلو را گم کرده.',
+'بعضی نگاه‌ها، تاریخ انقضا ندارند.',
+'تنهایی، شلوغ‌ترین جای دنیاست.',
+'دل بستن، همیشه خطر داشته است.',
+'باران، دلتنگیِ آسمان است.',
+'حقیقت، اغلب ساده اما تلخ است.',
+'آدم‌ها می‌روند، ردپاها می‌مانند.',
+'شب، همدستِ خیال است.',
+'صبر، شکل مؤدبانه‌ی درد است.',
+'دل، قانون نمی‌شناسد.',
+'فاصله‌ها از یک سلام شروع می‌شوند.',
+'لبخند، کوتاه‌ترین راهِ آرامش است.',
+'گاهی باید رفت تا پیدا شد.',
+'زندگی، تمرینِ دوام آوردن است.',
+'خاطره، بوی زمان می‌دهد.',
+'بعضی حرف‌ها، باید نانوشته بمانند.',
+'دل‌تنگی، وزن ندارد اما سنگین است.',
+'عشق، بلد نیست کم باشد.',
+'هر پایان، شروعی خجالتی دارد.',
+'زندگی، ادامه دارد.'
+];
+intro.innerText=texts[Math.floor(Math.random()*texts.length)];
+
+/* slider */
+const slider=document.getElementById('slider');
+const items=[
+['1.jpg','900','760'],
+['2.jpg','900','760'],
+['3.jpg','900','760'],
+['4.jpg','900','760'],
+['5.jpg','900','760'],
+['6.jpg','900','760']
+];
+items.sort(()=>0.5-Math.random()).slice(0,4).forEach(i=>{
+ slider.innerHTML+=`
+ <div class="slide">
+  <div class="product"><img src="${i[0]}"></div>
+  <div class="prices"><span class="old">${i[1]}</span><span class="new">${i[2]} تومان</span></div>
+  <button class="buy" data-code="${i[2]}">افزودن به سبد</button>
+ </div>`;
+});
+
+/* sms */
+document.querySelectorAll('.buy').forEach(b=>{
+ b.onclick=()=>{
+  location.href=`sms:09221620355?body=کد محصول: ${b.dataset.code}`;
+ };
+});
+</script>
 
 </body>
 </html>
