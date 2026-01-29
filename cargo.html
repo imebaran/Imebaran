@@ -6,110 +6,21 @@
 <title>اعلام بار</title>
 
 <style>
-body{
-  margin:0;
-  background:#f2f4f6;
-  font-family:Estedad, sans-serif;
-  color:#222;
-}
-
-/* هدر */
-.header{
-  background:#fff;
-  padding:18px;
-  text-align:center;
-  font-weight:800;
-  font-size:18px;
-  box-shadow:0 4px 12px rgba(0,0,0,.06);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-/* لیست */
-.container{
-  padding:14px;
-}
-
-/* کارت */
-.card{
-  background:#fff;
-  border-radius:18px;
-  padding:16px;
-  margin-bottom:16px;
-  box-shadow:0 8px 18px rgba(0,0,0,.08);
-}
-
-/* مسیر */
-.route{
-  font-size:16px;
-  font-weight:800;
-  margin-bottom:8px;
-}
-
-/* توضیحات */
-.desc{
-  font-size:14px;
-  font-weight:600;
-  color:#444;
-  margin-bottom:10px;
-}
-
-/* برچسب‌ها */
-.meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:12px;
-}
-
-.badge{
-  font-size:13px;
-  font-weight:700;
-  padding:6px 12px;
-  border-radius:14px;
-  background:#f0f0f0;
-  color:#555;
-}
-
-.truck{ background:#e8f7f5; color:#1FB6A6; }
-.weight{ background:#eef1f4; }
-.fast{ background:#fff3ea; color:#e86a00; }
-
-/* پایین کارت */
-.bottom{
-  margin-bottom:12px;
-}
-
-.date{
-  font-size:13px;
-  font-weight:600;
-  color:#777;
-}
-
-/* دکمه تماس (شفاف و ملایم) */
-.call-btn{
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:14px;
-  background:rgba(47,167,154,0.75); /* شفاف */
-  color:#fff;
-  font-size:14px;
-  font-weight:600;
-  cursor:pointer;
-}
-
-/* برگشت */
-.back{
-  display:block;
-  text-align:center;
-  padding:20px;
-  text-decoration:none;
-  color:#1FB6A6;
-  font-size:14px;
-  font-weight:700;
-}
+body{margin:0;background:#f2f4f6;font-family:Estedad,sans-serif;color:#222}
+.header{background:#fff;padding:18px;text-align:center;font-weight:800;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.06);position:sticky;top:0;z-index:10}
+.container{padding:14px}
+.card{background:#fff;border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:0 8px 18px rgba(0,0,0,.08)}
+.route{font-size:16px;font-weight:800;margin-bottom:8px}
+.desc{font-size:14px;font-weight:600;color:#444;margin-bottom:10px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.badge{font-size:13px;font-weight:700;padding:6px 12px;border-radius:14px;background:#f0f0f0;color:#555}
+.truck{background:#e8f7f5;color:#1FB6A6}
+.weight{background:#eef1f4}
+.fast{background:#fff3ea;color:#e86a00}
+.bottom{margin-bottom:12px}
+.date{font-size:13px;font-weight:600;color:#777}
+.call-btn{width:100%;padding:10px;border:none;border-radius:14px;background:rgba(47,167,154,.75);color:#fff;font-size:14px;font-weight:600}
+.back{display:block;text-align:center;padding:20px;text-decoration:none;color:#1FB6A6;font-size:14px;font-weight:700}
 </style>
 </head>
 
@@ -119,32 +30,36 @@ body{
 
 <div class="container">
 
-  <div class="card">
-    <div class="route">تهران → مشهد</div>
-    <div class="desc">بار لوازم خانگی، نیاز به خودروی مسقف و راننده باتجربه</div>
-    <div class="meta">
-      <span class="badge truck">تریلی</span>
-      <span class="badge weight">۲۲ تن</span>
-      <span class="badge fast">فوری</span>
-    </div>
-    <div class="bottom">
-      <span class="date">بارگیری: امروز</span>
-    </div>
-    <button class="call-btn">تماس با صاحب بار</button>
-  </div>
+<div class="card">
+<div class="route">تهران → مشهد</div>
+<div class="desc">بار لوازم خانگی، نیاز به خودروی مسقف</div>
+<div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۲ تن</span><span class="badge fast">فوری</span></div>
+<div class="bottom"><span class="date">بارگیری: امروز</span></div>
+<button class="call-btn">تماس با صاحب بار</button>
+</div>
 
-  <div class="card">
-    <div class="route">اصفهان → شیراز</div>
-    <div class="desc">بار مواد غذایی، تحویل درب انبار، بدون توقف</div>
-    <div class="meta">
-      <span class="badge truck">کامیون</span>
-      <span class="badge weight">۱۰ تن</span>
-    </div>
-    <div class="bottom">
-      <span class="date">بارگیری: فردا</span>
-    </div>
-    <button class="call-btn">تماس با صاحب بار</button>
-  </div>
+<div class="card">
+<div class="route">اصفهان → شیراز</div>
+<div class="desc">بار مواد غذایی، بدون توقف</div>
+<div class="meta"><span class="badge truck">کامیون</span><span class="badge weight">۱۰ تن</span></div>
+<div class="bottom"><span class="date">بارگیری: فردا</span></div>
+<button class="call-btn">تماس با صاحب بار</button>
+</div>
+
+<div class="card"><div class="route">تبریز → تهران</div><div class="desc">قطعات صنعتی</div><div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۰ تن</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">کرج → رشت</div><div class="desc">مواد پروتئینی</div><div class="meta"><span class="badge truck">کامیونت</span><span class="badge weight">۵ تن</span><span class="badge fast">فوری</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">اهواز → قم</div><div class="desc">سیمان فله</div><div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۴ تن</span></div><div class="bottom"><span class="date">فردا</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">یزد → کرمان</div><div class="desc">کاشی و سرامیک</div><div class="meta"><span class="badge truck">کامیون</span><span class="badge weight">۱۲ تن</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">قزوین → زنجان</div><div class="desc">مواد اولیه</div><div class="meta"><span class="badge truck">خاور</span><span class="badge weight">۶ تن</span></div><div class="bottom"><span class="date">فردا</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">بندرعباس → تهران</div><div class="desc">بار کانتینری</div><div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۶ تن</span><span class="badge fast">فوری</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">ساری → مشهد</div><div class="desc">مرکبات یخچالی</div><div class="meta"><span class="badge truck">یخچال‌دار</span><span class="badge weight">۱۵ تن</span></div><div class="bottom"><span class="date">فردا</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">اراک → همدان</div><div class="desc">ماشین‌آلات</div><div class="meta"><span class="badge truck">کامیون</span><span class="badge weight">۸ تن</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">قم → اراک</div><div class="desc">لوازم پلاستیکی</div><div class="meta"><span class="badge truck">کامیونت</span><span class="badge weight">۳ تن</span></div><div class="bottom"><span class="date">فردا</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">بوشهر → شیراز</div><div class="desc">مواد پتروشیمی</div><div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۳ تن</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">گرگان → تهران</div><div class="desc">چوب و MDF</div><div class="meta"><span class="badge truck">کامیون</span><span class="badge weight">۱۴ تن</span></div><div class="bottom"><span class="date">فردا</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">خرم‌آباد → اهواز</div><div class="desc">مصالح ساختمانی</div><div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۱ تن</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">زاهدان → کرمان</div><div class="desc">مواد معدنی</div><div class="meta"><span class="badge truck">تریلی</span><span class="badge weight">۲۵ تن</span></div><div class="bottom"><span class="date">فردا</span></div><button class="call-btn">تماس</button></div>
+<div class="card"><div class="route">کاشان → تهران</div><div class="desc">فرش و صنایع دستی</div><div class="meta"><span class="badge truck">خاور</span><span class="badge weight">۵ تن</span></div><div class="bottom"><span class="date">امروز</span></div><button class="call-btn">تماس</button></div>
 
 </div>
 
