@@ -9,8 +9,7 @@
 body{
   margin:0;
   background:#f2f4f6;
-  font-family:Estedad, sans-serif;
-  color:#222;
+  font-family:Estedad,sans-serif;
 }
 .header{
   background:#fff;
@@ -20,85 +19,88 @@ body{
   top:0;
   z-index:10;
 }
-.header-title{
+.title{
   text-align:center;
   font-weight:800;
   font-size:18px;
   margin-bottom:12px;
 }
-.search-box{
-  background:#f7f9fa;
-  border-radius:16px;
-  padding:12px;
+.filters{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
-.select{
-  background:#fff;
-  border-radius:14px;
+.field{
+  background:#f7f9fa;
   padding:12px;
+  border-radius:12px;
   font-weight:700;
   font-size:14px;
   cursor:pointer;
-  box-shadow:0 4px 10px rgba(0,0,0,.06);
 }
-.select + .select{ margin-top:10px; }
-
 .dropdown{
   display:none;
-  margin-top:10px;
   background:#fff;
-  border-radius:14px;
   padding:10px;
+  border-radius:12px;
   box-shadow:0 6px 16px rgba(0,0,0,.08);
 }
 .dropdown span{
   display:inline-block;
-  padding:8px 12px;
+  padding:6px 10px;
   margin:4px;
-  border-radius:12px;
+  border-radius:10px;
   background:#eef1f4;
   font-size:13px;
-  font-weight:600;
   cursor:pointer;
 }
 .dropdown span:hover{
   background:#1FB6A6;
   color:#fff;
 }
+.search-btn{
+  margin-top:8px;
+  padding:12px;
+  border:none;
+  border-radius:14px;
+  background:#1FB6A6;
+  color:#fff;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+}
 
-/* کارت‌ها */
 .container{ padding:14px; }
+
 .card{
   background:#fff;
   border-radius:18px;
   padding:16px;
-  margin-bottom:16px;
+  margin-bottom:14px;
   box-shadow:0 8px 18px rgba(0,0,0,.08);
 }
-.route{ font-size:16px;font-weight:800;margin-bottom:8px; }
-.desc{ font-size:14px;font-weight:600;color:#444;margin-bottom:10px; }
-.meta{ display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px; }
+.route{ font-weight:800;font-size:16px;margin-bottom:6px; }
+.desc{ font-size:14px;color:#444;margin-bottom:8px; }
+.meta{ display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px; }
 .badge{
-  font-size:13px;
-  font-weight:700;
+  background:#eef1f4;
   padding:6px 12px;
   border-radius:14px;
-  background:#f0f0f0;
+  font-size:13px;
+  font-weight:700;
 }
-.truck{ background:#e8f7f5;color:#1FB6A6; }
-.weight{ background:#eef1f4; }
 .fast{ background:#fff3ea;color:#e86a00; }
-.date{ font-size:13px;font-weight:600;color:#777; }
-.call-btn{
+.truck{ background:#e8f7f5;color:#1FB6A6; }
+.date{ font-size:13px;color:#777; }
+.call{
+  margin-top:8px;
   width:100%;
-  margin-top:10px;
   padding:10px;
   border:none;
   border-radius:14px;
   background:rgba(47,167,154,.8);
   color:#fff;
-  font-size:14px;
   font-weight:700;
-  cursor:pointer;
 }
 </style>
 </head>
@@ -106,61 +108,92 @@ body{
 <body>
 
 <div class="header">
-  <div class="header-title">لیست اعلام بار</div>
+  <div class="title">لیست اعلام بار</div>
 
-  <div class="search-box">
-    <div class="select" onclick="toggle('from')">📍 انتخاب شهر مبدأ</div>
-    <div id="from" class="dropdown"></div>
+  <div class="filters">
+    <div class="field" onclick="toggle('fromList')">مبدأ</div>
+    <div id="fromList" class="dropdown"></div>
 
-    <div class="select" onclick="toggle('to')">🎯 انتخاب شهر مقصد</div>
-    <div id="to" class="dropdown"></div>
+    <div class="field" onclick="toggle('toList')">مقصد</div>
+    <div id="toList" class="dropdown"></div>
+
+    <button class="search-btn" onclick="search()">جستجو</button>
   </div>
 </div>
 
-<div class="container">
-
-  <div class="card">
-    <div class="route">تهران → مشهد</div>
-    <div class="desc">بار لوازم خانگی، خودروی مسقف</div>
-    <div class="meta">
-      <span class="badge truck">تریلی</span>
-      <span class="badge weight">۲۲ تن</span>
-      <span class="badge fast">فوری</span>
-    </div>
-    <span class="date">بارگیری: امروز</span>
-    <button class="call-btn">تماس با صاحب بار</button>
-  </div>
-
-</div>
+<div class="container" id="list"></div>
 
 <script>
 const provinces=[
-"آذربایجان شرقی","آذربایجان غربی","اردبیل","اصفهان","البرز","ایلام",
-"بوشهر","تهران","چهارمحال و بختیاری","خراسان جنوبی","خراسان رضوی",
-"خراسان شمالی","خوزستان","زنجان","سمنان","سیستان و بلوچستان",
-"فارس","قزوین","قم","کردستان","کرمان","کرمانشاه","کهگیلویه و بویراحمد",
-"گلستان","گیلان","لرستان","مازندران","مرکزی","هرمزگان","همدان","یزد"
+"تهران","اصفهان","مشهد","شیراز","تبریز","رشت","ساری","اهواز","کرمان",
+"یزد","قم","قزوین","همدان","سنندج","کرمانشاه","ایلام","بوشهر",
+"بندرعباس","زاهدان","بیرجند","گرگان","اراک","خرم‌آباد","یاسوج",
+"اردبیل","زنجان","ارومیه","خوی","مراغه","میاندوآب","کاشان"
 ];
+
+let from="",to="";
 
 function fill(id){
   const box=document.getElementById(id);
-  box.innerHTML="";
   provinces.forEach(p=>{
     const s=document.createElement("span");
     s.innerText=p;
-    s.onclick=()=>box.previousElementSibling.innerText=p;
+    s.onclick=()=>{
+      if(id==="fromList") from=p;
+      else to=p;
+      box.previousElementSibling.innerText=p;
+      box.style.display="none";
+    }
     box.appendChild(s);
   });
 }
-fill("from"); fill("to");
+fill("fromList"); fill("toList");
 
 function toggle(id){
-  document.querySelectorAll('.dropdown').forEach(d=>{
+  document.querySelectorAll(".dropdown").forEach(d=>{
     if(d.id!==id) d.style.display="none";
   });
   const el=document.getElementById(id);
   el.style.display=el.style.display==="block"?"none":"block";
 }
+
+const list=document.getElementById("list");
+const loads=[];
+for(let i=0;i<35;i++){
+  loads.push({
+    from:provinces[i%provinces.length],
+    to:provinces[(i+5)%provinces.length],
+    desc:"بار عمومی، تسویه نقدی",
+    truck:i%2?"کامیون":"تریلی",
+    fast:i%3===0
+  });
+}
+
+function render(data){
+  list.innerHTML="";
+  data.forEach(l=>{
+    list.innerHTML+=`
+    <div class="card">
+      <div class="route">${l.from} → ${l.to}</div>
+      <div class="desc">${l.desc}</div>
+      <div class="meta">
+        <span class="badge truck">${l.truck}</span>
+        ${l.fast?'<span class="badge fast">فوری</span>':""}
+      </div>
+      <div class="date">بارگیری: امروز</div>
+      <button class="call">تماس با صاحب بار</button>
+    </div>`;
+  });
+}
+
+function search(){
+  let res=loads.filter(l=>{
+    return (!from||l.from===from)&&(!to||l.to===to);
+  });
+  render(res);
+}
+
+render(loads);
 </script>
 
 </body>
