@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Imebaran</title>
 
-<!-- آخرین نسخه Remix Icon شامل آیکون های جدید -->
+<!-- آخرین نسخه Remix Icon -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
 
 <style>
@@ -52,8 +52,11 @@ body {
 }
 .btn i {
   font-size: 36px;
-  color: #1FB6A6;
+  color: #1FB6A6; /* پیش‌فرض آبی فیروزه‌ای */
   margin-bottom: 10px;
+}
+.btn.handbag i {
+  color: #FF8A3D; /* رنگ نارنجی برای کیف دستی */
 }
 .btn span {
   font-size: 14px;
@@ -76,8 +79,8 @@ body {
 
   <div class="buttons">
     <!-- ارزانسرای باران -->
-    <a href="shop.html" class="btn">
-      <i class="ri-dress-line"></i>
+    <a href="shop.html" class="btn handbag">
+      <i class="ri-handbag-line"></i>
       <span>ارزانسرای باران</span>
     </a>
 
