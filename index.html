@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Imebaran</title>
 
-<!-- آخرین نسخه Remix Icon -->
+<!-- Remix Icon -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
 
 <style>
@@ -18,9 +18,13 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .wrapper {
   text-align: center;
+  position: relative;
 }
+
+/* عنوان */
 .title {
   font-size: 15px;
   margin-bottom: 22px;
@@ -30,12 +34,15 @@ body {
   color: #FF8A3D;
   font-weight: 600;
 }
+
+/* دکمه‌ها */
 .buttons {
   display: grid;
   grid-template-columns: repeat(2, 140px);
   gap: 20px;
   justify-content: center;
 }
+
 .btn {
   background: #fff;
   border-radius: 18px;
@@ -50,110 +57,113 @@ body {
   color: #333;
   transition: .2s;
 }
+
 .btn i {
   font-size: 36px;
-  color: #1FB6A6; /* پیش‌فرض آبی فیروزه‌ای */
+  color: #1FB6A6;
   margin-bottom: 10px;
 }
+
 .btn.handbag i {
-  color: #FF8A3D; /* رنگ نارنجی برای کیف دستی / کیسه خرید */
+  color: #FF8A3D;
 }
+
 .btn span {
   font-size: 14px;
   font-weight: 500;
-  text-align: center;
 }
+
 .btn:active {
   transform: scale(.95);
 }
 
-/* استایل پاپ‌آپ */
+/* پاپ‌آپ */
 .popup {
-  display: none; /* مخفی */
-  position: fixed;
-  top: 50%;
+  display: none;
+  position: absolute;
+  top: -95px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  text-align: center;
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  width: 240px;
+  z-index: 10;
 }
+
 .popup.active {
-  display: block; /* نمایش پاپ‌آپ */
+  display: block;
 }
-.popup .popup-content {
-  font-size: 16px;
+
+.popup-content {
+  font-size: 14px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
-.popup .popup-button {
-  padding: 8px 20px;
+
+.popup-button {
+  padding: 6px 18px;
   background: #FF8A3D;
   color: #fff;
   border: none;
   border-radius: 12px;
+  font-size: 13px;
   cursor: pointer;
-  font-size: 14px;
-}
-.popup .popup-button:hover {
-  background: #FF6A23;
 }
 </style>
 </head>
+
 <body>
 
 <div class="wrapper">
+
+  <!-- پاپ‌آپ -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      به زودی در دسترس قرار می‌گیرد<br>
+      <span style="color:#FF8A3D">Coming soon</span>
+    </div>
+    <button class="popup-button" onclick="closePopup()">OK</button>
+  </div>
+
+  <!-- عنوان -->
   <div class="title">
     لطفاً یکی از سرویس‌ها را
     <span class="highlight">انتخاب</span>
     کنید
   </div>
 
+  <!-- دکمه‌ها -->
   <div class="buttons">
-    <!-- ارزانسرای باران -->
+
     <a href="shop.html" class="btn handbag">
       <i class="ri-shopping-bag-line"></i>
       <span>ارزانسرای باران</span>
     </a>
 
-    <!-- اعلام بار -->
     <a href="cargo.html" class="btn">
       <i class="ri-truck-line"></i>
       <span>اعلام بار</span>
     </a>
 
-    <!-- آرایشی -->
-    <a href="#" class="btn coming-soon" onclick="showPopup(); return false;">
+    <a href="#" class="btn" onclick="showPopup(); return false;">
       <i class="ri-brush-3-line"></i>
       <span>آرایشی</span>
     </a>
 
-    <!-- اکسسوری -->
-    <a href="#" class="btn coming-soon" onclick="showPopup(); return false;">
+    <a href="#" class="btn" onclick="showPopup(); return false;">
       <i class="ri-diamond-ring-line"></i>
       <span>اکسسوری</span>
     </a>
-  </div>
-</div>
 
-<!-- پاپ‌آپ به زودی در دسترس قرار می‌گیرد -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    به زودی در دسترس قرار می‌گیرد
-    <br>
-    <span style="color: #FF8A3D;">Coming soon</span>
   </div>
-  <button class="popup-button" onclick="closePopup()">OK</button>
 </div>
 
 <script>
 function showPopup() {
   document.getElementById('popup').classList.add('active');
 }
-
 function closePopup() {
   document.getElementById('popup').classList.remove('active');
 }
