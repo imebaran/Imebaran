@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اعلام بار</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f2f4f6;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* هدر */
+    .header {
+      padding: 20px;
+    }
+
+    .header-bar {
+      height: 56px;
+      background: #fff;
+      border-radius: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+    }
+
+    .back {
+      color: #1FB6A6;
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* لیست بار */
+    .list {
+      padding: 0 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cargo {
+      background: #fff;
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.06);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .fromto {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .badge {
+      background: #e9f7f5;
+      color: #1FB6A6;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+
+    .info {
+      color: #666;
+      font-size: 12px;
+      display: flex;
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #FF8A3D;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- هدر -->
+  <header class="header">
+    <div class="header-bar">
+      <a href="index.html" class="back">
+        <i class="ri-arrow-right-line"></i>
+      </a>
+      <div class="title">بارهای فعال</div>
+    </div>
+  </header>
+
+  <!-- لیست بار -->
+  <div class="list">
+
+    <div class="cargo">
+      <div class="row">
+        <div class="fromto">تهران → مشهد</div>
+        <div class="badge">تریلی</div>
+      </div>
+      <div class="info">
+        <span>۲۴ تن</span>
+        <span>کارتن</span>
+        <span>امروز</span>
+      </div>
+      <div class="price">کرایه: توافقی</div>
+    </div>
+
+    <div class="cargo">
+      <div class="row">
+        <div class="fromto">اصفهان → شیراز</div>
+        <div class="badge">ده چرخ</div>
+      </div>
+      <div class="info">
+        <span>۱۵ تن</span>
+        <span>مصالح</span>
+        <span>فردا</span>
+      </div>
+      <div class="price">کرایه: ۱۸٬۵۰۰٬۰۰۰</div>
+    </div>
+
+    <div class="cargo">
+      <div class="row">
+        <div class="fromto">تبریز → تهران</div>
+        <div class="badge">کامیونت</div>
+      </div>
+      <div class="info">
+        <span>۵ تن</span>
+        <span>لوازم خانگی</span>
+        <span>امروز</span>
+      </div>
+      <div class="price">کرایه: ۹٬۰۰۰٬۰۰۰</div>
+    </div>
+
+    <div class="cargo">
+      <div class="row">
+        <div class="fromto">قم → اهواز</div>
+        <div class="badge">تریلی</div>
+      </div>
+      <div class="info">
+        <span>۲۲ تن</span>
+        <span>مواد غذایی</span>
+        <span>پس‌فردا</span>
+      </div>
+      <div class="price">کرایه: توافقی</div>
+    </div>
+
+    <div class="cargo">
+      <div class="row">
+        <div class="fromto">رشت → کرج</div>
+        <div class="badge">خاور</div>
+      </div>
+      <div class="info">
+        <span>۸ تن</span>
+        <span>میوه</span>
+        <span>امروز</span>
+      </div>
+      <div class="price">کرایه: ۶٬۸۰۰٬۰۰۰</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
