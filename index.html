@@ -19,6 +19,21 @@
       height: 100vh;
     }
 
+    .wrapper {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 15px;
+      margin-bottom: 22px;
+      color: #1FB6A6; /* فیروزه‌ای */
+    }
+
+    .title .highlight {
+      color: #FF8A3D; /* رنگ گرم برای "انتخاب" */
+      font-weight: 600;
+    }
+
     .buttons {
       display: flex;
       gap: 20px;
@@ -57,16 +72,24 @@
 </head>
 <body>
 
-  <div class="buttons">
-    <a href="#" class="btn">
-      <i class="ri-shopping-bag-line"></i>
-      <span>آنلاین شاپ</span>
-    </a>
+  <div class="wrapper">
+    <div class="title">
+      لطفاً یکی از سرویس‌ها را
+      <span class="highlight">انتخاب</span>
+      کنید
+    </div>
 
-    <a href="#" class="btn">
-      <i class="ri-truck-line"></i>
-      <span>اعلام بار</span>
-    </a>
+    <div class="buttons">
+      <a href="#" class="btn">
+        <i class="ri-shopping-bag-line"></i>
+        <span>آنلاین شاپ</span>
+      </a>
+
+      <a href="#" class="btn">
+        <i class="ri-truck-line"></i>
+        <span>اعلام بار</span>
+      </a>
+    </div>
   </div>
 
 </body>
