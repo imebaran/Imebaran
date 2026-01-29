@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imebaran</title>
+  <title>آنلاین شاپ</title>
+
+  <!-- آیکون خطی -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       background: #f7f7f7;
-      font-family: Estedad;
+      font-family: Estedad, system-ui, sans-serif;
     }
 
     /* هدر */
@@ -22,48 +26,25 @@
       border-radius: 40px;
       position: relative;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
-    }
-
-    .logo {
-      width: 64px;
-      height: 64px;
-      background: #fff;
-      border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
       display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-      cursor: pointer;
-      overflow: visible; /* اجازه می‌ده روسری از دایره بیرون بزنه */
+      padding: 0 16px;
+      gap: 12px;
     }
 
-    .logo img {
-      width: 90px;
-      height: auto;
-      position: absolute;
-      top: -5px;
-      left: -13px;
-      background: transparent;
-    }
-
-    /* نمونه بخش آمار */
-    .stats {
+    .back {
+      text-decoration: none;
+      color: #1FB6A6;
+      font-size: 24px;
       display: flex;
-      background: #fff;
-      border-radius: 24px;
-      padding: 18px;
-      margin: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.06);
-      text-align: center;
+      align-items: center;
     }
-    .stats div { flex: 1; }
-    .stats b { display:block; font-size:24px; color:#1fb6a6; }
-    .stats span { font-size:13px; color:#666; }
-    .stats div+div { border-right:1px solid #eee; }
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
 
     /* دسته‌بندی‌ها */
     .cats {
@@ -91,6 +72,7 @@
       gap:12px;
       overflow-x:auto;
       scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
     .slider::-webkit-scrollbar { display:none; }
     .product {
@@ -121,25 +103,25 @@
       background:#1FB6A6;
       color:#fff;
       border:none;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .buy:active {
+      transform: scale(.95);
     }
   </style>
 </head>
 <body>
 
-  <!-- هدر با لوگوی جدید -->
+  <!-- هدر با دکمه بازگشت -->
   <header class="header">
     <div class="header-bar">
-      <div class="logo">
-        <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/image_1767828252298.png" alt="Imebaran Logo">
-      </div>
+      <a href="index.html" class="back">
+        <i class="ri-arrow-right-line"></i>
+      </a>
+      <div class="title">آنلاین شاپ</div>
     </div>
   </header>
-
-  <!-- بخش آمار -->
-  <section class="stats">
-    <div><b>+۸۰۰</b><span>فروش</span></div>
-    <div><b>+۲۰۰</b><span>مشتری</span></div>
-  </section>
 
   <!-- دسته‌بندی‌ها -->
   <section class="cats">
@@ -151,9 +133,21 @@
   <!-- محصولات نمونه -->
   <section class="product-slider">
     <div class="slider">
-      <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
-      <div class="product"><img src="520.jpg"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
-      <div class="product"><img src="568.jpg"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
+      <div class="product">
+        <img src="399.jpg" alt="محصول ۳۹۹">
+        <div class="price">۳۹۹</div>
+        <button class="buy">خرید</button>
+      </div>
+      <div class="product">
+        <img src="520.jpg" alt="محصول ۵۲۰">
+        <div class="price">۵۲۰</div>
+        <button class="buy">خرید</button>
+      </div>
+      <div class="product">
+        <img src="568.jpg" alt="محصول ۵۶۸">
+        <div class="price">۵۶۸</div>
+        <button class="buy">خرید</button>
+      </div>
     </div>
   </section>
 
