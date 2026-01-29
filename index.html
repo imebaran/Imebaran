@@ -66,6 +66,41 @@ body {
 .btn:active {
   transform: scale(.95);
 }
+
+/* استایل پاپ‌آپ */
+.popup {
+  display: none; /* مخفی */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  text-align: center;
+}
+.popup.active {
+  display: block; /* نمایش پاپ‌آپ */
+}
+.popup .popup-content {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.popup .popup-button {
+  padding: 8px 20px;
+  background: #FF8A3D;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.popup .popup-button:hover {
+  background: #FF6A23;
+}
 </style>
 </head>
 <body>
@@ -91,18 +126,38 @@ body {
     </a>
 
     <!-- آرایشی -->
-    <a href="beauty.html" class="btn">
+    <a href="#" class="btn coming-soon" onclick="showPopup(); return false;">
       <i class="ri-brush-3-line"></i>
       <span>آرایشی</span>
     </a>
 
     <!-- اکسسوری -->
-    <a href="accessory.html" class="btn">
+    <a href="#" class="btn coming-soon" onclick="showPopup(); return false;">
       <i class="ri-diamond-ring-line"></i>
       <span>اکسسوری</span>
     </a>
   </div>
 </div>
+
+<!-- پاپ‌آپ به زودی در دسترس قرار می‌گیرد -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    به زودی در دسترس قرار می‌گیرد
+    <br>
+    <span style="color: #FF8A3D;">Coming soon</span>
+  </div>
+  <button class="popup-button" onclick="closePopup()">OK</button>
+</div>
+
+<script>
+function showPopup() {
+  document.getElementById('popup').classList.add('active');
+}
+
+function closePopup() {
+  document.getElementById('popup').classList.remove('active');
+}
+</script>
 
 </body>
 </html>
