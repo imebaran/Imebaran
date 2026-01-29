@@ -1,179 +1,163 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>اعلام بار</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اعلام بار</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  background:#f2f4f6;
+  font-family:Estedad, sans-serif;
+  color:#222;
+}
 
-  <style>
-    body {
-      margin: 0;
-      background: #f2f4f6;
-      font-family: system-ui, sans-serif;
-    }
+/* هدر */
+.header{
+  background:#ffffff;
+  padding:16px;
+  text-align:center;
+  font-weight:bold;
+  font-size:17px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
 
-    /* هدر */
-    .header {
-      padding: 20px;
-    }
+/* لیست */
+.container{
+  padding:14px;
+}
 
-    .header-bar {
-      height: 56px;
-      background: #fff;
-      border-radius: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.06);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0 16px;
-    }
+/* کارت بار */
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
 
-    .back {
-      color: #1FB6A6;
-      font-size: 22px;
-      text-decoration: none;
-    }
+/* مسیر */
+.route{
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
 
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-    }
+/* مشخصات */
+.meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
 
-    /* لیست بار */
-    .list {
-      padding: 0 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+.badge{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:12px;
+  background:#f0f0f0;
+  color:#555;
+}
 
-    .cargo {
-      background: #fff;
-      border-radius: 18px;
-      padding: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.06);
-    }
+.truck{ background:#e8f7f5; color:#1FB6A6; }
+.fast{ background:#fff1e6; color:#ff7a00; }
 
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-      font-size: 13px;
-    }
+/* پایین کارت */
+.bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .fromto {
-      font-weight: 600;
-      font-size: 14px;
-    }
+.date{
+  font-size:12px;
+  color:#777;
+}
 
-    .badge {
-      background: #e9f7f5;
-      color: #1FB6A6;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-    }
+.btn{
+  padding:8px 16px;
+  border:none;
+  border-radius:12px;
+  background:#1FB6A6;
+  color:#fff;
+  font-size:13px;
+}
 
-    .info {
-      color: #666;
-      font-size: 12px;
-      display: flex;
-      gap: 14px;
-      margin-top: 6px;
-    }
-
-    .price {
-      margin-top: 10px;
-      font-weight: 700;
-      color: #FF8A3D;
-      font-size: 14px;
-    }
-  </style>
+/* برگشت */
+.back{
+  display:block;
+  text-align:center;
+  padding:18px;
+  text-decoration:none;
+  color:#1FB6A6;
+  font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- هدر -->
-  <header class="header">
-    <div class="header-bar">
-      <a href="index.html" class="back">
-        <i class="ri-arrow-right-line"></i>
-      </a>
-      <div class="title">بارهای فعال</div>
+<div class="header">لیست اعلام بار</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="route">تهران → مشهد</div>
+    <div class="meta">
+      <span class="badge truck">تریلی</span>
+      <span class="badge">۲۲ تن</span>
+      <span class="badge fast">فوری</span>
     </div>
-  </header>
-
-  <!-- لیست بار -->
-  <div class="list">
-
-    <div class="cargo">
-      <div class="row">
-        <div class="fromto">تهران → مشهد</div>
-        <div class="badge">تریلی</div>
-      </div>
-      <div class="info">
-        <span>۲۴ تن</span>
-        <span>کارتن</span>
-        <span>امروز</span>
-      </div>
-      <div class="price">کرایه: توافقی</div>
+    <div class="bottom">
+      <span class="date">امروز</span>
+      <button class="btn">مشاهده</button>
     </div>
-
-    <div class="cargo">
-      <div class="row">
-        <div class="fromto">اصفهان → شیراز</div>
-        <div class="badge">ده چرخ</div>
-      </div>
-      <div class="info">
-        <span>۱۵ تن</span>
-        <span>مصالح</span>
-        <span>فردا</span>
-      </div>
-      <div class="price">کرایه: ۱۸٬۵۰۰٬۰۰۰</div>
-    </div>
-
-    <div class="cargo">
-      <div class="row">
-        <div class="fromto">تبریز → تهران</div>
-        <div class="badge">کامیونت</div>
-      </div>
-      <div class="info">
-        <span>۵ تن</span>
-        <span>لوازم خانگی</span>
-        <span>امروز</span>
-      </div>
-      <div class="price">کرایه: ۹٬۰۰۰٬۰۰۰</div>
-    </div>
-
-    <div class="cargo">
-      <div class="row">
-        <div class="fromto">قم → اهواز</div>
-        <div class="badge">تریلی</div>
-      </div>
-      <div class="info">
-        <span>۲۲ تن</span>
-        <span>مواد غذایی</span>
-        <span>پس‌فردا</span>
-      </div>
-      <div class="price">کرایه: توافقی</div>
-    </div>
-
-    <div class="cargo">
-      <div class="row">
-        <div class="fromto">رشت → کرج</div>
-        <div class="badge">خاور</div>
-      </div>
-      <div class="info">
-        <span>۸ تن</span>
-        <span>میوه</span>
-        <span>امروز</span>
-      </div>
-      <div class="price">کرایه: ۶٬۸۰۰٬۰۰۰</div>
-    </div>
-
   </div>
+
+  <div class="card">
+    <div class="route">اصفهان → شیراز</div>
+    <div class="meta">
+      <span class="badge truck">کامیون</span>
+      <span class="badge">۱۰ تن</span>
+    </div>
+    <div class="bottom">
+      <span class="date">فردا</span>
+      <button class="btn">مشاهده</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="route">تبریز → تهران</div>
+    <div class="meta">
+      <span class="badge truck">خاور</span>
+      <span class="badge">۴ تن</span>
+    </div>
+    <div class="bottom">
+      <span class="date">امروز</span>
+      <button class="btn">مشاهده</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="route">قم → کرج</div>
+    <div class="meta">
+      <span class="badge truck">کامیونت</span>
+      <span class="badge">۳ تن</span>
+      <span class="badge fast">فوری</span>
+    </div>
+    <div class="bottom">
+      <span class="date">امشب</span>
+      <button class="btn">مشاهده</button>
+    </div>
+  </div>
+
+</div>
+
+<a class="back" href="index.html">← بازگشت به صفحه اصلی</a>
 
 </body>
 </html>
