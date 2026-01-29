@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imebaran</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f7f7f7;
+      font-family: Estedad;
+    }
+
+    /* هدر */
+    .header {
+      padding: 20px;
+    }
+
+    .header-bar {
+      height: 56px;
+      background: #fff;
+      border-radius: 40px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      cursor: pointer;
+      overflow: visible; /* اجازه می‌ده روسری از دایره بیرون بزنه */
+    }
+
+    .logo img {
+      width: 90px;
+      height: auto;
+      position: absolute;
+      top: -5px;
+      left: -13px;
+      background: transparent;
+    }
+
+    /* نمونه بخش آمار */
+    .stats {
+      display: flex;
+      background: #fff;
+      border-radius: 24px;
+      padding: 18px;
+      margin: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.06);
+      text-align: center;
+    }
+    .stats div { flex: 1; }
+    .stats b { display:block; font-size:24px; color:#1fb6a6; }
+    .stats span { font-size:13px; color:#666; }
+    .stats div+div { border-right:1px solid #eee; }
+
+    /* دسته‌بندی‌ها */
+    .cats {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin:20px;
+    }
+    .cat {
+      background:#fff;
+      border-radius:16px;
+      aspect-ratio:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+    }
+    .cat span { margin-top:6px; font-size:13px; color:#555; }
+
+    /* محصولات */
+    .product-slider { margin:20px; }
+    .slider {
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+    }
+    .slider::-webkit-scrollbar { display:none; }
+    .product {
+      min-width:110px;
+      aspect-ratio:1;
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+      scroll-snap-align:start;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-end;
+      padding-bottom:8px;
+    }
+    .product img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:16px;
+    }
+    .price { margin-top:4px; font-weight:bold; }
+    .buy {
+      margin-top:6px;
+      padding:6px 14px;
+      font-size:13px;
+      border-radius:12px;
+      background:#1FB6A6;
+      color:#fff;
+      border:none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- هدر با لوگوی جدید -->
+  <header class="header">
+    <div class="header-bar">
+      <div class="logo">
+        <img src="https://raw.githubusercontent.com/imebaran/Imebaran/main/image_1767828252298.png" alt="Imebaran Logo">
+      </div>
+    </div>
+  </header>
+
+  <!-- بخش آمار -->
+  <section class="stats">
+    <div><b>+۸۰۰</b><span>فروش</span></div>
+    <div><b>+۲۰۰</b><span>مشتری</span></div>
+  </section>
+
+  <!-- دسته‌بندی‌ها -->
+  <section class="cats">
+    <div class="cat"><span>زنانه</span></div>
+    <div class="cat"><span>مردانه</span></div>
+    <div class="cat"><span>بچگانه</span></div>
+  </section>
+
+  <!-- محصولات نمونه -->
+  <section class="product-slider">
+    <div class="slider">
+      <div class="product"><img src="399.jpg"><div class="price">۳۹۹</div><button class="buy">خرید</button></div>
+      <div class="product"><img src="520.jpg"><div class="price">۵۲۰</div><button class="buy">خرید</button></div>
+      <div class="product"><img src="568.jpg"><div class="price">۵۶۸</div><button class="buy">خرید</button></div>
+    </div>
+  </section>
+
+</body>
+</html>
