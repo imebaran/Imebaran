@@ -1,99 +1,107 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imebaran</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imebaran</title>
 
-  <!-- آیکون خطی -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  background:#f2f4f6;
+  font-family:Estedad, sans-serif;
+}
 
-  <style>
-    body {
-      margin: 0;
-      background: #f7f7f7;
-      font-family: system-ui, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+/* کانتینر */
+.wrapper{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
 
-    .wrapper {
-      text-align: center;
-    }
+/* متن بالا */
+.title{
+  font-size:16px;
+  font-weight:700;
+  color:#1FB6A6;
+  margin-bottom:20px;
+}
+.title span{
+  color:#e07a2f;
+}
 
-    .title {
-      font-size: 15px;
-      margin-bottom: 22px;
-      color: #1FB6A6;
-    }
+/* دکمه‌ها */
+.buttons{
+  width:100%;
+  max-width:360px;
+  display:grid;
+  gap:14px;
+}
 
-    .title .highlight {
-      color: #FF8A3D;
-      font-weight: 600;
-    }
+.btn{
+  background:#fff;
+  border-radius:18px;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:#222;
+  font-weight:700;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
 
-    .buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .btn {
-      background: #fff;
-      border-radius: 18px;
-      width: 140px;
-      height: 140px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,.08);
-      text-decoration: none;
-      color: #333;
-      transition: .2s;
-    }
-
-    .btn i {
-      font-size: 36px;
-      color: #1FB6A6;
-      margin-bottom: 10px;
-    }
-
-    .btn span {
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .btn:active {
-      transform: scale(.95);
-    }
-  </style>
+/* آیکون خطی */
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  background:#e8f7f5;
+  color:#1FB6A6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="wrapper">
-    <div class="title">
-      لطفاً یکی از سرویس‌ها را
-      <span class="highlight">انتخاب</span>
-      کنید
-    </div>
+<div class="wrapper">
 
-    <div class="buttons">
-      <!-- آنلاین شاپ -->
-      <a href="shop.html" class="btn">
-        <i class="ri-shopping-bag-line"></i>
-        <span>آنلاین شاپ</span>
-      </a>
-
-      <!-- اعلام بار -->
-      <a href="cargo.html" class="btn">
-        <i class="ri-truck-line"></i>
-        <span>اعلام بار</span>
-      </a>
-    </div>
+  <div class="title">
+    لطفاً یکی از سرویس‌ها را <span>انتخاب</span> کنید
   </div>
+
+  <div class="buttons">
+
+    <a href="shop.html" class="btn">
+      <div class="icon">🛍️</div>
+      آنلاین شاپ
+    </a>
+
+    <a href="cargo.html" class="btn">
+      <div class="icon">🚚</div>
+      اعلام بار
+    </a>
+
+    <a href="beauty.html" class="btn">
+      <div class="icon">💄</div>
+      آرایشی بهداشتی
+    </a>
+
+    <a href="accessory.html" class="btn">
+      <div class="icon">👜</div>
+      اکسسوری
+    </a>
+
+  </div>
+
+</div>
 
 </body>
 </html>
