@@ -6,130 +6,46 @@
 <title>اعلام بار</title>
 
 <style>
-body{
-  margin:0;
-  background:#f2f4f6;
-  font-family:Estedad,sans-serif;
-}
-.header{
-  background:#fff;
-  padding:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,.06);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-.title{
-  text-align:center;
-  font-weight:800;
-  font-size:18px;
-  margin-bottom:12px;
-}
-.filters{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-.field{
-  background:#f7f9fa;
-  padding:12px;
-  border-radius:12px;
-  font-weight:700;
-  font-size:14px;
-  cursor:pointer;
-}
-.dropdown{
-  display:none;
-  background:#fff;
-  padding:10px;
-  border-radius:12px;
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
-}
-.dropdown span{
-  display:inline-block;
-  padding:6px 10px;
-  margin:4px;
-  border-radius:10px;
-  background:#eef1f4;
-  font-size:13px;
-  cursor:pointer;
-}
-.dropdown span:hover{
-  background:#1FB6A6;
-  color:#fff;
-}
-.search-btn{
-  margin-top:8px;
-  padding:12px;
-  border:none;
-  border-radius:14px;
-  background:#1FB6A6;
-  color:#fff;
-  font-weight:800;
-  font-size:15px;
-  cursor:pointer;
-}
-
-.container{ padding:14px; }
-
-.card{
-  background:#fff;
-  border-radius:18px;
-  padding:16px;
-  margin-bottom:14px;
-  box-shadow:0 8px 18px rgba(0,0,0,.08);
-}
-.route{ font-weight:800;font-size:16px;margin-bottom:6px; }
-.desc{ font-size:14px;color:#444;margin-bottom:8px; }
-.meta{ display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px; }
-.badge{
-  background:#eef1f4;
-  padding:6px 12px;
-  border-radius:14px;
-  font-size:13px;
-  font-weight:700;
-}
-.fast{ background:#fff3ea;color:#e86a00; }
-.truck{ background:#e8f7f5;color:#1FB6A6; }
-.date{ font-size:13px;color:#777; }
-.call{
-  margin-top:8px;
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:14px;
-  background:rgba(47,167,154,.8);
-  color:#fff;
-  font-weight:700;
-}
+body{margin:0;background:#f2f4f6;font-family:Estedad,sans-serif;}
+.header{background:#f2f4f6;padding:14px;position:sticky;top:0;z-index:10;}
+.search-box{background:#ffffffcc;backdrop-filter:blur(6px);border-radius:18px;padding:10px;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+.field{flex:1;padding:10px;font-weight:700;font-size:14px;color:#444;cursor:pointer;}
+.field span{color:#888;font-weight:600;}
+.dropdown{display:none;margin-top:8px;background:#fff;padding:8px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.1);}
+.dropdown span{display:inline-block;padding:6px 10px;margin:4px;border-radius:10px;background:#eef1f4;font-size:13px;cursor:pointer;}
+.dropdown span:hover{background:#1FB6A6;color:#fff;}
+.container{padding:14px;}
+.card{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 8px 18px rgba(0,0,0,.08);}
+.route{font-weight:800;font-size:16px;margin-bottom:6px;}
+.desc{font-size:14px;color:#444;margin-bottom:8px;}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.badge{background:#eef1f4;padding:6px 12px;border-radius:14px;font-size:13px;font-weight:700;}
+.fast{background:#fff3ea;color:#e86a00;}
+.truck{background:#e8f7f5;color:#1FB6A6;}
+.call{margin-top:8px;width:100%;padding:10px;border:none;border-radius:14px;background:rgba(47,167,154,.8);color:#fff;font-weight:700;}
 </style>
 </head>
 
 <body>
 
 <div class="header">
-  <div class="title">لیست اعلام بار</div>
-
-  <div class="filters">
-    <div class="field" onclick="toggle('fromList')">مبدأ</div>
-    <div id="fromList" class="dropdown"></div>
-
-    <div class="field" onclick="toggle('toList')">مقصد</div>
-    <div id="toList" class="dropdown"></div>
-
-    <button class="search-btn" onclick="search()">جستجو</button>
+  <div class="search-box">
+    <div class="field" onclick="toggle('fromList')">
+      <span>مبدأ:</span> <b id="fromTxt">همه</b>
+    </div>
+    <div class="field" onclick="toggle('toList')">
+      <span>مقصد:</span> <b id="toTxt">همه</b>
+    </div>
   </div>
+
+  <div id="fromList" class="dropdown"></div>
+  <div id="toList" class="dropdown"></div>
 </div>
 
 <div class="container" id="list"></div>
 
 <script>
-const provinces=[
-"تهران","اصفهان","مشهد","شیراز","تبریز","رشت","ساری","اهواز","کرمان",
-"یزد","قم","قزوین","همدان","سنندج","کرمانشاه","ایلام","بوشهر",
-"بندرعباس","زاهدان","بیرجند","گرگان","اراک","خرم‌آباد","یاسوج",
-"اردبیل","زنجان","ارومیه","خوی","مراغه","میاندوآب","کاشان"
-];
+const provinces=["تهران","اصفهان","مشهد","شیراز","تبریز","رشت","اهواز","کرمان","یزد","قم","قزوین","همدان","سنندج","کرمانشاه","بوشهر","بندرعباس","زاهدان","گرگان","اراک","خرم‌آباد","یاسوج","اردبیل","زنجان","ارومیه","کاشان","ساری","بابل","قائمشهر","نوشهر","چالوس","آمل"];
 
 let from="",to="";
 
@@ -139,11 +55,11 @@ function fill(id){
     const s=document.createElement("span");
     s.innerText=p;
     s.onclick=()=>{
-      if(id==="fromList") from=p;
-      else to=p;
-      box.previousElementSibling.innerText=p;
+      if(id==="fromList"){ from=p; fromTxt.innerText=p; }
+      else{ to=p; toTxt.innerText=p; }
       box.style.display="none";
-    }
+      search(); // اتوسرچ: هر بار انتخاب شد، لیست فیلتر میشه
+    };
     box.appendChild(s);
   });
 }
@@ -157,12 +73,13 @@ function toggle(id){
   el.style.display=el.style.display==="block"?"none":"block";
 }
 
+/* ===== بارها (قفل) ===== */
 const list=document.getElementById("list");
 const loads=[];
 for(let i=0;i<35;i++){
   loads.push({
     from:provinces[i%provinces.length],
-    to:provinces[(i+5)%provinces.length],
+    to:provinces[(i+6)%provinces.length],
     desc:"بار عمومی، تسویه نقدی",
     truck:i%2?"کامیون":"تریلی",
     fast:i%3===0
@@ -180,17 +97,15 @@ function render(data){
         <span class="badge truck">${l.truck}</span>
         ${l.fast?'<span class="badge fast">فوری</span>':""}
       </div>
-      <div class="date">بارگیری: امروز</div>
       <button class="call">تماس با صاحب بار</button>
     </div>`;
   });
 }
 
 function search(){
-  let res=loads.filter(l=>{
-    return (!from||l.from===from)&&(!to||l.to===to);
-  });
-  render(res);
+  render(loads.filter(l=>
+    (!from||l.from===from)&&(!to||l.to===to)
+  ));
 }
 
 render(loads);
